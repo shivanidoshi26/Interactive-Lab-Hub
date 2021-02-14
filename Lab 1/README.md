@@ -124,7 +124,7 @@ Now, hange the goal within the same setting, and update the interaction with the
 
 **Show the follow-up work here.**
 
-![Setup](https://youtu.be/NhCTkFXi9YY)
+![Paper Interaction](https://youtu.be/NhCTkFXi9YY)
 
 ## Part E. Costume the device
 
