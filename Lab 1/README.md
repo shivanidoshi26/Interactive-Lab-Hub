@@ -68,6 +68,13 @@ _Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening th
 
 The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
 **Describe your setting, players, activity and goals here.**
+_Setting:_ Sam is headed on her weekly grocery run. Every time she goes, she struggles to find the ripe avocados, the sweet oranges, the non-disease-ridden lettuce and so on. She’s had to waste so much food as a result of buying nearly-rotten foods from the grocery store - not to mention the couple of encounters with food poisoning (yeesh!). 
+
+_Players:_ Sam is the primary player here. When Sam invites her friends, Snigdha and Shivani, over for food they become the secondary players. The people around Sam at the grocery store are also secondary players here because they can learn from the device. 
+
+_Activity:_ When Sam goes to the grocery store, she brings along the {NAME TBD}. When the device is pointed to a specific food object, it detects whether the food is good to eat or not by displaying a green go-ahead color or a red don’t-buy color. Within the category of go-ahead colors, the different shades of green determine how mature the food item is, with the darker hues representing food that is absolutely ready to be consumed and the lighter hues the opposite. 
+
+_Goals:_ Sam’s goal is to find the best food to eat so she can accurately meal plan and she doesn’t waste any food in the process. She wants to eventually start cooking and delivering food from her home to help people during this pandemic, so she’ll need to buy the right groceries to do it. 
 
 Sketch a storyboard of the interactions you are planning. It does not need to be perfect, but must get across the behavior of the interactive device and the other characters in the scene. 
 **Include a picture of your storyboard here**
