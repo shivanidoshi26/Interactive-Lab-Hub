@@ -99,6 +99,8 @@ Try physically acting out the interaction you planned. For now, you can just pre
 
 **Are there new ideas that occur to you or your collaborators that come up from the acting?**
 
+- Maybe the device could be on the shopping cart itself, rather than a handheld device. It would be more convenient than having to hold it.
+- The keychain might not be a great idea to include because if the device breaks off or falls off, then the device could get lost.
 
 ## Part C. Prototype the device
 
@@ -142,6 +144,8 @@ The device ought to be easy to use, lightweight and chargeable. It should be sma
 ## Part F. Record
 
 **Take a video of your prototyped interaction.**
+
+
 
 **Please indicate anyone you collaborated with on this Lab.**
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
