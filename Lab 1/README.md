@@ -119,9 +119,11 @@ Only now should you start worrying about what the device should look like. Devel
 Think about the setting of the device: is the environment a place where the device could overheat? Is water a danger? Does it need to have bright colors in an emergency setting?
 
 **Include sketches of what your device might look like here.**
+![image](Sketches.jpg)
 
 **What concerns or opportunitities are influencing the way you've designed the device to look?**
 
+The device ought to be easy to use, lightweight and chargeable. It should be small enough to fit in the actor's hand and should fit in their pocket as they keep shopping for food items. It could have a detachable keychain, in case the person wants to attach it to their bag.
 
 ## Part F. Record
 
@@ -129,6 +131,8 @@ Think about the setting of the device: is the environment a place where the devi
 
 **Please indicate anyone you collaborated with on this Lab.**
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
+
+Sam Lee (snlee159) and Snigdha Singhania (ss4224)
 
 # Staging Interaction, Part 2 
 
