@@ -68,6 +68,7 @@ _Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening th
 
 The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
 **Describe your setting, players, activity and goals here.**
+
 _Setting:_ Sam is headed on her weekly grocery run. Every time she goes, she struggles to find the ripe avocados, the sweet oranges, the non-disease-ridden lettuce and so on. She’s had to waste so much food as a result of buying nearly-rotten foods from the grocery store - not to mention the couple of encounters with food poisoning (yeesh!). 
 
 _Players:_ Sam is the primary player here. When Sam invites her friends, Snigdha and Shivani, over for food they become the secondary players. The people around Sam at the grocery store are also secondary players here because they can learn from the device. 
