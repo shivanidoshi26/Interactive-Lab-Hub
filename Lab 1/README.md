@@ -56,26 +56,24 @@ Labs are due on Mondays. Make sure this page is linked to on your main class hub
 
 ## Part A. Plan 
 
-To stage the interaction with your interactive device, think about:
-
-_Setting:_ Where is this interaction happening? (e.g., a jungle, the kitchen) When is it happening?
-
-_Players:_ Who is involved in the interaction? Who else is there? If you reflect on the design of current day interactive devices like the Amazon Alexa, it’s clear they didn’t take into account people who had roommates, or the presence of children. Think through all the people who are in the setting.
-
-_Activity:_ What is happening between the actors?
-
-_Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening the fridge). 
-
 The interactive device can be anything *except* a computer, a tablet computer or a smart phone, but the main way it interacts needs to be using light.
 **Describe your setting, players, activity and goals here.**
 
-**_Setting:_ Sam is headed on her weekly grocery run. Every time she goes, she struggles to find the ripe avocados, the sweet oranges, the non-disease-ridden lettuce and so on. She’s had to waste so much food as a result of buying nearly-rotten foods from the grocery store - not to mention the couple of encounters with food poisoning (yeesh!).**
+_Setting:_ Where is this interaction happening? (e.g., a jungle, the kitchen) When is it happening? 
 
-**_Players:_ Sam is the primary player here. When Sam invites her friends, Snigdha and Shivani, over for food they become the secondary players. The people around Sam at the grocery store are also secondary players here because they can learn from the device.**
+Sam is headed on her weekly grocery run. Every time she goes, she struggles to find the ripe avocados, the sweet oranges, the non-disease-ridden lettuce and so on. She’s had to waste so much food as a result of buying nearly-rotten foods from the grocery store - not to mention the couple of encounters with food poisoning (yeesh!).
 
-**_Activity:_ When Sam goes to the grocery store, she brings along the {NAME TBD}. When the device is pointed to a specific food object, it detects whether the food is good to eat or not by displaying a green go-ahead color or a red don’t-buy color. Within the category of go-ahead colors, the different shades of green determine how mature the food item is, with the darker hues representing food that is absolutely ready to be consumed and the lighter hues the opposite.** 
+_Players:_ Who is involved in the interaction? Who else is there? If you reflect on the design of current day interactive devices like the Amazon Alexa, it’s clear they didn’t take into account people who had roommates, or the presence of children. Think through all the people who are in the setting. 
 
-**_Goals:_ Sam’s goal is to find the best food to eat so she can accurately meal plan and she doesn’t waste any food in the process. She wants to eventually start cooking and delivering food from her home to help people during this pandemic, so she’ll need to buy the right groceries to do it.**
+Sam is the primary player here. When Sam invites her friends, Snigdha and Shivani, over for food they become the secondary players. The people around Sam at the grocery store are also secondary players here because they can learn from the device.
+
+_Activity:_ What is happening between the actors?
+
+When Sam goes to the grocery store, she brings along the {NAME TBD}. When the device is pointed to a specific food object, it detects whether the food is good to eat or not by displaying a green go-ahead color or a red don’t-buy color. Within the category of go-ahead colors, the different shades of green determine how mature the food item is, with the darker hues representing food that is absolutely ready to be consumed and the lighter hues the opposite. 
+
+_Goals:_ What are the goals of each player? (e.g., jumping to a tree, opening the fridge). 
+
+Sam’s goal is to find the best food to eat so she can accurately meal plan and she doesn’t waste any food in the process. She wants to eventually start cooking and delivering food from her home to help people during this pandemic, so she’ll need to buy the right groceries to do it.
 
 Sketch a storyboard of the interactions you are planning. It does not need to be perfect, but must get across the behavior of the interactive device and the other characters in the scene. 
 **Include a picture of your storyboard here**
