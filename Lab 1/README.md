@@ -146,7 +146,7 @@ The device ought to be easy to use, lightweight and chargeable. It should be sma
 
 **Take a video of your prototyped interaction.**
 
-
+https://youtu.be/9lUx9wfE-DA
 
 **Please indicate anyone you collaborated with on this Lab.**
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
