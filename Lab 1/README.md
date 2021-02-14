@@ -82,6 +82,10 @@ Sketch a storyboard of the interactions you are planning. It does not need to be
 Present your idea to the other people in your breakout room. You can just get feedback from one another or you can work together on the other parts of the lab.
 **Summarize feedback you got here.**
 
+- The initial idea I had was applying this in the wild. But everyone believed that it would be more appropriate in a grocery store/supermarket setting.
+- How would you make sure that the device is pointing to the thing that you're actually trying to test?
+- Fun idea!
+
 
 ## Part B. Act out the Interaction
 
