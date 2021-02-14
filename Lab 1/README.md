@@ -101,6 +101,8 @@ Code for the "Tinkerbelle" tool, and instructions for setting up the server and 
 We invented this tool for this lab! 
 **Give us feedback on Tinkerbelle.**
 
+I wish the buttons would get minimized when you interact with the device. I feel that there should be some sort of "Need Help?" function on the website itself, in the event the person using the tool needs immediate assistance and doesn't want to reference the GitHub page. Other than that, I think it's a great tool and I love the fact that the colors can be changed either by your laptop or your phone.
+
 ## Part D. Wizard the device
 Take a little time to set up the wizarding set-up that allows for someone to remotely control the device while someone acts with it. Hint: You can use Zoom to record videos, and you can pin someone’s video feed if that is the scene which you want to record. 
 
