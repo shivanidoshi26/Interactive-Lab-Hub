@@ -93,6 +93,10 @@ Try physically acting out the interaction you planned. For now, you can just pre
 
 **Are there things that seemed better on paper than acted out?**
 
+- How long would you have to hold up the device against the object for it to tell you whether it's safe to eat or not? If the device takes too long, people might not be inclined to use it because it would slow down their grocery shopping process.
+- If people start recognizing the ways to determine food goodness on their own, there would be no need for the device. This would really only help a certain group of people.
+- If the item being scanned is very big, such as a watermelon, would the device still be able to capture the entire object (since the device would have to be held a bit further away to get the entire item)?
+
 **Are there new ideas that occur to you or your collaborators that come up from the acting?**
 
 
