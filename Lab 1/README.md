@@ -69,7 +69,7 @@ Sam is the primary player here. When Sam invites her friends, Snigdha and Shivan
 
 _Activity: What is happening between the actors?_
 
-When Sam goes to the grocery store, she brings along the {NAME TBD}. When the device is pointed to a specific food object, it detects whether the food is good to eat or not by displaying a green go-ahead color or a red don’t-buy color. Within the category of go-ahead colors, the different shades of green determine how mature the food item is, with the darker hues representing food that is absolutely ready to be consumed and the lighter hues the opposite. 
+When Sam goes to the grocery store, she brings along The Grocery Helper. When the device is pointed to a specific food object, it detects whether the food is good to eat or not by displaying a green go-ahead color or a red don’t-buy color. Within the category of go-ahead colors, the different shades of green determine how mature the food item is, with the darker hues representing food that is absolutely ready to be consumed and the lighter hues the opposite. 
 
 _Goals: What are the goals of each player? (e.g., jumping to a tree, opening the fridge)._ 
 
