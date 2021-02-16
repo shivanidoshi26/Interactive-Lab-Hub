@@ -164,6 +164,11 @@ You will be assigned three partners from another group. Go to their github pages
 
 **Summarize feedback from your partners here.**
 
+- Maybe the device could go on the grocery cart itself.
+- The device doesn’t have any buttons to say you’re ready to capture stuff. A “test freshness” button could be useful. Maybe also some words to express what each color means. Like a shopper might not automatically know what the different shades of green imply.
+- The different greens definitely aren’t showing up in the videos and so could be harder to interpret.
+- The chocolate example wasn't particularly relevant (because who goes into a grocery store, unwraps something to check it and then wraps it back up and leaves it?)
+
 ## Make it your own
 
 Do last week’s assignment again, but this time: 
