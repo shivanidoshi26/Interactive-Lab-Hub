@@ -165,9 +165,12 @@ You will be assigned three partners from another group. Go to their github pages
 **Summarize feedback from your partners here.**
 
 - Maybe the device could go on the grocery cart itself.
-- The device doesn’t have any buttons to say you’re ready to capture stuff. A “test freshness” button could be useful. Maybe also some words to express what each color means. Like a shopper might not automatically know what the different shades of green imply.
-- The different greens definitely aren’t showing up in the videos and so could be harder to interpret.
+- The device doesn’t have any buttons to say you’re ready to capture stuff. A “test freshness” button could be useful. Maybe also some words to express what each color means - a shopper might not automatically know what the different shades of green imply.
+- The different shades of green didn’t show up in the videos and was difficult to interpret.
 - The chocolate example wasn't particularly relevant (because who goes into a grocery store, unwraps something to check it and then wraps it back up and leaves it?)
+- Someone liked the idea of keeping it in the form of a keychain, something that would be easy to carry.
+- For the color hues, the addition of sound/text in the next iteration might be useful to cater to people who are color blind or if they are shopping outdoors where the sunlight can affect the brightness, hues won’t be prominent at that time.
+- Another use case that it could be relevant for: due to COVID, it’s not recommended to touch items unnecessarily, so maybe you can use the scanner to scan and check if the product is vegan/organic/vegetarian etc. (the device will scan the product and get this information from google perhaps).
 
 ## Make it your own
 
