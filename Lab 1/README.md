@@ -180,3 +180,4 @@ Do last week’s assignment again, but this time:
 3) We will be grading with an emphasis on creativity. 
 
 **Document everything here.**
+![image](Storyboard Part2.jpg)
