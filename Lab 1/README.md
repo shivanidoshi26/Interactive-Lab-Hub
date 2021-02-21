@@ -180,6 +180,14 @@ Do last week’s assignment again, but this time:
 3) We will be grading with an emphasis on creativity. 
 
 **Document everything here.**
+
+The setting, players, actions and goals are all the same as the first iteration. The one new addition we've learned about our primary player, Sam, is that she is colorblind. So, the device is not effective. The actions have also been updated to specifically help during this pandemic - since people ought not to touch the groceries at the store to help prevent the spread of COVID-19 the device can be held from a distance and still capture the results accurately.
+
+Here is the updated storyboard with The Grocery Helper 2.0:
 ![image](Storyboard_Part2.jpg)
 
-https://youtu.be/GTgpFWnIfyo
+Upon acting the interaction out in person, my contributors and I noticed that the color was slightly unclear. So we used a more yellowish color to denote unripe foods, instead of light green. 
+
+Here are sketches of the updated version of the Grocery Helper 2.0:
+
+The final video that we took was our first attempt at filming the interaction. Here is the final interaction video: https://youtu.be/GTgpFWnIfyo
