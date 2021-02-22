@@ -164,6 +164,8 @@ You will be assigned three partners from another group. Go to their github pages
 
 **Summarize feedback from your partners here.**
 
+Collated feedback from Anam Tahir (at884), Ritika Poddar (rp477), Sam Lee (snlee159) and Snigdha Singhania (ss4224) 
+
 - Maybe the device could go on the grocery cart itself.
 - The device doesn’t have any buttons to say you’re ready to capture stuff. A “test freshness” button could be useful. Maybe also some words to express what each color means - a shopper might not automatically know what the different shades of green imply.
 - The different shades of green didn’t show up in the videos and was difficult to interpret.
@@ -189,5 +191,6 @@ Here is the updated storyboard with The Grocery Helper 2.0:
 Upon acting the interaction out in person, my contributors and I noticed that the color was slightly unclear. So we used a more yellowish color to denote unripe foods, instead of light green. 
 
 Here are sketches of the updated version of the Grocery Helper 2.0:
+
 
 The final video that we took was our first attempt at filming the interaction. Here is the final interaction video: https://youtu.be/GTgpFWnIfyo
