@@ -164,7 +164,7 @@ You will be assigned three partners from another group. Go to their github pages
 
 **Summarize feedback from your partners here.**
 
-Collated feedback from Anam Tahir (at884), Ritika Poddar (rp477), Sam Lee (snlee159) and Snigdha Singhania (ss4224) 
+Collated feedback from Anam Tahir (at884), Niki Agrawal (aa653), Ritika Poddar (rp477), Sam Lee (snlee159) and Snigdha Singhania (ss4224) 
 
 - Maybe the device could go on the grocery cart itself.
 - The device doesn’t have any buttons to say you’re ready to capture stuff. A “test freshness” button could be useful. Maybe also some words to express what each color means - a shopper might not automatically know what the different shades of green imply.
