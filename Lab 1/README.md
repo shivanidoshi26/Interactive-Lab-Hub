@@ -190,7 +190,9 @@ Here is the updated storyboard with The Grocery Helper 2.0:
 
 Upon acting the interaction out in person, my contributors and I noticed that the color was slightly unclear. So we used a more yellowish color to denote unripe foods, instead of light green. 
 
-Here are sketches of the updated version of the Grocery Helper 2.0:
+The Grocery Helper 2.0 now has a speaker at the back and a play and stop button on the front. The new buttons and the speaker were incorporated to handle the sound element that was added to the device. If something is already clear to the user, then they have the stop button to stop the device from saying anything. If they hold the stop button for 3 seconds, it mutes to device altogether - this would help users that are not colorblind and would not benefit as much from the sound aspect. Here are sketches of the updated version of The Grocery Helper:
 ![image](Sketches_TGH2.jpg)
 
 The final video that we took was our first attempt at filming the interaction. Here is the final interaction video: https://youtu.be/GTgpFWnIfyo
+
+The contributors of The Grocery Helper 2.0 were Snigdha Singhania (ss4224) and Shaival Divatia (does not go to CT). 
