@@ -191,6 +191,6 @@ Here is the updated storyboard with The Grocery Helper 2.0:
 Upon acting the interaction out in person, my contributors and I noticed that the color was slightly unclear. So we used a more yellowish color to denote unripe foods, instead of light green. 
 
 Here are sketches of the updated version of the Grocery Helper 2.0:
-
+![image](Sketches_TGH2.jpg)
 
 The final video that we took was our first attempt at filming the interaction. Here is the final interaction video: https://youtu.be/GTgpFWnIfyo
