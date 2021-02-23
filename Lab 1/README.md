@@ -181,7 +181,7 @@ Do last week’s assignment again, but this time:
 2) You can use any modality (e.g., vibration, sound) to prototype the behaviors, 
 3) We will be grading with an emphasis on creativity. 
 
-**Document everything here.**
+**Document everything here. (Particularly we'd like to see the storyboard and video, although photos of the prototype are also great.)**
 
 The setting, players, actions and goals are mostly the same as the first iteration. We've learned something new about our primary player this time around. Sam is actually colorblind, so the device is not very effective. The actions have also been updated to specifically help during this pandemic - since people ought not to touch the groceries at the store to help prevent the spread of COVID-19, the device can be held from a distance and still capture the results accurately.
 
