@@ -183,7 +183,6 @@ Do last week’s assignment again, but this time:
 3) We will be grading with an emphasis on creativity. 
 
 **Document everything here. (Particularly we'd like to see the storyboard and video, although photos of the prototype are also great.)**
-<<<<<<< HEAD
 
 The setting, players, actions and goals are mostly the same as the first iteration. We've learned something new about our primary player this time around. Sam is actually colorblind, so the device is not very effective. The actions have also been updated to specifically help during this pandemic - since people ought not to touch the groceries at the store to help prevent the spread of COVID-19, the device can be held from a distance and still capture the results accurately.
 
@@ -198,5 +197,3 @@ The Grocery Helper 2.0 now has a speaker at the back and a play and stop button 
 The final video that we took was our first attempt at filming the interaction. Here is the final interaction video: https://youtu.be/GTgpFWnIfyo
 
 The contributors of The Grocery Helper 2.0 were Snigdha Singhania (ss4224) and Shaival Divatia (does not go to CT). 
-=======
->>>>>>> 0ce633de26dcd0b1b919d3671e4dff1ef76db371
