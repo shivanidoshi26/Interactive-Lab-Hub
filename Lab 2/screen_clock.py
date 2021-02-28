@@ -54,26 +54,49 @@ x = 0
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the
 # same directory as the python script!
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
-font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 34)
+font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 26)
 
 # Turn on the backlight
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
+buttonA = digitalio.DigitalInOut(board.D23)
+buttonB = digitalio.DigitalInOut(board.D24)
+buttonA.switch_to_input()
+buttonB.switch_to_input()
+
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
-    #TODO: fill in here. You should be able to look in cli_clock.py and stats.py 
-    DAY = time.strftime("%m/%d/%Y")
-    TIME = time.strftime("%H:%M:%S")
+    DAYN = time.strftime("%a, %m-%d-%Y")
+    DAYW = time.strftime("%a, %d %b %Y")
+    TIMEH = time.strftime("%H:%M:%S")
+    TIMEI = time.strftime("%I:%M:%S %p")
 
-    y  = top
-    draw.text((x, y), DAY, font=font, fill="#FFFFFF")
-    y += font.getsize(DAY)[1]
-    draw.text((x,y), TIME, font=font, fill="#0000FF")
+    if buttonA.value and buttonB.value:
+        backlight.value = False
+    else:
+        backlight.value = True
+    if buttonB.value and not buttonA.value:
+        y  = top
+        draw.text((x, y), DAYN, font=font, fill="#FFFFFF")
+        y += font.getsize(DAYW)[1]
+        draw.text((x,y), TIMEH, font=font, fill="#0000FF")
 
-    # Display image.
-    disp.image(image, rotation)
-    time.sleep(1)
+        # Display image.
+        disp.image(image, rotation)
+        time.sleep(1)
+    if buttonA.value and not buttonB.value:
+        y  = top
+        draw.text((x, y), DAYW, font=font, fill="#FFFFFF")
+        y += font.getsize(DAYW)[1]
+        draw.text((x,y), TIMEI, font=font, fill="#0000FF")
+
+        # Display image.
+        disp.image(image, rotation)
+        time.sleep(1)
+    if not buttonA.value and not buttonB.value:
+        time.sleep(1)
+
