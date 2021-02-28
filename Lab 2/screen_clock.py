@@ -69,9 +69,11 @@ buttonB.switch_to_input()
 
 DAYW = "%a, %d %b %Y"
 DAYN = "%a, %m/%d/%Y"
-TIMEH = "%H:%M"
-TIMEI = "%I:%M %p"
-cmd = "curl -s wttr.in/?format=1"
+TIMEH = "%H:%M:%S"
+TIMEI = "%I:%M:%S %p"
+
+DAY = DAYW
+TIME = TIMEI
 
 d = 0
 t = 0
@@ -80,10 +82,8 @@ while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill="#5B009E")
 
+    cmd = "curl -s wttr.in/?format=1"
     WTTR = subprocess.check_output(cmd, shell=True).decode("utf-8")
-
-    DAY = DAYW
-    TIME = TIMEI
 
     if buttonB.value and not buttonA.value: # just button A pressed
         if d % 2 == 0:
@@ -109,5 +109,5 @@ while True:
 
     # Display image.
     disp.image(image, rotation)
-    time.sleep(1)
+    time.sleep(0.6)
 
