@@ -67,6 +67,12 @@ buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
 buttonB.switch_to_input()
 
+DAYW = "%a, %d %b %Y"
+DAYN = "%a, %m/%d/%Y"
+TIMEH = "%H:%M"
+TIMEI = "%I:%M %p"
+cmd = "curl -s wttr.in/?format=1"
+
 d = 0
 t = 0
 
@@ -74,11 +80,6 @@ while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill="#5B009E")
 
-    DAYW = "%a, %d %b %Y"
-    DAYN = "%a, %m/%d/%Y"
-    TIMEH = "%H:%M:%S"
-    TIMEI = "%I:%M:%S %p"
-    cmd = "curl -s wttr.in/?format=1"
     WTTR = subprocess.check_output(cmd, shell=True).decode("utf-8")
 
     DAY = DAYW
