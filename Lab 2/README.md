@@ -9,6 +9,8 @@ It is worth spending a little time thinking about how you mark time, and what wo
 **Please indicate anyone you collaborated with on this Lab here.**
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
 
+I worked with Ritika Poddar (rp477) for the entirety of this lab. We came up with the idea, coded up the clock and made the video together.
+
 ## Prep
 
 [Lab prep](prep.md) is extra long this week! Make sure you read it over in time to prepare for lab on Wednesday.
