@@ -179,6 +179,6 @@ Demo: https://drive.google.com/file/d/1tq70Sjqui4XYMWgT17rZzMMTv67OKrcm/view?usp
 
 - For the next iteration, we would like to have one button switch both the day and time format at the same time. That button would be in charge of switching between the 2 available formats of day/time. The other button could then be used for anything else.
 - We would like to incorporate a visual element, in which the background of the screen changes when one of the buttons is pressed. Perhaps there could be an option of 3 different backgrounds that the user could select from by repeatedly clicking the button to find the best one.
-- Even though we do not have the current technology to incorporate this feature, it would be nice to incorporate a sound element. At the top of the hour, the device could beep the hour that it is (just as a clocktower would). 
+- Even though we do not have the current technology to incorporate this feature, it would be nice to add a sound element. At the top of the hour, the device could beep the hour that it is (just as a belltower would). 
 
 
