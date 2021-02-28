@@ -66,37 +66,40 @@ buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
 buttonB.switch_to_input()
 
+d = 0
+t = 0
+
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
-    DAYN = time.strftime("%a, %m-%d-%Y")
     DAYW = time.strftime("%a, %d %b %Y")
-    TIMEH = time.strftime("%H:%M:%S")
+    DAYN = time.strftime("%a, %m-%d-%Y")
     TIMEI = time.strftime("%I:%M:%S %p")
+    TIMEH = time.strftime("%H:%M:%S")
+    DAY = DAYW
+    TIME = TIMEI
 
-    if buttonA.value and buttonB.value:
-        backlight.value = False
-    else:
-        backlight.value = True
     if buttonB.value and not buttonA.value:
-        y  = top
-        draw.text((x, y), DAYN, font=font, fill="#FFFFFF")
-        y += font.getsize(DAYW)[1]
-        draw.text((x,y), TIMEH, font=font, fill="#0000FF")
-
-        # Display image.
-        disp.image(image, rotation)
-        time.sleep(1)
+        if d % 2 == 0:
+            DAY = DAYW
+        else:
+            DAY = DAYN
+        d += 1
     if buttonA.value and not buttonB.value:
-        y  = top
-        draw.text((x, y), DAYW, font=font, fill="#FFFFFF")
-        y += font.getsize(DAYW)[1]
-        draw.text((x,y), TIMEI, font=font, fill="#0000FF")
-
-        # Display image.
-        disp.image(image, rotation)
-        time.sleep(1)
+        if d % 2 == 0:
+            TIME = TIMEI
+        else:
+            TIME = TIMEH
+        t += 1
     if not buttonA.value and not buttonB.value:
         time.sleep(1)
 
+    y  = top
+    draw.text((x, y), DAY, font=font, fill="#FFFFFF")
+    y += font.getsize(DAY)[1]
+    draw.text((x,y), TIME, font=font, fill="#0000FF")
+
+    # Display image.
+    disp.image(image, rotation)
+    time.sleep(1)
