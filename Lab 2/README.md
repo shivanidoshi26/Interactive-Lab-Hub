@@ -9,7 +9,7 @@ It is worth spending a little time thinking about how you mark time, and what wo
 **Please indicate anyone you collaborated with on this Lab here.**
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
 
-I worked with Ritika Poddar (rp477) for the entirety of this lab. We came up with the idea, coded up the clock and made the video together.
+I worked with Ritika Poddar (rp477) for the entirety of this lab. We came up with the idea, coded up the clock and made the video together. Here is the link to Ritika's Lab 2 repo: https://github.com/Rpoddar1953/Interactive-Lab-Hub/tree/Spring2021/Lab%202. The code on our repos is the same, except for image.py where we experimented with the code separately.
 
 ## Prep
 
