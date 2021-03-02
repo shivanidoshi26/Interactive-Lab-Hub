@@ -9,6 +9,8 @@ It is worth spending a little time thinking about how you mark time, and what wo
 **Please indicate anyone you collaborated with on this Lab here.**
 Be generous in acknowledging their contributions! And also recognizing any other influences (e.g. from YouTube, Github, Twitter) that informed your design. 
 
+I worked with Ritika Poddar (rp477) for the entirety of this lab. We came up with the idea, coded up the clock and made the video together. Here is the link to Ritika's Lab 2 repo: https://github.com/Rpoddar1953/Interactive-Lab-Hub/tree/Spring2021/Lab%202. The code on our repos is the same, except for image.py where we experimented with the code separately.
+
 ## Prep
 
 [Lab prep](prep.md) is extra long this week! Make sure you read it over in time to prepare for lab on Wednesday.
@@ -170,14 +172,20 @@ After that git will ask you to login to your github account to upload.
 
 **Take a video of your PiClock.**
 
+Demo: https://drive.google.com/file/d/1tq70Sjqui4XYMWgT17rZzMMTv67OKrcm/view?usp=sharing
+
 ## Part G. 
 ## Sketch and brainstorm further interactions and features you would like for your clock for Part 2.
+
+- For the next iteration, we would like to have one button switch both the day and time format at the same time. That button would be in charge of switching between the 2 available formats of day/time. The other button could then be used for anything else.
+- We would like to incorporate a visual element, in which the background of the screen changes when one of the buttons is pressed. Perhaps there could be an option of 3 different backgrounds that the user could select from by repeatedly clicking the button to find the best one.
+- Even though we do not have the current technology to incorporate this feature, it would be nice to add a sound element. At the top of the hour, the device could beep the hour that it is (just as a belltower would). 
+
+![Image](sketch.jpg)
 
 ## Prep for Part 2
 
 Pick up remaining parts for kit.
 
 Look at and give feedback on the Part G. for at least 2 other people in the class (and get 2 people to comment on your Part G!)
-
-
 
