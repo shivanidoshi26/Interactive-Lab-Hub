@@ -64,14 +64,9 @@ import sys
 
 print("\nSparkFun Qwiic Button Example 1")
 buttonA = qwiic_button.QwiicButton()
-buttonB = qwiic_button.QwiicButton(0x39)
 
 if buttonA.begin() == False:
     print("\nThe Qwiic Button A isn't connected to the system. Please check your connection", \
-            file=sys.stderr)
-
-if buttonB.begin() == False:
-    print("\nThe Qwiic Button B isn't connected to the system. Please check your connection", \
             file=sys.stderr)
 
 print("\nButton ready!")
@@ -84,5 +79,5 @@ while True:
     else:
         print("\nThe button is not pressed!")
 
-    time.sleep(1)
+    time.sleep(0.7)
 
