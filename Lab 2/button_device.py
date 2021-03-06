@@ -1,3 +1,4 @@
+'''
 import busio
 import board
 import time
@@ -55,4 +56,33 @@ while True:
         # on control-c do...something? try commenting this out and running again? What might this do
         write_register(device, STATUS, 0)
         break
+'''
+from __future__ import print_function
+import qwiic_button
+import time
+import sys
+
+print("\nSparkFun Qwiic Button Example 1")
+buttonA = qwiic_button.QwiicButton()
+buttonB = qwiic_button.QwiicButton(0x39)
+
+if buttonA.begin() == False:
+    print("\nThe Qwiic Button A isn't connected to the system. Please check your connection", \
+            file=sys.stderr)
+
+if buttonB.begin() == False:
+    print("\nThe Qwiic Button B isn't connected to the system. Please check your connection", \
+            file=sys.stderr)
+
+print("\nButton ready!")
+
+while True:
+
+    if buttonA.is_button_pressed() == True:
+        print("\nThe button is pressed!")
+
+    else:
+        print("\nThe button is not pressed!")
+
+    time.sleep(1)
 
