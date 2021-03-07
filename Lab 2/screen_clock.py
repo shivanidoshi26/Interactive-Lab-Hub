@@ -69,6 +69,44 @@ x = 5
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 26)
 font1 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 16)
 font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 50)
+font3 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 23)
+
+image1 = Image.new("RGB", (width, height))
+image1 = Image.open("images/red.jpg")
+
+image2 = Image.new("RGB", (width, height))
+image2 = Image.open("images/smiley.jpg")
+
+# Scale the first image to the smaller screen dimension
+image_ratio1 = image1.width / image1.height
+screen_ratio = width / height
+if screen_ratio < image_ratio1:
+    scaled_width = image1.width * height // image1.height
+    scaled_height = height
+else:
+    scaled_width = width
+    scaled_height = image1.height * width // image1.width
+image1 = image1.resize((scaled_width, scaled_height), Image.BICUBIC)
+
+# Crop and center the first  image
+x = scaled_width // 2 - width // 2
+y = scaled_height // 2 - height // 2
+image1 = image1.crop((x, y, x + width, y + height))
+
+# Scale the second image to the smaller screen dimension
+image_ratio2 = image2.width / image2.height
+if screen_ratio < image_ratio2:
+    scaled_width = image2.width * height // image2.height
+    scaled_height = height
+else:
+    scaled_width = width
+    scaled_height = image2.height * width // image2.width
+image2 = image2.resize((scaled_width, scaled_height), Image.BICUBIC)
+
+# Crop and center the second image
+x = scaled_width // 2 - width // 2
+y = scaled_height // 2 - height // 2
+image2 = image2.crop((x, y, x + width, y + height))
 
 # Turn on the backlight
 backlight = digitalio.DigitalInOut(board.D22)
@@ -91,11 +129,11 @@ TIMEI = "%I:%M:%S %p"
 DAY = DAYW
 TIME = TIMEI
 
-d = 0
-t = 0
+dt = 0
+
+b = 0
 
 sensor.enable_proximity = True
-sensor.enable_gesture = True
 
 buttonR.LED_off()
 
@@ -103,21 +141,40 @@ while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill="#5B009E")
 
+    prox = sensor.proximity
+    if prox > 2:
+        backlight.value = True
+    else:
+        backlight.value = False
+
     cmd = "curl -s wttr.in/?format=1"
     WTTR = subprocess.check_output(cmd, shell=True).decode("utf-8")
 
+    #if buttonB.value and not buttonA.value: # just button A pressed
+    #    if d % 2 == 0:
+    #        DAY = DAYW
+    #    else:
+    #        DAY = DAYN
+    #    d += 1
+    #if buttonA.value and not buttonB.value: # just button B pressed
+    #    if t % 2 == 0:
+    #        TIME = TIMEI
+    #    else:
+    #        TIME = TIMEH
+    #    t += 1
+
     if buttonB.value and not buttonA.value: # just button A pressed
-        if d % 2 == 0:
+        if dt % 2 == 0:
             DAY = DAYW
-        else:
-            DAY = DAYN
-        d += 1
-    if buttonA.value and not buttonB.value: # just button B pressed
-        if t % 2 == 0:
             TIME = TIMEI
         else:
+            DAY = DAYN
             TIME = TIMEH
-        t += 1
+        dt += 1
+    if buttonA.value and not buttonB.value: # just button B pressed
+        if b % 2 == 0:
+            pass
+        b += 1 
 
     if buttonR.is_button_pressed() == True:
         buttonR.LED_on(100)
@@ -137,19 +194,18 @@ while True:
         draw.rectangle((0, 0, width, height), outline=0, fill="#5B009E")
 
     y = top
-    draw.text((x, y), time.strftime(DAY), font=font, fill="#FFFFFF")
+    draw.text((5, y), time.strftime(DAY), font=font, fill="#FFFFFF")
     y += font.getsize(DAY)[1] + 10
-    draw.text((x, y), time.strftime(TIME), font=font, fill="#00AABA")
+    draw.text((5, y), time.strftime(TIME), font=font, fill="#00AABA")
     y += font.getsize(DAY)[1] + 5
-    draw.text((x, y), WTTR, font=font1, fill="#99BA00")
+    draw.text((5, y), WTTR, font=font1, fill="#99BA00")
     y += font.getsize(DAY)[1]
 
-    if (time.strftime("%p") == "PM"):
-        draw.text((x, y), "Have a good night!", font=font, fill="#FF69B4")
+    if int(time.strftime("%H")) < 6 or int(time.strftime("%H")) >= 18:
+        draw.text((5, y), "Have a good night!", font=font3, fill="#FF69B4")
     else:
-        draw.text((x, y), "Have a great day!", font=font, fill="#FF69B4")
+        draw.text((5, y), "Have a great day!", font=font3, fill="#FF69B4")
 
-    # Display image.
     disp.image(image, rotation)
     time.sleep(0.1)
 
