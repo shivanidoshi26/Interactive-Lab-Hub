@@ -52,6 +52,7 @@ draw = ImageDraw.Draw(image)
 # Draw a black filled box to clear the image.
 draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 
+# Display the image
 disp.image(image, rotation)
 
 # Draw some shapes.
@@ -59,9 +60,6 @@ disp.image(image, rotation)
 padding = -2
 top = padding
 bottom = height - padding
-
-# Move left to right keeping track of the current x position for drawing shapes.
-x = 5
 
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the
 # same directory as the python script!
@@ -71,13 +69,10 @@ font1 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 16
 font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 50)
 font3 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 23)
 
+# Scale and crop the first image to the smaller screen dimension
 image1 = Image.new("RGB", (width, height))
 image1 = Image.open("images/red.jpg")
 
-image2 = Image.new("RGB", (width, height))
-image2 = Image.open("images/smiley.jpg")
-
-# Scale the first image to the smaller screen dimension
 image_ratio1 = image1.width / image1.height
 screen_ratio = width / height
 if screen_ratio < image_ratio1:
@@ -88,12 +83,14 @@ else:
     scaled_height = image1.height * width // image1.width
 image1 = image1.resize((scaled_width, scaled_height), Image.BICUBIC)
 
-# Crop and center the first  image
 x = scaled_width // 2 - width // 2
 y = scaled_height // 2 - height // 2
 image1 = image1.crop((x, y, x + width, y + height))
 
-# Scale the second image to the smaller screen dimension
+# Scale and crop the second image to the smaller screen dimension
+image2 = Image.new("RGB", (width, height))
+image2 = Image.open("images/smiley.jpg")
+
 image_ratio2 = image2.width / image2.height
 if screen_ratio < image_ratio2:
     scaled_width = image2.width * height // image2.height
@@ -103,7 +100,6 @@ else:
     scaled_height = image2.height * width // image2.width
 image2 = image2.resize((scaled_width, scaled_height), Image.BICUBIC)
 
-# Crop and center the second image
 x = scaled_width // 2 - width // 2
 y = scaled_height // 2 - height // 2
 image2 = image2.crop((x, y, x + width, y + height))
@@ -113,33 +109,39 @@ backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
+# Initialize the buttons on the screen
 buttonA = digitalio.DigitalInOut(board.D23)
 buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
 buttonB.switch_to_input()
 
+# Initialize the red LED button
 buttonR = qwiic_button.QwiicButton()
 buttonR.begin()
 
+# Define the different formats
 DAYW = "%a, %d %b %Y"
 DAYN = "%a, %m/%d/%Y"
 TIMEH = "%H:%M:%S"
 TIMEI = "%I:%M:%S %p"
 
+# Set the default day and time format
 DAY = DAYW
 TIME = TIMEI
 
+# Counters to switch the formats and backgrounds
 dt = 0
-
 b = 0
 
+# For the proximity sensor
 sensor.enable_proximity = True
 
+# For the red LED button
 buttonR.LED_off()
 
 while True:
     # Draw a black filled box to clear the image.
-    draw.rectangle((0, 0, width, height), outline=0, fill="#5B009E")
+    draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 
     prox = sensor.proximity
     if prox > 2:
@@ -149,19 +151,6 @@ while True:
 
     cmd = "curl -s wttr.in/?format=1"
     WTTR = subprocess.check_output(cmd, shell=True).decode("utf-8")
-
-    #if buttonB.value and not buttonA.value: # just button A pressed
-    #    if d % 2 == 0:
-    #        DAY = DAYW
-    #    else:
-    #        DAY = DAYN
-    #    d += 1
-    #if buttonA.value and not buttonB.value: # just button B pressed
-    #    if t % 2 == 0:
-    #        TIME = TIMEI
-    #    else:
-    #        TIME = TIMEH
-    #    t += 1
 
     if buttonB.value and not buttonA.value: # just button A pressed
         if dt % 2 == 0:
@@ -173,7 +162,9 @@ while True:
         dt += 1
     if buttonA.value and not buttonB.value: # just button B pressed
         if b % 2 == 0:
-            pass
+            disp.image(image1, rotation)
+        else:
+            disp.image(image2, rotation)
         b += 1 
 
     if buttonR.is_button_pressed() == True:
@@ -181,17 +172,17 @@ while True:
         numS = 0
         numM = 0
         while buttonR.is_button_pressed() == False:
-            draw.rectangle((0, 0, width, height), outline=0, fill="#000000")
+            draw.rectangle((0, 0, width, height), outline=0, fill=(255, 255, 255))
             if numS != 0 and numS % 60 == 0:
                 numM += 1
             ptime = "{0:0=2d}".format(numM) + ":" + "{0:0=2d}".format(numS % 60)
-            draw.text((50, 40), ptime, font=font2, fill="#FFFFFF")
+            draw.text((50, 40), ptime, font=font2, fill="#000000")
             disp.image(image, rotation)
             numS += 1
             time.sleep(1)
         buttonR.LED_off()
         time.sleep(1)
-        draw.rectangle((0, 0, width, height), outline=0, fill="#5B009E")
+        draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 
     y = top
     draw.text((5, y), time.strftime(DAY), font=font, fill="#FFFFFF")
