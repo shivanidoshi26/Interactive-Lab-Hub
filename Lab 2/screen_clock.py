@@ -68,6 +68,7 @@ x = 5
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
 font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 26)
 font1 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 16)
+font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 50)
 
 # Turn on the backlight
 backlight = digitalio.DigitalInOut(board.D22)
@@ -96,6 +97,8 @@ t = 0
 sensor.enable_proximity = True
 sensor.enable_gesture = True
 
+buttonR.LED_off()
+
 while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill="#5B009E")
@@ -116,13 +119,22 @@ while True:
             TIME = TIMEH
         t += 1
 
-    gesture = sensor.gesture()
-    if gesture == 0x03:
-        DAY = DAYW
-        print(DAY)
-    if gesture == 0x04:
-        DAY = DAYN
-        print(DAY)
+    if buttonR.is_button_pressed() == True:
+        buttonR.LED_on(100)
+        numS = 0
+        numM = 0
+        while buttonR.is_button_pressed() == False:
+            draw.rectangle((0, 0, width, height), outline=0, fill="#000000")
+            if numS != 0 and numS % 60 == 0:
+                numM += 1
+            ptime = "{0:0=2d}".format(numM) + ":" + "{0:0=2d}".format(numS % 60)
+            draw.text((50, 40), ptime, font=font2, fill="#FFFFFF")
+            disp.image(image, rotation)
+            numS += 1
+            time.sleep(1)
+        buttonR.LED_off()
+        time.sleep(1)
+        draw.rectangle((0, 0, width, height), outline=0, fill="#5B009E")
 
     y = top
     draw.text((x, y), time.strftime(DAY), font=font, fill="#FFFFFF")
