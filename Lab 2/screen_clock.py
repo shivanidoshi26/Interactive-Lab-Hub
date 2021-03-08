@@ -142,13 +142,15 @@ while True:
         buttonR.LED_on(100)
         numS = 0
         numM = 0
+        temp = Image.new("RGB", (width, height))
+        temp_draw = ImageDraw.Draw(temp)
         while buttonR.is_button_pressed() == False:
-            draw.rectangle((0, 0, width, height), outline=0, fill=0)
+            temp_draw.rectangle((0, 0, width, height), outline=0, fill=0)
             if numS != 0 and numS % 60 == 0:
                 numM += 1
             ptime = "{0:0=2d}".format(numM) + ":" + "{0:0=2d}".format(numS % 60)
-            draw.text((50, 40), ptime, font=font2, fill="#FFFFFF")
-            disp.image(image, rotation)
+            temp_draw.text((50, 40), ptime, font=font2, fill="#FFFFFF")
+            disp.image(temp, rotation)
             numS += 1
             time.sleep(0.9)
         buttonR.LED_off()
