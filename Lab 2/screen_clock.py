@@ -69,41 +69,6 @@ font1 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 16
 font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 50)
 font3 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 23)
 
-# Scale and crop the first image to the smaller screen dimension
-image1 = Image.new("RGB", (width, height))
-image1 = Image.open("images/red.jpg")
-
-image_ratio1 = image1.width / image1.height
-screen_ratio = width / height
-if screen_ratio < image_ratio1:
-    scaled_width = image1.width * height // image1.height
-    scaled_height = height
-else:
-    scaled_width = width
-    scaled_height = image1.height * width // image1.width
-image1 = image1.resize((scaled_width, scaled_height), Image.BICUBIC)
-
-x = scaled_width // 2 - width // 2
-y = scaled_height // 2 - height // 2
-image1 = image1.crop((x, y, x + width, y + height))
-
-# Scale and crop the second image to the smaller screen dimension
-image2 = Image.new("RGB", (width, height))
-image2 = Image.open("images/smiley.jpg")
-
-image_ratio2 = image2.width / image2.height
-if screen_ratio < image_ratio2:
-    scaled_width = image2.width * height // image2.height
-    scaled_height = height
-else:
-    scaled_width = width
-    scaled_height = image2.height * width // image2.width
-image2 = image2.resize((scaled_width, scaled_height), Image.BICUBIC)
-
-x = scaled_width // 2 - width // 2
-y = scaled_height // 2 - height // 2
-image2 = image2.crop((x, y, x + width, y + height))
-
 # Turn on the backlight
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
@@ -139,18 +104,22 @@ sensor.enable_proximity = True
 # For the red LED button
 buttonR.LED_off()
 
+# Set the default image to display
+image = Image.open("images/red.jpg")
+
 while True:
     # Draw a black filled box to clear the image.
-    draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
+    draw.rectangle((0, 0, width, height), outline=0, fill=0)
+    background = Image.new("RGB", (width, height))
+
+    cmd = "curl -s wttr.in/?format=1"
+    WTTR = subprocess.check_output(cmd, shell=True).decode("utf-8")
 
     prox = sensor.proximity
     if prox > 2:
         backlight.value = True
     else:
         backlight.value = False
-
-    cmd = "curl -s wttr.in/?format=1"
-    WTTR = subprocess.check_output(cmd, shell=True).decode("utf-8")
 
     if buttonB.value and not buttonA.value: # just button A pressed
         if dt % 2 == 0:
@@ -162,9 +131,9 @@ while True:
         dt += 1
     if buttonA.value and not buttonB.value: # just button B pressed
         if b % 2 == 0:
-            disp.image(image1, rotation)
+            image = Image.open("images/red.jpg")
         else:
-            disp.image(image2, rotation)
+            image = Image.open("images/smiley.jpg")
         b += 1 
 
     if buttonR.is_button_pressed() == True:
@@ -179,24 +148,31 @@ while True:
             draw.text((50, 40), ptime, font=font2, fill="#000000")
             disp.image(image, rotation)
             numS += 1
-            time.sleep(1)
+            time.sleep(0.9)
         buttonR.LED_off()
         time.sleep(1)
         draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 
+    image = image.convert('RGB')
+    image = image.resize((width, height), Image.BICUBIC)
+
+    background.paste(image, mask = image.split()[0])
+
+    img_draw = ImageDraw.Draw(background)
+
     y = top
-    draw.text((5, y), time.strftime(DAY), font=font, fill="#FFFFFF")
+    img_draw.text((5, y), time.strftime(DAY), font=font, fill="#FFFFFF")
     y += font.getsize(DAY)[1] + 10
-    draw.text((5, y), time.strftime(TIME), font=font, fill="#00AABA")
+    img_draw.text((5, y), time.strftime(TIME), font=font, fill="#00AABA")
     y += font.getsize(DAY)[1] + 5
-    draw.text((5, y), WTTR, font=font1, fill="#99BA00")
+    img_draw.text((5, y), WTTR, font=font1, fill="#99BA00")
     y += font.getsize(DAY)[1]
 
     if int(time.strftime("%H")) < 6 or int(time.strftime("%H")) >= 18:
-        draw.text((5, y), "Have a good night!", font=font3, fill="#FF69B4")
+        img_draw.text((5, y), "Have a good night!", font=font3, fill="#FF69B4")
     else:
-        draw.text((5, y), "Have a great day!", font=font3, fill="#FF69B4")
+        img_draw.text((5, y), "Have a great day!", font=font3, fill="#FF69B4")
 
-    disp.image(image, rotation)
+    disp.image(background, rotation)
     time.sleep(0.1)
 
