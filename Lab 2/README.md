@@ -199,4 +199,11 @@ As always, make sure you document contributions and ideas from others explicitly
 
 You are permitted (but not required) to work in groups and share a turn in; you are expected to make equal contribution on any group work you do, and N people's group project should look like N times the work of a single person's lab. What each person did should be explicitly documented. Make sure the page for the group turn in is linked to your Interactive Lab Hub page. 
 
+Ritika Poddar and I worked together once again. We made quite a few changes for this iteration:
+- The top button on the Adafruit MiniPiTFT changes both the day and time format. It switches between two options. To free up the use of one of the buttons, we changed our implementation in this way.
+- The bottom button on the Adafruit MiniPiTFT changes the background on the screen between 3 different options.
+- The message on the screen changes from "Have a great day!" to "Have a good night!" between 6pm and 6am of the current timezone.
+- The proximity sensor is used to turn the display on or off. This is to replicate the functionality of many smart watches and thermostats we have seen. Only when there is indication that the screen should be on does it turn on.
+- The red LED button is used as a timer. When the button is clicked, the LED turns on and a timer on the screen starts incrementing. Once the button is clicked again, the LED switches off, the final time persists on the screen for another second or so and the original display is then jumped back to.
 
+Video demo with new changes: https://drive.google.com/file/d/1YJfLan2RmghsJ5S5TVQmS8sf_Ag6CVUl/view?usp=sharing
