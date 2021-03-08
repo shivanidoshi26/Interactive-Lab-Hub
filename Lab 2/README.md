@@ -11,6 +11,11 @@ Be generous in acknowledging their contributions! And also recognizing any other
 
 I worked with Ritika Poddar (rp477) for both part 1 AND part 2 of this lab. We came up with the idea, coded up the clock, added the new devices and made the videos together. Here is the link to Ritika's Lab 2 repo: https://github.com/Rpoddar1953/Interactive-Lab-Hub/tree/Spring2021/Lab%202. The code on our repos is the same, except for image.py where we experimented with the code separately.
 
+We used the [Sparkfun](https://github.com/sparkfun/Qwiic_Button_Py) implementation of Qwiic Button for the red LED. Therefore, to be able to run our code, you need to first run:
+```
+pip install sparkfun-qwiic-button
+```
+
 ## Prep
 
 [Lab prep](prep.md) is extra long this week! Make sure you read it over in time to prepare for lab on Wednesday.
