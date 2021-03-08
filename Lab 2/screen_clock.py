@@ -105,7 +105,7 @@ sensor.enable_proximity = True
 buttonR.LED_off()
 
 # Set the default image to display
-image = Image.open("images/red.jpg")
+image = Image.open("images/background1.jpg")
 
 while True:
     # Draw a black filled box to clear the image.
@@ -130,10 +130,12 @@ while True:
             TIME = TIMEH
         dt += 1
     if buttonA.value and not buttonB.value: # just button B pressed
-        if b % 2 == 0:
-            image = Image.open("images/red.jpg")
+        if b % 3 == 0:
+            image = Image.open("images/background1.jpg")
+        elif b % 3 == 1:
+            image = Image.open("images/background2.jpg")
         else:
-            image = Image.open("images/smiley.jpg")
+            image = Image.open("images/background3.jpg")
         b += 1 
 
     if buttonR.is_button_pressed() == True:
@@ -141,11 +143,11 @@ while True:
         numS = 0
         numM = 0
         while buttonR.is_button_pressed() == False:
-            draw.rectangle((0, 0, width, height), outline=0, fill=(255, 255, 255))
+            draw.rectangle((0, 0, width, height), outline=0, fill=0)
             if numS != 0 and numS % 60 == 0:
                 numM += 1
             ptime = "{0:0=2d}".format(numM) + ":" + "{0:0=2d}".format(numS % 60)
-            draw.text((50, 40), ptime, font=font2, fill="#000000")
+            draw.text((50, 40), ptime, font=font2, fill="#FFFFFF")
             disp.image(image, rotation)
             numS += 1
             time.sleep(0.9)
@@ -163,15 +165,15 @@ while True:
     y = top
     img_draw.text((5, y), time.strftime(DAY), font=font, fill="#FFFFFF")
     y += font.getsize(DAY)[1] + 10
-    img_draw.text((5, y), time.strftime(TIME), font=font, fill="#00AABA")
+    img_draw.text((5, y), time.strftime(TIME), font=font, fill="#FFFFFF")
     y += font.getsize(DAY)[1] + 5
-    img_draw.text((5, y), WTTR, font=font1, fill="#99BA00")
+    img_draw.text((5, y), WTTR, font=font1, fill="#FFFFFF")
     y += font.getsize(DAY)[1]
 
     if int(time.strftime("%H")) < 6 or int(time.strftime("%H")) >= 18:
-        img_draw.text((5, y), "Have a good night!", font=font3, fill="#FF69B4")
+        img_draw.text((5, y), "Have a good night!", font=font3, fill="#FFFFFF")
     else:
-        img_draw.text((5, y), "Have a great day!", font=font3, fill="#FF69B4")
+        img_draw.text((5, y), "Have a great day!", font=font3, fill="#FFFFFF")
 
     disp.image(background, rotation)
     time.sleep(0.1)
