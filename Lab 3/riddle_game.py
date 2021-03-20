@@ -13,10 +13,9 @@ import sys
 import digitalio
 import qwiic_joystick
 import os
-
-# gesture sensor
-i2c = busio.I2C(board.SCL, board.SDA)
-sensor = adafruit_apds9960.apds9960.APDS9960(i2c)
+from vosk import Model, KaldiRecognizer
+import wave
+import json
 
 # Configuration for CS and DC pins (these are FeatherWing defaults on M0/M4):
 cs_pin = digitalio.DigitalInOut(board.CE0)
@@ -69,6 +68,7 @@ buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
 buttonB.switch_to_input()
 
+# For the red and green LED buttons
 buttonR = qwiic_button.QwiicButton(0x6f)
 buttonG = qwiic_button.QwiicButton(0x60)
 buttonR.begin()
@@ -77,11 +77,29 @@ buttonR.LED_off()
 buttonG.LED_off()
 
 # For the proximity sensor
+i2c = busio.I2C(board.SCL, board.SDA)
+sensor = adafruit_apds9960.apds9960.APDS9960(i2c)
 sensor.enable_proximity = True
 
-#joy stick
+# For the joystick
 joystick = qwiic_joystick.QwiicJoystick()
 joystick.begin()
+
+os.system('arecord -D hw:2,0 -f cd -c1 -r 48000 -d 5 -t wav recorded_mono.wav')
+
+wf = wave.open("recorded_mono.wav", "rb")
+
+model = Model("model")
+rec = KaldiRecognizer(model, wf.getframerate(), "hello zero oh one two three four five six seven eight nine [unk]")
+
+while True:
+    data = wf.readframes(4000)
+    if len(data) == 0:
+        break
+    rec.AcceptWaveform(data)
+
+d = json.loads(rec.FinalResult())
+print(d["text"])
 
 while True:
     # Draw a black filled box to clear the image.
