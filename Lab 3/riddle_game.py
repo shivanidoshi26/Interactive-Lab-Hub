@@ -93,7 +93,7 @@ while True:
         main_image = main_image.convert('RGB')
         main_image = main_image.resize((width, height), Image.BICUBIC)
         disp.image(main_image, rotation)
-        os.system('echo "Welcome to puzzle bot! You must solve 4 riddles to win. Use the joystick to navigate to each riddle. Going right goes to door 1, going down goes to door 2, going left goes to door 3 and going up goes to door 4. Remember to say your answer loudly and directly into the mike. Good luck!" | festival --tts')
+        os.system('echo "Welcome to puzzle bot! You must solve 4 riddles to win. Use the joystick to navigate to each riddle. Remember to say your answer loudly and directly into the mike. Good luck!" | festival --tts')
 
     if joystick.get_horizontal() > 510:
         door_image = Image.open("images/door1.jpeg")
@@ -101,7 +101,6 @@ while True:
         door_image = door_image.resize((width, height), Image.BICUBIC)
         disp.image(door_image, rotation)
         os.system('echo "Riddle 1" | festival --tts')
-
 
     if joystick.get_vertical() < 450:
         door_image = Image.open("images/door2.jpeg")
