@@ -58,20 +58,6 @@ draw.rectangle((0, 0, width, height), outline=0, fill=(0, 0, 0))
 # Display the image
 disp.image(image, rotation)
 
-# Draw some shapes.
-# First define some constants to allow easy resizing of shapes.
-padding = -2
-top = padding
-bottom = height - padding
-
-# Alternatively load a TTF font.  Make sure the .ttf font file is in the
-# same directory as the python script!
-# Some other nice fonts to try: http://www.dafont.com/bitmap.php
-font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 26)
-font1 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 16)
-font2 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 50)
-font3 = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 23)
-
 # Turn on the backlight
 backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
@@ -82,6 +68,13 @@ buttonA = digitalio.DigitalInOut(board.D23)
 buttonB = digitalio.DigitalInOut(board.D24)
 buttonA.switch_to_input()
 buttonB.switch_to_input()
+
+buttonR = qwiic_button.QwiicButton(0x6f)
+buttonG = qwiic_button.QwiicButton(0x60)
+buttonR.begin()
+buttonG.begin()
+buttonR.LED_off()
+buttonG.LED_off()
 
 # For the proximity sensor
 sensor.enable_proximity = True
@@ -94,21 +87,42 @@ while True:
     # Draw a black filled box to clear the image.
     draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
+    prox = sensor.proximity
+    if prox > 1:
+        main_image = Image.open("images/welcome.png")
+        main_image = main_image.convert('RGB')
+        main_image = main_image.resize((width, height), Image.BICUBIC)
+        disp.image(main_image, rotation)
+        os.system('echo "Welcome to puzzle bot! You must solve 4 riddles to win. Use the joystick to navigate to each riddle. Going right goes to door 1, going down goes to door 2, going left goes to door 3 and going up goes to door 4. Remember to say your answer loudly and directly into the mike. Good luck!" | festival --tts')
+
     if joystick.get_horizontal() > 510:
-        print("right")
-        door_image = Image.open("images/door.jpg")
+        door_image = Image.open("images/door1.jpeg")
         door_image = door_image.convert('RGB')
         door_image = door_image.resize((width, height), Image.BICUBIC)
         disp.image(door_image, rotation)
-        os.system('echo "Welcome to Riddle 1" | festival --tts')
+        os.system('echo "Riddle 1" | festival --tts')
+
 
     if joystick.get_vertical() < 450:
-        door_image = Image.open("images/door2.jpg")
+        door_image = Image.open("images/door2.jpeg")
         door_image = door_image.convert('RGB')
         door_image = door_image.resize((width, height), Image.BICUBIC)
         disp.image(door_image, rotation)
-        os.system('echo "Welcome to Riddle 2" | festival --tts')
-        print("down")
+        os.system('echo "Riddle 2" | festival --tts')
+
+    if joystick.get_horizontal() < 100:
+        door_image = Image.open("images/door3.jpeg")
+        door_image = door_image.convert('RGB')
+        door_image = door_image.resize((width, height), Image.BICUBIC)
+        disp.image(door_image, rotation)
+        os.system('echo "Riddle 3" | festival --tts')
+
+    if joystick.get_vertical() > 1000:
+        door_image = Image.open("images/door4.jpeg")
+        door_image = door_image.convert('RGB')
+        door_image = door_image.resize((width, height), Image.BICUBIC)
+        disp.image(door_image, rotation)
+        os.system('echo "Riddle 4" | festival --tts')
 
     time.sleep(0.1)
 
