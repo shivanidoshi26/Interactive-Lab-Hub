@@ -113,16 +113,18 @@ door3 = 0
 door4 = 0
 
 while True:
-    # Draw a black filled box to clear the image.
-    draw.rectangle((0, 0, width, height), outline=0, fill=0)
-
     prox = sensor.proximity
-    if prox > 1:
+    if prox > 10:
         main_image = Image.open("images/welcome.png")
         main_image = main_image.convert('RGB')
         main_image = main_image.resize((width, height), Image.BICUBIC)
         disp.image(main_image, rotation)
         handle_speak("Welcome to puzzle bot! You must solve 4 riddles to win. Use the joystick to navigate to each riddle. Remember to say your answer loudly and directly into the mike. Good luck!")
+        break
+
+while True:
+    # Draw a black filled box to clear the image.
+    draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
     if joystick.get_horizontal() > 510:
         if door1 == 0:
