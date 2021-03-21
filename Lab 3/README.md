@@ -68,9 +68,16 @@ Create a system that runs on the Raspberry Pi that takes in one or more sensors 
 
 1. Sketch ideas for what you'll work on in lab on Wednesday.
 
+Ritika and I came up with the idea during the lab on Wednesday. We decided to play with an idea that revolved around Jeopardy and game shows because those are really enjoyable and fun to watch. These were the sketches we came up with:
+[!Image](sketch.jpg)
+
 ## Share your idea sketches with Zoom Room mates and get feedback
 
 *what was the feedback? Who did it come from?*
+
+- Sam Lee really liked the idea, and gave us some feature recommendations - using the LED's to denote right or wrong answers. She was the inspiration for the idea (ty Sam!)
+- Niki Agrawal really liked the idea also, and couldn't wait to see it executed. 
+- Ilan Mandel thought that the idea we had was a great one, and definitely technically feasible.
 
 ## Prototype your system
 
@@ -81,7 +88,11 @@ The system should:
 
 *Document how the system works*
 
+
+
 *Include videos or screencaptures of both the system and the controller.*
+
+Video demo: 
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
