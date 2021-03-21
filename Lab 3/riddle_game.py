@@ -104,6 +104,7 @@ def check_userinput():
         rec.AcceptWaveform(data)
 
     d = json.loads(rec.FinalResult())
+    print("finaltext", d["text"])
     return d
 
 door1 = 0
@@ -129,42 +130,133 @@ while True:
             door_image = door_image.convert('RGB')
             door_image = door_image.resize((width, height), Image.BICUBIC)
             disp.image(door_image, rotation)
-            handle_speak("Riddle 1")
-            handle_speak("You have ten seconds to answer")
+            handle_speak("Riddle 1. What has words, but never speaks? You have ten seconds to answer")
 
             d = check_userinput()
-            if(d["text"] == "two"):
-                handle_speak("Correct")
+            if("book" in d["text"]):
                 door1 = 1
+                num = 4 - (door1+door2+door3+door4)
+                buttonG.LED_on(150)
+                handle_speak("Correct, you have " + str(num) + " left.")
+                door_image = Image.open("images/opendoor1.jpeg")
+                door_image = door_image.convert('RGB')
+                door_image = door_image.resize((width, height), Image.BICUBIC)
+                disp.image(door_image, rotation)
+                buttonG.LED_off()
             else:
-                handle_speak("Incorrect, try again")
+                buttonR.LED_on(150)
+                handle_speak("Incorrect, push the joystick up to try again")
+                buttonR.LED_off()
         else:
-            door_image = Image.open("images/opendoor.jpeg")
+            door_image = Image.open("images/opendoor1.jpeg")
             door_image = door_image.convert('RGB')
             door_image = door_image.resize((width, height), Image.BICUBIC)
             disp.image(door_image, rotation)
             handle_speak("Riddle 1 has been solved")
 
     if joystick.get_vertical() < 450:
-        door_image = Image.open("images/door2.jpeg")
-        door_image = door_image.convert('RGB')
-        door_image = door_image.resize((width, height), Image.BICUBIC)
-        disp.image(door_image, rotation)
-        handle_speak("Riddle 2")
+        if door2 == 0:
+            door_image = Image.open("images/door2.jpeg")
+            door_image = door_image.convert('RGB')
+            door_image = door_image.resize((width, height), Image.BICUBIC)
+            disp.image(door_image, rotation)
+            handle_speak("Riddle 2. What has many keys but can’t open a single lock? You have ten seconds to answer.")
+
+            d = check_userinput()
+            if("piano" in d["text"]):
+                door2 = 1
+                num = 4 - (door1+door2+door3+door4)
+                buttonG.LED_on(150)
+                handle_speak("Correct, you have " + str(num) + " left.")
+                door_image = Image.open("images/opendoor2.jpeg")
+                door_image = door_image.convert('RGB')
+                door_image = door_image.resize((width, height), Image.BICUBIC)
+                disp.image(door_image, rotation)
+                buttonG.LED_off()
+            else:
+                buttonR.LED_on(150)
+                handle_speak("Incorrect, push the joystick to the left to try again")
+                buttonR.LED_off()
+        else:
+            door_image = Image.open("images/opendoor2.jpeg")
+            door_image = door_image.convert('RGB')
+            door_image = door_image.resize((width, height), Image.BICUBIC)
+            disp.image(door_image, rotation)
+            handle_speak("Riddle 2 has been solved")
 
     if joystick.get_horizontal() < 100:
-        door_image = Image.open("images/door3.jpeg")
-        door_image = door_image.convert('RGB')
-        door_image = door_image.resize((width, height), Image.BICUBIC)
-        disp.image(door_image, rotation)
-        handle_speak("Riddle 2")
+        if door3 == 0:
+            door_image = Image.open("images/door3.jpeg")
+            door_image = door_image.convert('RGB')
+            door_image = door_image.resize((width, height), Image.BICUBIC)
+            disp.image(door_image, rotation)
+            handle_speak("Riddle 3. What has a head and a tail but no body? You have ten seconds to answer")
+
+            d = check_userinput()
+            if("coin" in d["text"]):
+                door3 = 1
+                num = 4 - (door1+door2+door3+door4)
+                buttonG.LED_on(150)
+                handle_speak("Correct, you have " + str(num) + " left.")
+                door_image = Image.open("images/opendoor3.jpeg")
+                door_image = door_image.convert('RGB')
+                door_image = door_image.resize((width, height), Image.BICUBIC)
+                disp.image(door_image, rotation)
+                buttonG.LED_off()
+            else:
+                buttonR.LED_on(150)
+                handle_speak("Incorrect, push the joystick down to try again")
+                buttonR.LED_off()
+        else:
+            door_image = Image.open("images/opendoor3.jpeg")
+            door_image = door_image.convert('RGB')
+            door_image = door_image.resize((width, height), Image.BICUBIC)
+            disp.image(door_image, rotation)
+            handle_speak("Riddle 3 has been solved")
 
     if joystick.get_vertical() > 1000:
-        door_image = Image.open("images/door4.jpeg")
-        door_image = door_image.convert('RGB')
-        door_image = door_image.resize((width, height), Image.BICUBIC)
-        disp.image(door_image, rotation)
-        handle_speak("Riddle 2")
+        if door4 == 0:
+            door_image = Image.open("images/door4.jpeg")
+            door_image = door_image.convert('RGB')
+            door_image = door_image.resize((width, height), Image.BICUBIC)
+            disp.image(door_image, rotation)
+            handle_speak("Riddle 4. What building has the most stories? You have ten seconds to answer")
 
-    time.sleep(0.1)
+            d = check_userinput()
+            if("library" in d["text"]):
+                door4 = 1
+                num = 4 - (door1+door2+door3+door4)
+                buttonG.LED_on(150)
+                handle_speak("Correct, you have " + str(num) + " left.")
+                door_image = Image.open("images/opendoor4.jpeg")
+                door_image = door_image.convert('RGB')
+                door_image = door_image.resize((width, height), Image.BICUBIC)
+                disp.image(door_image, rotation)
+                buttonG.LED_off()
+            else:
+                buttonR.LED_on(150)
+                handle_speak("Incorrect, push the joystick to the right to try again")
+                buttonR.LED_off()
+        else:
+            door_image = Image.open("images/opendoor4.jpeg")
+            door_image = door_image.convert('RGB')
+            door_image = door_image.resize((width, height), Image.BICUBIC)
+            disp.image(door_image, rotation)
+            handle_speak("Riddle 4 has been solved")
+
+    if door1 and door2 and door3 and door4:
+        main_image = Image.open("images/end.jpeg")
+        main_image = main_image.convert('RGB')
+        main_image = main_image.resize((width, height), Image.BICUBIC)
+        disp.image(main_image, rotation)
+        handle_speak("You have solved all the riddles. Great job!")
+        break
+
+    time.sleep(0.5)
+
+while True:
+    main_image = Image.open("images/end.jpeg")
+    main_image = main_image.convert('RGB')
+    main_image = main_image.resize((width, height), Image.BICUBIC)
+    disp.image(main_image, rotation)
 
