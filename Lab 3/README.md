@@ -69,7 +69,7 @@ Create a system that runs on the Raspberry Pi that takes in one or more sensors 
 1. Sketch ideas for what you'll work on in lab on Wednesday.
 
 Ritika and I came up with the idea during the lab on Wednesday. We decided to play with an idea that revolved around Jeopardy and game shows because those are really enjoyable and fun to watch. These were the sketches we came up with:
-[!Image](sketch.jpg)
+[!Image](sketch.png)
 
 ## Share your idea sketches with Zoom Room mates and get feedback
 
