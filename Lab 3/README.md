@@ -101,12 +101,23 @@ These are all the features we incorporated/the devices we used for our wizard in
 - We used the red and green LED buttons to visually indicate to the user whether they got the answer right or wrong
 - We used the mic to capture the user input, so that we could verify if the user's answer was right or not - this was fully automated (not wizarded) and there was no real need for an external controller
 
+This is what the sequence of actions would be:
+- A user walks by the device which triggers the proximity sensor
+- The device greets the user and tells them how to play the game via the speaker - the goal is to solve 4 riddles to win
+- The user uses the joystick to navigate to one of the 4 riddles, which is communicated via the speaker to the user
+- The user has 10 seconds to come up with an answer and speak it directly into the mic
+- If it's correct, the graphic on the screen changes from a closed door to an open one and the green LED turns on for a short while; if the user comes back to a door for a riddle that has already been solved, the system displays the corresponding open door graphic and tells them the riddle has already been solved
+- If it's incorrect, the user is instructed on how to replay the question to try again and the red LED turns on for a short while
+- Once the user answers each of the 4 riddles correctly, they are greeted with a "Congratulations!" graphic on the screen and a short congratulatory message from the system
+
 *Include videos or screencaptures of both the system and the controller.*
 
 Video demo: https://drive.google.com/file/d/1if4Wd0Cvh_kE6f_orL4BXskNBZukgOEU/view?usp=sharing
 
 Since we didn't actually have a controller because we automated the entire interaction, here is an example picture of the console logs that we used to help debug our system and ensure it was working correctly:
 ![Image](images/log.png)
+
+As you can see, between the log outputs there are print-outs that say "final text...". Everything beyond "final text" is what the system processed as the user's verbal input. In this way, we could check and make sure that they said the right answer to the riddle.
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
