@@ -56,7 +56,6 @@ pi@ixe00:~/$ python server.py
 ```
 From a remote browser on the same network, check to make sure your webserver is working by going to [http://ixe00.local:5000]()
 
-
 ## Demo
 
 In the [demo directory](./demo), you will find an example wizard of oz project you may use as a template. **You do not have to** feel free to get creative. In that project, you can see how audio and sensor data is streamed from the Pi to a wizard controller that runs in the browser. You can control what system says from the controller as well.
@@ -64,8 +63,6 @@ In the [demo directory](./demo), you will find an example wizard of oz project y
 ## Optional
 
 There is an included [dspeech](./dspeech) demo that uses [Mozilla DeepSpeech](https://github.com/mozilla/DeepSpeech) for speech to text. If you're interested in trying it out we suggest you create a seperarate virutalenv. 
-
-
 
 # Lab 3 Part 2
 
@@ -109,7 +106,7 @@ These are all the features we incorporated/the devices we used for our wizard in
 Video demo: https://drive.google.com/file/d/1if4Wd0Cvh_kE6f_orL4BXskNBZukgOEU/view?usp=sharing
 
 Since we didn't actually have a controller because we automated the entire interaction, here is an example picture of the console logs that we used to help debug our system and ensure it was working correctly:
-![Image](log.png)
+![Image](images/log.png)
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
@@ -141,9 +138,7 @@ Didn't work well:
 * There need to be more visual cues provided by the system to explain how to use the different sensors and widgets, in order to limit the amount of prior explanation needed.
 * If using a system that interprets the user input on its own, the way the speech to text function was for us, then it needs to be more robust and applicable to a vairety of situations (i.e., someone having an accent). 
 
-
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
 * We could log all of the user's answers to the questions, which could help us determine how long to wait before analyzing their answer. 
 * We could also log the directions that user toggles the joy stick, which can help streamline the navigation.
 * Next time we could use the gesture sensor to enhance the interaction and capture how close or far the user tends to stand to the mic. 
-
