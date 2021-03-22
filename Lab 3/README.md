@@ -124,13 +124,9 @@ Try to get at least two people to interact with your system. (Ideally, you would
 
 We asked Snigdha Singhania and Anu Deodhar to test out our system. They were informed about how to interact with the tool, but not that there was a live interaction involved. The tests went off pretty smoothly. Here are some pictures of them playing around with it:
 
-<img src="images/p1-1.jpg" width="250" height="300"> <img src="images/p1-2.jpg" width="250" height="300">
+<img src="images/p1-1.jpg" width="250" height="300"> <img src="images/p1-2.jpg" width="250" height="300"> <img src="images/p1-3.jpg" width="250" height="300"> <img src="images/p1-4.jpg" width="250" height="300"> <img src="images/p1-5.jpg" width="250" height="300">
 
-![Image](images/p1-1.jpg) ![Image](images/p1-2.jpg) ![Image](images/p1-3.jpg)
-
-![Image](images/p1-4.jpg) ![Image](images/p1-5.jpg)
-
-![Image](images/p2-1.jpg) ![Image](images/p2-2.jpg) ![Image](images/p2-3.jpg)
+<img src="images/p2-1.jpg" width="250" height="300"> <img src="images/p2-2.jpg" width="250" height="300"> <img src="images/p2-3.jpg" width="250" height="300">
 
 Answer the following:
 
