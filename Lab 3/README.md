@@ -1,6 +1,6 @@
 # You're a wizard, Doshi
 
-![Image](images/imageonline-co-overlayed-image.jpg)
+![Image](images/wizard_doshi.jpeg)
 
 In this lab, we want you to practice wizarding an interactive device as discussed in class. We will focus on audio as the main modality for interaction but there is no reason these general techniques can't extend to video, haptics or other interactive mechanisms. In fact, you are welcome to add those to your project if they enhance your design.
 
