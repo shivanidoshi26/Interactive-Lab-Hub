@@ -95,8 +95,14 @@ The system should:
 
 *Document how the system works*
 
-These are all the features we incorporated into our wizard interaction:
-- 
+These are all the features we incorporated/the devices we used for our wizard interaction:
+- Raspberry pi + power supply
+- We used a speaker - connected via an AUX cord - to communicate all the instructions, the riddles and any other relevant remarks to the user
+- We used the Adafruit Mini PiTFT screen to display the images of the welcome page, the closed/opened doors and the congratulations message at the end
+- We used the proximity sensor to detect when someone is passing by, so as to activate the game and encourage them to play along
+- We used the joystick to navigate to each of the different rooms and solve the corresponding riddle
+- We used the red and green LED buttons to visually indicate to the user whether they got the answer right or wrong
+- We used the mic to capture the user input, so that we could verify if the user's answer was right or not - this was fully automated (not wizarded) and there was no real need for an external controller
 
 *Include videos or screencaptures of both the system and the controller.*
 
