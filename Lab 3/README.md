@@ -117,7 +117,7 @@ Video demo: https://drive.google.com/file/d/1if4Wd0Cvh_kE6f_orL4BXskNBZukgOEU/vi
 Since we didn't actually have a controller because we automated the entire interaction, here is an example picture of the console logs that we used to help debug our system and ensure it was working correctly:
 ![Image](images/log.png)
 
-As you can see, between the log outputs there are print-outs that say "final text...". Everything beyond "final text" is what the system processed as the user's verbal input. In this way, we could check and make sure that they said the right answer to the riddle.
+As you can see, between the log outputs there are print-outs that say "finaltext...". Everything beyond "finaltext" is what the system processed as the user's verbal input. In this way, we could check and make sure that they said the right answer to the riddle.
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
