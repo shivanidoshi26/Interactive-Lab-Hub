@@ -4,6 +4,13 @@
 
 In this lab, we want you to practice wizarding an interactive device as discussed in class. We will focus on audio as the main modality for interaction but there is no reason these general techniques can't extend to video, haptics or other interactive mechanisms. In fact, you are welcome to add those to your project if they enhance your design.
 
+## Contributions
+
+I worked with Ritika Poddar (rp477) for the entirety of this lab. We came up with PuzzleBot together, coded everything in parallel and made the video with each other. Here is a link to her lab 3 repo: https://github.com/Rpoddar1953/Interactive-Lab-Hub/tree/Spring2021/Lab%203. We also made use of the following tools online:
+- Canva to build the sketch of our idea
+- iMovie to edit our video
+- For the riddles: https://parade.com/947956/parade/riddles/
+- Online photo editing tools for the little meme at the top of this README (lol)
 
 ## Text to Speech and Speech to Text
 
@@ -68,7 +75,7 @@ Create a system that runs on the Raspberry Pi that takes in one or more sensors 
 
 1. Sketch ideas for what you'll work on in lab on Wednesday.
 
-Ritika and I came up with the idea during the lab on Wednesday. We decided to play with an idea that revolved around Jeopardy and game shows because those are really enjoyable and fun to watch. These were the sketches we came up with:
+Ritika and I came up with the idea during the lab on Wednesday. We decided to play with an idea that revolved around Jeopardy and game shows because those are really enjoyable and fun to watch. This is the sketch we came up with:
 ![Image](images/sketch.png)
 
 ## Share your idea sketches with Zoom Room mates and get feedback
@@ -88,11 +95,14 @@ The system should:
 
 *Document how the system works*
 
-
+These are all the features we incorporated into our wizard interaction:
+- 
 
 *Include videos or screencaptures of both the system and the controller.*
 
 Video demo: https://drive.google.com/file/d/1if4Wd0Cvh_kE6f_orL4BXskNBZukgOEU/view?usp=sharing
+Since we didn't actually have a controller because we automated the entire interaction, here is an example picture of the console logs that we used to help debug our system and ensure it was working correctly:
+![Image](log.png)
 
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
@@ -102,18 +112,31 @@ We asked Snigdha Singhania and Anu Deodhar to test out our system. They were inf
 Answer the following:
 
 ### What worked well about the system and what didn't?
-*your answer here*
+Worked Well:
+* The joy stick navigation worked well, both Snigdha and Anu understood how to use it to view the doors with minimal explanation.
+* Both participants were able to work through the entire riddle game.
+* Snigdha thought the text to speech voice used for the instructions and riddles was very clear and easy to understand.
+
+Didn't work well:
+* The voice to text recognition for checking the user's answers to the riddles was not consistent. It either didn't recognzie someone had spoken because the mic didn't pick it up, or didn't understand the answer because of the participant's accent. 
+* The voice to text function took a long time to run, which meant that the participants were often waiting to see if their answer was correct.
 
 ### What worked well about the controller and what didn't?
+We tried to make our system completely autonomous so that it spoke instructions and analyzed user input on its own, while we monitored the progress though logs in the terminal as the user interacted with the system. 
 
-*your answer here*
+Worked well:
+* We could see what the speech to text interepreted the user's answer as, and see when there were issues with the interpretations. 
+
+Didn't work well:
+* Because there was no way for us to directly control the system, only monitor it, we couldn't interject when there was an issue without talking to the participant directly and interrupting the interaction. This broke the sense of autonomy that the system had, and broke the flow of the interaction. 
 
 ### What lessons can you take away from the WoZ interactions for designing a more autonomous version of the system?
-
-*your answer here*
+* There need to be more visual cues provided by the system to explain how to use the different sensors and widgets, in order to limit the amount of prior explanation needed.
+* If using a system that interprets the user input on its own, the way the speech to text function was for us, then it needs to be more robust and applicable to a vairety of situations (i.e., someone having an accent). 
 
 
 ### How could you use your system to create a dataset of interaction? What other sensing modalities would make sense to capture?
-
-*your answer here*
+* We could log all of the user's answers to the questions, which could help us determine how long to wait before analyzing their answer. 
+* We could also log the directions that user toggles the joy stick, which can help streamline the navigation.
+* Next time we could use the gesture sensor to enhance the interaction and capture how close or far the user tends to stand to the mic. 
 
