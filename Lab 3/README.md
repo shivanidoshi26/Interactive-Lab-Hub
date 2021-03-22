@@ -80,7 +80,7 @@ Ritika and I came up with the idea during the lab on Wednesday. We decided to pl
 
 ## Share your idea sketches with Zoom Room mates and get feedback
 
-*what was the feedback? Who did it come from?*
+*What was the feedback? Who did it come from?*
 
 - Sam Lee really liked the idea, and gave us some feature recommendations - using the LED's to denote right or wrong answers. She was the inspiration for the idea (ty Sam!)
 - Niki Agrawal really liked the idea also, and couldn't wait to see it executed. 
@@ -101,6 +101,7 @@ These are all the features we incorporated into our wizard interaction:
 *Include videos or screencaptures of both the system and the controller.*
 
 Video demo: https://drive.google.com/file/d/1if4Wd0Cvh_kE6f_orL4BXskNBZukgOEU/view?usp=sharing
+
 Since we didn't actually have a controller because we automated the entire interaction, here is an example picture of the console logs that we used to help debug our system and ensure it was working correctly:
 ![Image](log.png)
 
