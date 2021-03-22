@@ -122,7 +122,13 @@ As you can see, between the log outputs there are print-outs that say "finaltext
 ## Test the system
 Try to get at least two people to interact with your system. (Ideally, you would inform them that there is a wizard _after_ the interaction, but we recognize that can be hard.)
 
-We asked Snigdha Singhania and Anu Deodhar to test out our system. They were informed about how to interact with the tool, but not that there was a live interaction involved. The tests went off pretty smoothly.
+We asked Snigdha Singhania and Anu Deodhar to test out our system. They were informed about how to interact with the tool, but not that there was a live interaction involved. The tests went off pretty smoothly. Here are some pictures of them playing around with it:
+
+![Image](p1-1.jpg) ![Image](p1-2.jpg) ![Image](p1-3.jpg)
+
+![Image](p1-4.jpg) ![Image](p1-5.jpg)
+
+![Image](p2-1.jpg) ![Image](p2-2.jpg) ![Image](p2-3.jpg)
 
 Answer the following:
 
