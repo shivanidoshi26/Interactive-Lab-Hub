@@ -151,7 +151,7 @@ I taped a small little bag inside the box to grab all the coins that are inserte
 
 **c. Explain the rationale for the design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
 
-I designed this interactive piggybank to be box-like and small, so that it could sit on your desk or in some space and not take up too much room. It does not need to be noticed from a distance, and can easily be placed in any part of your room (whatever you want or are comfortable with). The entire device (without any money added) should not weigh a lot because the coins that will be added to the box will end up causing the entire thing to become quite heavy. Therefore, the aim of the design was to create a small, lightweight, non-obstructive box to store all the wires and technology that it contains.
+I designed this interactive piggybank to be box-like and small, so that it could sit on your desk or in some space and not take up too much room. It does not need to be noticed from a distance, and can easily be placed in any part of your room (whatever you want or are comfortable with). I also intended for the device to not look flashy, such that if a thief were to raid your house, they wouldn't find your precious loose change. The entire device (without any money added) should not weigh a lot because the coins that will be added to the box will end up causing the entire thing to become quite heavy. Therefore, the aim of the design was to create a small, lightweight, non-obstructive box to store all the wires, technology and money that it contains.
 
 ### Part D
 ### Materiality
