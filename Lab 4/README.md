@@ -135,7 +135,7 @@ Make a paper display for your project that communicates the state of the Pi and 
  
 **a. Document the design for your paper display.** (e.g. if you had to make it again from scratch, what information would you need?). Include interim iterations (or at least tell us about them).
 
-Since this piggybank stores only loose change, there could only be 4 potential options for the amount of money being inserted. To make it easy for the user to request the total amount of money in the bank and the count of each coin, I added 2 relevant buttons. Here is the first iteration of a rough sketch I made for this box:
+Since this piggybank stores only loose change, there could only be 4 potential options for the amount of money being inserted. To make it easy for the user to request the total amount of money in the bank and the count of each coin, I added 2 relevant buttons. I intend on adding a screen once I am able to get my hands on an oled screen. Here is the first iteration of a rough sketch I made for this box:
 
 <img src="media/sketch.jpg" width="350"/>
 
