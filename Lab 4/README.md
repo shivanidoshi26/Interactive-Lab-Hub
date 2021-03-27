@@ -101,7 +101,7 @@ We just received some of the small oled screens that we had coped to include in 
 <img src="https://cdn.discordapp.com/attachments/679466987314741338/823354087105101854/PXL_20210322_003033073.jpg" height="200">
 </p>
 
-
+I'm yet to pick up my oled screen :'(
 
 ### Part C
 ### Paper Display
