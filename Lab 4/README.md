@@ -135,7 +135,9 @@ Make a paper display for your project that communicates the state of the Pi and 
  
 **a. Document the design for your paper display.** (e.g. if you had to make it again from scratch, what information would you need?). Include interim iterations (or at least tell us about them).
 
-<img src="https://github.com/shivanidoshi26/Interactive-Lab-Hub/blob/Spring2021/Lab%204/media/sketch.jpg"  width="350"/>
+<img src="media/sketch.jpg" width="350"/>
+
+<img src="media/p1.jpg" width="250"> <img src="media/p2.jpg" width="250"> <img src="media/p3.jpg" width="250">
 
 **b. Make a video of your paper display in action.**
 
