@@ -86,7 +86,7 @@ Banana 6 touched!
 
 *\*Some students have noted that their banana's look noticeably different from the ones presented in this demo. We firmly reject the accusation that these are not in fact banana's but Twizzlers™. Due to the challenges of remote teaching we cannot debug banana's at this time. We suggest you bring these issues up with the university or your local produce representative*
 
-<p align="center"><img src="https://github.com/shivanidoshi26/Interactive-Lab-Hub/blob/Spring2021/Lab%204/media/CapSensorDemo.mp4" height="360" /></p>
+<p align="center"><img src="https://drive.google.com/file/d/1XSGrefj-1_0yi6CXBM2GCBVGjimb_T20/view?usp=sharing" height="360" /></p>
 
 ### Part B
 ### OLED screen
