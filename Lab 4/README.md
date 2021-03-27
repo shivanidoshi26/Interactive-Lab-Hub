@@ -147,6 +147,8 @@ I taped a small little bag inside the box to grab all the coins that are inserte
 
 **b. Make a video of your paper display in action.**
 
+[![](https://drive.google.com/thumbnail?authuser=0&sz=w1280&id=1F46lqY5GtjhiOxW4Fa6vqFDQOjOomnpR)](https://drive.google.com/file/d/1F46lqY5GtjhiOxW4Fa6vqFDQOjOomnpR/view?usp=sharing "")
+
 **c. Explain the rationale for the design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
 
 I designed this interactive piggybank to be box-like and small, so that it could sit on your desk or in some space and not take up too much room. It does not need to be noticed from a distance, and can easily be placed in any part of your room (whatever you want or are comfortable with). The entire device (without any money added) should not weigh a lot because the coins that will be added to the box will end up causing the entire thing to become quite heavy. Therefore, the aim of the design was to create a small, lightweight, non-obstructive box to store all the wires and technology that it contains.
