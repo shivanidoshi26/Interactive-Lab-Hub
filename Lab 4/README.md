@@ -88,7 +88,7 @@ Banana 6 touched!
 
 **My demo of the capacitive sensor:**
 
-[![Capacitive Sensor Demo](https://drive.google.com/thumbnail?authuser=0&sz=w1280&id=1XSGrefj-1_0yi6CXBM2GCBVGjimb_T20)](https://drive.google.com/file/d/1XSGrefj-1_0yi6CXBM2GCBVGjimb_T20/view?usp=sharing "")
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1616886589/video_to_markdown/images/google-drive--1XSGrefj-1_0yi6CXBM2GCBVGjimb_T20-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1XSGrefj-1_0yi6CXBM2GCBVGjimb_T20/view?usp=sharing "")
 
 
 ### Part B
@@ -147,7 +147,7 @@ I taped a small little bag inside the box to grab all the coins that are inserte
 
 **b. Make a video of your paper display in action.**
 
-[![](https://drive.google.com/thumbnail?authuser=0&sz=w1280&id=1F46lqY5GtjhiOxW4Fa6vqFDQOjOomnpR)](https://drive.google.com/file/d/1F46lqY5GtjhiOxW4Fa6vqFDQOjOomnpR/view?usp=sharing "")
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1616886540/video_to_markdown/images/google-drive--1F46lqY5GtjhiOxW4Fa6vqFDQOjOomnpR-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1F46lqY5GtjhiOxW4Fa6vqFDQOjOomnpR/view?usp=sharing "")
 
 **c. Explain the rationale for the design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
 
