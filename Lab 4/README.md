@@ -135,9 +135,13 @@ Make a paper display for your project that communicates the state of the Pi and 
  
 **a. Document the design for your paper display.** (e.g. if you had to make it again from scratch, what information would you need?). Include interim iterations (or at least tell us about them).
 
+I designed this interactive piggybank to be box-like and small, so that it could sit on your desk or in some space and not take up too much room. The overall prototype should not weigh a lot because the money that will be added to the box will end up causing the entire thing to become quite heavy. Since this piggybank stores only loose change, there could only be 4 potential options for the amount of money being inserted. To make it easy for the user to request the total amount of money in the bank and the count of each coin, I added 2 relevant buttons. Here is the first iteration of a rough sketch I made for this box:
+
 <img src="media/sketch.jpg" width="350"/>
 
-<img src="media/p1.jpg" width="250"> <img src="media/p2.jpg" width="250"> <img src="media/p3.jpg" width="250">
+Here are photos of what the cardboard prototype look like (it was not my intention to make it look so pet-like):
+
+<img src="media/p1.jpg" width="300"> <img src="media/p2.jpg" width="300"> <img src="media/p3.jpg" width="300">
 
 **b. Make a video of your paper display in action.**
 
