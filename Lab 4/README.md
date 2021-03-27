@@ -143,6 +143,8 @@ Here are photos of what the cardboard prototype look like (it was not my intenti
 
 <img src="media/p1.jpg" width="300"> <img src="media/p2.jpg" width="300"> <img src="media/p3.jpg" width="300">
 
+I taped a small little bag inside the box to grab all the coins that are inserted, such that they don't interfere with the technology that will also lie inside (specifically the pi, the sensors and the buttons). I also cut up a small replaceable door, so that I could easily make any alterations to the pi when necessary. 
+
 **b. Make a video of your paper display in action.**
 
 **c. Explain the rationale for the design.** (e.g. Does it need to be a certain size or form or need to be able to be seen from a certain distance?)
