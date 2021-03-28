@@ -143,9 +143,12 @@ while True:
 
     if buttonR.is_button_pressed():
         total = numP * 1 + numN * 5 + numD * 10 + numQ * 25
-        dollars = total/100
-        cents = total % 100
-        handle_speak("There are " + str(dollars) + " dollars and " + str(cents) + " cents in the bank")
+        if total <  100:
+            handle_speak("There are " + str(total) + " cents in the bank")
+        else:
+            dollars = total/100
+            cents = total % 100
+            handle_speak("There are " + str(dollars) + " dollars and " + str(cents) + " cents in the bank")
 
     if buttonG.is_button_pressed():
         handle_speak("There are " + str(numP) + " pennies, " + str(numN) + "nickels, " + str(numD) + " dimes and " + str(numQ) + " quarters in the bank")
