@@ -180,4 +180,17 @@ There wasn't much of a selection, since the only material I could work with was 
 
 **"Acts like" prototype:**
 Here is a final video of the entire system in action:
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1616947789/video_to_markdown/images/google-drive--1E4bfhPOdC_G4UfilI-a64B_zStiX3V2P-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1E4bfhPOdC_G4UfilI-a64B_zStiX3V2P/view?usp=sharing "")
+
+This is what the inside of the box looks like:
+
+<img src="media/p5.jpg" width="300"> 
+
+These are the items that the box contains (front and back):
+
+<img src="media/p7.jpg" width="300"> <img src="media/p6.jpg" width="300"> 
+
+This is what the board holding all the technology looks like:
+
+<img src="media/p8.jpg" width="300">
 
