@@ -190,7 +190,13 @@ These are the items that the box contains (front and back):
 
 <img src="media/p7.jpg" width="300"> <img src="media/p6.jpg" width="300"> 
 
-This is what the board holding all the technology looks like:
+This is what the board holding all the technology looks like (I made and used this board, so that it would be easy to take out and put back in, rather than having to work on each item within the small box):
 
 <img src="media/p8.jpg" width="600">
+
+For the next iteration of the interactive piggybank, I would like to make the following changes/improvements:
+- Automate the coin adding, so that the user doesn't have to specify the number of coins being added
+- Fix irregularities in performance by cleaning up the capacitive sensor connections
+- Use a slightly bigger box and enclose all the items more tightly/compactly
+- Include a feature that allows you to decrement the amount of coins that are in the bank
 
