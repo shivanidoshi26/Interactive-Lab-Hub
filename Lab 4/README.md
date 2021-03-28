@@ -192,5 +192,5 @@ These are the items that the box contains (front and back):
 
 This is what the board holding all the technology looks like:
 
-<img src="media/p8.jpg" width="400">
+<img src="media/p8.jpg" width="600">
 
