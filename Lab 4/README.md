@@ -136,13 +136,17 @@ Make a paper display for your project that communicates the state of the Pi and 
 **a. Document the design for your paper display.** (e.g. if you had to make it again from scratch, what information would you need?). Include interim iterations (or at least tell us about them).
 
 **"Looks like" prototype:**
-Since this piggybank stores only loose change, there could only be 4 potential options for the amount of money being inserted. To make it easy for the user to request the total amount of money in the bank and the count of each coin, I added 2 relevant buttons. I intend on adding a screen once I am able to get my hands on an oled screen. Here is the first iteration of a rough sketch I made for this box:
+Since this piggybank stores only loose change, there could only be 4 potential options for the amount of money being inserted. I have used the capacitive sensor to find out what type of coin is being added. I have also used the rotary encoder for the user to inform the box of how many coins of the current type are being added - I tried making use of the proximity sensor and the accelerometer to automatically detect when a coin is being added, but I was unsuccessful in getting this functionatlity (this is something I will work on for the next iteration). To inform the user of the total amount of money in the bank and the count of each coin, I added 2 relevant buttons. I intend on adding a screen once I am able to get my hands on an oled screen. Here is the first iteration of a rough sketch I made for this box:
 
 <img src="media/sketch.jpg" width="350"/>
 
 Here are photos of what the cardboard prototype look like (it was not my intention to make it look so pet-like):
 
 <img src="media/p1.jpg" width="300"> <img src="media/p2.jpg" width="300"> <img src="media/p3.jpg" width="300">
+
+Updated version:
+
+<img src="media/p4.jpg" width="300">
 
 I taped a small little bag inside the box to grab all the coins that are inserted, such that they don't interfere with the technology that will also lie inside (specifically the pi, the sensors and the buttons). I also cut up a small replaceable door, so that I could easily make any alterations to the pi when necessary. 
 
