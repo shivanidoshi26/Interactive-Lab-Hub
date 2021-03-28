@@ -116,23 +116,30 @@ while True:
 
     for i in range(12):
         # Pennies
-        if i == 0 and mpr121[i].value:
+        if i == 1 and mpr121[i].value:
             currC = 1
             handle_speak("You have chosen penny")
         # Nickels
-        elif i == 1 and mpr121[i].value:
+        elif i == 0 and mpr121[i].value:
             currC = 5
             handle_speak("You have chosen nickel")
         # Dimes
-        elif i == 2 and mpr121[i].value:
+        elif i == 11 and mpr121[i].value:
             currC = 10
             handle_speak("You have chosen dime")
         # Quarters
-        elif i == 3 and mpr121[i].value:
+        elif i == 10 and mpr121[i].value:
             currC = 25
             handle_speak("You have chosen quarter")
-        elif i == 4 and mpr121[i].value:
-            print("1 token")
+        elif i == 5 and mpr121[i].value:
+            handle_speak("Here is how to use this device")
+            handle_speak("First, gently tap the type of coin you are inserting.")
+            handle_speak("Then press down on the knob.")
+            handle_speak("Twist it to denote the number of coins you are inserting.")
+            handle_speak("Press it down once again to confirm you have finished.")
+            handle_speak("Then add the coins of that type into the slip at thetop.") 
+            handle_speak("The red button tells you how much money you have in total.")
+            handle_speak("The green button tells you how much of each coin is present.")
 
     if buttonR.is_button_pressed():
         total = numP * 1 + numN * 5 + numD * 10 + numQ * 25
