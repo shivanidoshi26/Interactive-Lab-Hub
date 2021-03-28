@@ -31,8 +31,8 @@ import board
 import busio
 from i2c_button import I2C_Button
 
-DEF_ADDR = 0x6f
-NEW_ADDR = 0x60
+DEF_ADDR = 0x60
+NEW_ADDR = 0x6f
 
 # initialize I2C
 i2c = busio.I2C(board.SCL, board.SDA)
