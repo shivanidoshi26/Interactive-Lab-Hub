@@ -178,6 +178,18 @@ The material prototype that was used was the cardboard box shown above. It had t
 
 There wasn't much of a selection, since the only material I could work with was cardboard. I could have built a purely paper object. However it would not have the required sturdiness that a piggybank ought to have. I did not have any harder materials to work with, such as glass or plastic - though, for a piggybank they would have made better candidates.
 
+### Part 2.
+
+Following exploration and reflection from Part 1, complete the "looks like," "works like" and "acts like" prototypes for your design.
+
+Reiterating:
+### Deliverables for this lab are: 
+1. Sketches/photos of device designs
+1. "Looks like" prototypes: show us what how the device should look, feel, sit, weigh, etc.
+3. "Works like" prototypes: show us what the device can do
+4. "Acts like" prototypes: videos/storyboards/other means of showing how a person would interact with the device
+5. Submit these in the lab 4 folder of your class [Github page], either as links or uploaded files. Each group member should post their own copy of the work to their own Lab Hub, even if some of the work is the same for each person in the group.
+
 **"Acts like" prototype:**
 Here is a final video of the entire system in action:
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1616947789/video_to_markdown/images/google-drive--1E4bfhPOdC_G4UfilI-a64B_zStiX3V2P-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1E4bfhPOdC_G4UfilI-a64B_zStiX3V2P/view?usp=sharing "")
@@ -194,22 +206,9 @@ This is what the board holding all the technology looks like (I made and used th
 
 <img src="media/p8.jpg" width="600">
 
-For the next iteration of the interactive piggybank, I would like to make the following changes/improvements:
+For any next iterations of the interactive piggybank, I would make the following changes/improvements:
 - Automate the coin adding, so that the user doesn't have to specify the number of coins being added
 - Fix irregularities in performance by cleaning up the capacitive sensor connections
 - Use a slightly bigger box and enclose all the items more tightly/compactly
 - Include a feature that allows you to decrement the amount of coins that are in the bank
-
-### Part 2.
-
-Following exploration and reflection from Part 1, complete the "looks like," "works like" and "acts like" prototypes for your design.
-
-Reiterating:
-### Deliverables for this lab are: 
-1. Sketches/photos of device designs
-1. "Looks like" prototypes: show us what how the device should look, feel, sit, weigh, etc.
-3. "Works like" prototypes: show us what the device can do
-4. "Acts like" prototypes: videos/storyboards/other means of showing how a person would interact with the device
-5. Submit these in the lab 4 folder of your class [Github page], either as links or uploaded files. Each group member should post their own copy of the work to their own Lab Hub, even if some of the work is the same for each person in the group.
-
 
