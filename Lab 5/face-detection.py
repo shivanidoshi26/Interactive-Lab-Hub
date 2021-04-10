@@ -61,6 +61,7 @@ while(True):
        if buttonR.is_button_pressed():
            cv2.imwrite('attempted' + str(i) + '.jpg',img)
            i += 1
+           time.sleep(0.2)
 
    if webCam:
       cv2.imshow('face-detection (press q to quit.)',img)
