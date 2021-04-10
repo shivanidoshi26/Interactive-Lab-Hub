@@ -13,18 +13,21 @@ import cv2
 import sys
 import subprocess
 import time
-
+import qwiic_button
 
 def handle_speak(val):
     subprocess.run(["sh","GoogleTTS_demo.sh",val])
 
-
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
 
-
 img=None
 webCam = False
+
+buttonR = qwiic_button.QwiicButton(0x6f)
+buttonR.begin()
+buttonR.LED_off()
+
 if(len(sys.argv)>1):
    try:
       print("I'll try to read your image");
@@ -55,7 +58,8 @@ while(True):
    for (x,y,w,h) in faces:
        img = cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
        cv2.putText(img, "Wanna take a photo?",(50,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,0,0),2,cv2.LINE_AA)
-       cv2.imwrite('attempted.jpg',img)
+       if buttonR.is_button_pressed():
+           cv2.imwrite('attempted.jpg',img)
 
    if webCam:
       cv2.imshow('face-detection (press q to quit.)',img)
