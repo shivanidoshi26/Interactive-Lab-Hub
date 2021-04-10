@@ -35,6 +35,7 @@ currSumZ = 0
 
 pre = (-float('inf'), -float('inf'), -float('inf'))
 cur = (-float('inf'), -float('inf'), -float('inf'))
+thresh = 2.0
 peakCtr = 0
 
 @socketio.on('speak')
@@ -51,16 +52,18 @@ def handle_message(val):
     # print(mpu.acceleration)
     emit('pong-gps', mpu.acceleration)
 
+    currAccel = mpu.acceleration
+
     # THRESHOLD DETECTION
-    if mpu.acceleration[0] > 10.0:
+    if currAccel[0] > 10.0:
         print("-----------------X-direction-----------------")
-        print("Acceleration: X:%.2f, Y: %.2f, Z: %.2f m/s^2" % (mpu.acceleration))
-    if mpu.acceleration[1] > 5.0:
+        print("Acceleration: X:%.2f, Y: %.2f, Z: %.2f m/s^2" % (currAccel))
+    if currAccel[1] > 5.0:
         print("-----------------Y-direction-----------------")
-        print("Acceleration: X:%.2f, Y: %.2f, Z: %.2f m/s^2" % (mpu.acceleration))
-    if mpu.acceleration[2] > 11.0:
+        print("Acceleration: X:%.2f, Y: %.2f, Z: %.2f m/s^2" % (currAccel))
+    if currAccel[2] > 11.0:
         print("-----------------Z-direction-----------------")
-        print("Acceleration: X:%.2f, Y: %.2f, Z: %.2f m/s^2" % (mpu.acceleration))
+        print("Acceleration: X:%.2f, Y: %.2f, Z: %.2f m/s^2" % (currAccel))
 
     # AVERAGE
     global i
@@ -71,7 +74,6 @@ def handle_message(val):
 
     if i < num:
         i += 1
-        currAccel = mpu.acceleration
         currSumX += currAccel[0]
         currSumY += currAccel[1]
         currSumZ += currAccel[2]
@@ -89,8 +91,8 @@ def handle_message(val):
     global peakCtr
     
     pre = cur
-    cur = mpu.acceleration
-    if cur < pre:
+    cur = currAccel
+    if cur[0] - pre[0] > thresh:
         print("PEAK! ", peakCtr)
         peakCtr += 1
 
