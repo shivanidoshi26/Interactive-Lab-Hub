@@ -190,7 +190,7 @@ We checked for peaks by comparing the current acceleration value with the previo
 
 Include links to your code here, and put the code for these in your repo--they will come in handy later.
 
-# All the code written above can be found in this file: https://github.com/shivanidoshi26/Interactive-Lab-Hub/blob/Spring2021/Lab%205/demo/app.py
+**All the code written above can be found in this file: https://github.com/shivanidoshi26/Interactive-Lab-Hub/blob/Spring2021/Lab%205/demo/app.py **
 
 #### Teachable Machines (beta, optional)
 Google's [TeachableMachines](https://teachablemachine.withgoogle.com/train) might look very simple.  However, its simplicity is very useful for experimenting with the capabilities of this technology.
