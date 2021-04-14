@@ -84,15 +84,19 @@ pi@ixe00:~/openCV-examples $ tree -l
     └── ssd_mobilenet_v2_coco_2018_03_29.pbtxt
 ```
 Result of contour detection:
+
 <img src="opencv-examples-images/contour_out.jpg">
 
 Result of face detection:
+
 <img src="opencv-examples-images/faces_detected.jpg">
 
 Result of flow detection:
+
 <img src="opencv-examples-images/flow.png">
 
 Result of object detection:
+
 <img src="opencv-examples-images/detected_out.jpg">
 
 #### Filtering, FFTs, and Time Series data.
