@@ -11,12 +11,8 @@ Edited by David Goedicke
 import numpy as np
 import cv2
 import sys
-import subprocess
 import time
 import qwiic_button
-
-def handle_speak(val):
-    subprocess.run(["sh","GoogleTTS_demo.sh",val])
 
 face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')
