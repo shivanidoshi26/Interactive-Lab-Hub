@@ -106,11 +106,91 @@ Using the set up from the [Lab 3 demo](https://github.com/FAR-Lab/Interactive-La
 
 **1. Set up threshold detection** Can you identify when a signal goes above certain fixed values?
 
+This was the code that was written in demo/app.py (we added it directly into the handle_message() function):
+
+```
+# THRESHOLD DETECTION
+currAccel = mpu.acceleration
+if currAccel[0] > 10.0:
+    print("-----------------X-direction-----------------")
+    print("Acceleration: X:%.2f, Y: %.2f, Z: %.2f m/s^2" % (currAccel))
+if currAccel[1] > 5.0:
+    print("-----------------Y-direction-----------------")
+    print("Acceleration: X:%.2f, Y: %.2f, Z: %.2f m/s^2" % (currAccel))
+if currAccel[2] > 11.0:
+    print("-----------------Z-direction-----------------")
+    print("Acceleration: X:%.2f, Y: %.2f, Z: %.2f m/s^2" % (currAccel))
+```
+
+We picked random thresholds for the x, y and z direction. When the threshold is met, the current acceleration is printed out to the console.
+
 **2. Set up averaging** Can you average your signal in N-sample blocks? N-sample running average?
+
+This was the code that was written in demo/app.py (N was set to 10 in this example):
+
+```
+# AVERAGING
+global i
+global num
+global currSumX
+global currSumY
+global currSumZ
+
+if i < num:
+    i += 1
+    currSumX += currAccel[0]
+    currSumY += currAccel[1]
+    currSumZ += currAccel[2]
+else:
+    averageSum = (currSumX/num, currSumY/num, currSumZ/num)
+    print("Average: X:%.2f, Y: %.2f, Z: %.2f m/s^2" % (averageSum))
+    i = 0
+    currSumX = 0
+    currSumY = 0
+    currSumZ = 0
+```
+
+This was the initialization of the global variables, and was defined outside the scope of the handle_message() function:
+
+```
+num = 10
+i = 0
+currSumX = 0
+currSumY = 0
+currSumZ = 0
+```
 
 **3. Set up peak detection** Can you identify when your signal reaches a peak and then goes down?
 
+This was the code that was written in demo/app.py (we added it directly into the handle_message() function):
+
+```
+# PEAK DETECTION
+global pre
+global cur
+global peakCtr
+
+pre = cur
+cur = currAccel
+if cur[0] - pre[0] > thresh:
+    print("PEAK! ", peakCtr)
+    peakCtr += 1
+```
+
+This was the initialization of the global variables, and was defined outside the scope of the handle_message() function:
+
+```
+pre = (-float('inf'), -float('inf'), -float('inf'))
+cur = (-float('inf'), -float('inf'), -float('inf'))
+thresh = 2.0
+peakCtr = 0
+```
+
+We checked for peaks by comparing the current acceleration value with the previous (since a peak can only be detected after it's occurred). We used a threshold of 2.0 to remove all small peaks and to only detect the larger ones.
+
 Include links to your code here, and put the code for these in your repo--they will come in handy later.
+
+All the code written above can be found in this file: https://github.com/shivanidoshi26/Interactive-Lab-Hub/blob/Spring2021/Lab%205/demo/app.py
 
 #### Teachable Machines (beta, optional)
 Google's [TeachableMachines](https://teachablemachine.withgoogle.com/train) might look very simple.  However, its simplicity is very useful for experimenting with the capabilities of this technology.
