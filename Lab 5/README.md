@@ -206,6 +206,14 @@ Here is Adafruit's directions on using Raspberry Pi and the Pi camera with Teach
 
 Alternative less steps option is [here](https://github.com/FAR-Lab/TensorflowonThePi).
 
+For the sake of a simple demonstration, I trained a model to detect a phone, a water bottle and a pillow. Here is a video of the trained model and detection on Teachable Machines:
+
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1618523134/video_to_markdown/images/google-drive--1Jz6quhKJpN632zMwSfKU1M9CUO0I1wCI-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1Jz6quhKJpN632zMwSfKU1M9CUO0I1wCI/view?usp=sharing "")
+
+Here is a video of the pi cam in action detecting the phone, water bottle and pillow quite well:
+
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1618522738/video_to_markdown/images/google-drive--1B56yowbpyk2vvhupi311Y3NvfBT_UXpK-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1B56yowbpyk2vvhupi311Y3NvfBT_UXpK/view?usp=sharing "")
+
 #### PyTorch  
 As a note, the global Python install contains also a PyTorch installation. That can be experimented with as well if you are so inclined.
 
