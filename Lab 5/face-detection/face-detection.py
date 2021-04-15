@@ -47,9 +47,10 @@ i = 0
 while(True):
    if webCam:
       ret, img = cap.read()
-      copy = img
 
    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
+   copy = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 
    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
    for (x,y,w,h) in faces:
