@@ -57,7 +57,7 @@ while(True):
        img = cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
        cv2.putText(img, "Wanna take a photo?",(50,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,0,0),2,cv2.LINE_AA)
        if buttonR.is_button_pressed():
-           cv2.imwrite('attempted' + str(i) + '.jpg',copy)
+           cv2.imwrite('pic' + str(i) + '.jpg',copy)
            i += 1
            time.sleep(0.2)
 
