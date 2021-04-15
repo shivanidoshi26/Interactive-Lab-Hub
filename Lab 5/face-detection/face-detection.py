@@ -48,6 +48,8 @@ while(True):
    if webCam:
       ret, img = cap.read()
 
+   copy = img
+
    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
    faces = face_cascade.detectMultiScale(gray, 1.3, 5)
@@ -55,7 +57,8 @@ while(True):
        img = cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)
        cv2.putText(img, "Wanna take a photo?",(50,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,0,0),2,cv2.LINE_AA)
        if buttonR.is_button_pressed():
-           cv2.imwrite('attempted' + str(i) + '.jpg',img)
+           cv2.putText(copy,"Cute!",(202,50),cv2.FONT_HERSHEY_SIMPLEX,1,(255,75,79),cv2.LINE_AA)
+           cv2.imwrite('attempted' + str(i) + '.jpg',copy)
            i += 1
            time.sleep(0.2)
 
