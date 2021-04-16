@@ -10,7 +10,7 @@ In Lab 5 part 1, we focus on detecting and sense-making.
 
 In Lab 5 part 2, we'll incorporate interactive responses.
 
-## Collaborators
+### Collaborators
 
 I worked with Ritika Poddar on this lab (rp477). We coded up the sensor data processing code and built the face detector and object detector together. Here is the link to her repo: https://github.com/Rpoddar1953/Interactive-Lab-Hub/tree/Spring2021/Lab%205.
 
