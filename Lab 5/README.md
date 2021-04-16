@@ -240,9 +240,9 @@ Here is a short video to demonstrate the functionality we created with this face
 
 Ritika and I took some great photos together:
 
-<img src="face-detection/pic00.jpg"> <img src="face-detection/pic01.jpg">
+<img src="face-detection/pic00.jpg" height=350> <img src="face-detection/pic01.jpg" height=350>
 
-<img src="face-detection/pic000.jpg"> <img src="face-detection/pic001.jpg"> <img src="face-detection/pic002.jpg">
+<img src="face-detection/pic000.jpg" height=350> <img src="face-detection/pic001.jpg" height=350> <img src="face-detection/pic002.jpg" height=350>
 
 To play around with the object detection (teachable machines) concept, we also created a simple plant detector. 
 
