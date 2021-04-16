@@ -228,6 +228,14 @@ This can be as simple as the boat detector earlier.
 Try out different interactions outputs and inputs.
 **Describe and detail the interaction, as well as your experimentation.**
 
+One of the observant systems we played around with was the face detection. We decided to create a photobooth style interaction, in which the user is prompted with a question asking whether they would like to take a photo. To incorporate the face detection concept, we prompt the user to take a photo only when their face is detected by the pi cam. If there is any other object other than a recognizable face, the user cannot take a picture. To take a photograph, the user has to click the button and it gets saved in the local folder. The idea was very simple and mainly focussed on triggering the photo functionality. If you click the button when there is no face, no photo is taken. A few points of interest with this interaction:
+- The face detection didn't work very well when it was dark
+- If the camera was held at any angle that wasn't straight, the face wasn't detected
+- If your face isn't visible within a specific range of the camera's view, the face isn't detected
+- When funny faces were made in front of the camera, the face wasn't detected
+
+Here is a short video to demonstrate the functionality we created with this face detection photobooth:
+
 
 
 ### Part C
