@@ -236,7 +236,13 @@ One of the observant systems we played around with was the face detection. We de
 
 Here is a short video to demonstrate the functionality we created with this face detection photobooth:
 
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1618601738/video_to_markdown/images/google-drive--1wbH6gI6LI6RqyBw_SfGFtFqpOmXMKk4C-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1wbH6gI6LI6RqyBw_SfGFtFqpOmXMKk4C/view?usp=sharing "")
 
+To play around with the object detection (teachable machines) concept, we also created a simple plant detector. 
+
+Here is a short video demonstrating the trained model on teachable machines:
+
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1618600586/video_to_markdown/images/google-drive--14KoTUkC8BK4zjgO9KHrDehFMCi4s8S-p-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/14KoTUkC8BK4zjgO9KHrDehFMCi4s8S-p/view?usp=sharing "")
 
 ### Part C
 ### Test the interaction prototype
