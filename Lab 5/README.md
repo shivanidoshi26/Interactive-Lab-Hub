@@ -10,6 +10,9 @@ In Lab 5 part 1, we focus on detecting and sense-making.
 
 In Lab 5 part 2, we'll incorporate interactive responses.
 
+## Collaborators
+
+I worked with Ritika Poddar on this lab (rp477). We coded up the sensor data processing code and built the face detector and object detector together. Here is the link to her repo: https://github.com/Rpoddar1953/Interactive-Lab-Hub/tree/Spring2021/Lab%205.
 
 ## Prep
 
@@ -224,6 +227,8 @@ Pick one of the models you have tried, pick a class of objects, and experiment w
 This can be as simple as the boat detector earlier.
 Try out different interactions outputs and inputs.
 **Describe and detail the interaction, as well as your experimentation.**
+
+
 
 ### Part C
 ### Test the interaction prototype
