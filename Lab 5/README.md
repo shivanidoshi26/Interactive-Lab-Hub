@@ -238,6 +238,12 @@ Here is a short video to demonstrate the functionality we created with this face
 
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1618601738/video_to_markdown/images/google-drive--1wbH6gI6LI6RqyBw_SfGFtFqpOmXMKk4C-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1wbH6gI6LI6RqyBw_SfGFtFqpOmXMKk4C/view?usp=sharing "")
 
+Ritika and I took some great photos together:
+
+<img src="face-detection/pic00.jpg"> <img src="face-detection/pic01.jpg">
+
+<img src="face-detection/pic000.jpg"> <img src="face-detection/pic001.jpg"> <img src="face-detection/pic002.jpg">
+
 To play around with the object detection (teachable machines) concept, we also created a simple plant detector. 
 
 Here is a short video demonstrating the trained model on teachable machines:
