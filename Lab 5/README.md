@@ -240,7 +240,7 @@ Ritika and I took some great photos together:
 
 <img src="face-detection/pic000.jpg" height=230> <img src="face-detection/pic001.jpg" height=230> <img src="face-detection/pic002.jpg" height=230>
 
-To play around with the object detection (teachable machines) concept, we also created a simple plant detector. 
+The other thing we tried was object detection and we tried building a teachable machines model. We built a plant detection interaction that a user can use to determine whether their plant needs to be watered. We built a teachable machines model to recognize two types of flowers, a potted plant, and a fake succulent. The user can place their plant in front of the pi camera and if the model recoginzes the plant it will show the name on the screen and say whether the plant needs to be watered, if the plant is fine, or if the plant is fake. We also provide feedback using the LED lights along with the voice, so if the plant needs watering then the red light turns on, if the plant is healthy the green light turns on, and if the plant is fake both the red and green lights turn on. We decided to move forward with out plant detection idea.
 
 Here is a short video demonstrating the trained model on teachable machines:
 
