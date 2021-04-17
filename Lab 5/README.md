@@ -318,4 +318,4 @@ Here is a short video to demonstrate the functionality we created with the botan
 
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1618677458/video_to_markdown/images/google-drive--1qqeBXlIsvRo2rQTSCrBQodnvQ2NM9pIu-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1qqeBXlIsvRo2rQTSCrBQodnvQ2NM9pIu/view?usp=sharing "")
 
-<img src="botany/setup1.jpg"> <img src="botany/setup2.jpg">
+<img src="botany/setup1.jpg" height=400> <img src="botany/setup2.jpg" height=400>
