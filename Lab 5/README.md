@@ -302,7 +302,7 @@ During the lecture, we mentioned questions to help characterize a material:
 
 We created a storyboard to demonstrate how our device could be used:
 
-<img src="botany/storyboard.png">
+<img src="botany/storyboard.png" height=500>
 
 We found that a good environment is a well lit and clean white background, similar to the one used in the training images. This reduces any background noise and increases the likelihood of a properly classified object. On the other hand, a bad environment is one in which the lighting is bad/dark or when there are a lot of other objects in the background behind the plant.
 
