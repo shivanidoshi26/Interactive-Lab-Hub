@@ -7,9 +7,18 @@ import os
 import sys
 import numpy as np
 import subprocess
+import qwiic_button
 
-CONFIDENCE_THRESHOLD = 0.5   # at what confidence level do we say we detected a thing
-PERSISTANCE_THRESHOLD = 0.25  # what percentage of the time we have to have seen a thing
+# For the red and green LED buttons
+buttonR = qwiic_button.QwiicButton(0x6f)
+buttonG = qwiic_button.QwiicButton(0x60)
+buttonR.begin()
+buttonG.begin()
+buttonR.LED_off()
+buttonG.LED_off()
+
+CONFIDENCE_THRESHOLD = 0.6   # at what confidence level do we say we detected a thing
+PERSISTANCE_THRESHOLD = 0.5  # what percentage of the time we have to have seen a thing
 
 os.environ['SDL_FBDEV'] = "/dev/fb1"
 os.environ['SDL_VIDEODRIVER'] = "fbcon"
@@ -95,7 +104,7 @@ def main(args):
 
         for p in prediction:
             label, name, conf = p
-            if conf > CONFIDENCE_THRESHOLD:
+            if label == 0 and conf > CONFIDENCE_THRESHOLD:
                 print("Detected", name)
 
                 persistant_obj = False  # assume the object is not persistant
@@ -105,6 +114,8 @@ def main(args):
                 inferred_times = last_seen.count(name)
                 if inferred_times / len(last_seen) > PERSISTANCE_THRESHOLD:  # over quarter time
                     persistant_obj = True
+
+                speaktext = "Healthy"
 
                 detecttext = name.replace("_", " ")
                 detecttextfont = None
@@ -121,15 +132,130 @@ def main(args):
                                        screen.get_height() - detecttextfont.size(detecttext)[1])
                 screen.blit(detecttext_surface, detecttext_surface.get_rect(center=detecttext_position))
 
-                if persistant_obj and last_spoken != detecttext:
-                    os.system('echo %s | festival --tts & ' % detecttext)
-                    last_spoken = detecttext
+                if persistant_obj:
+                    buttonG.LED_on(150)
+
+                if persistant_obj and last_spoken != speaktext:
+                    os.system('echo %s | festival --tts & ' % speaktext)
+                    last_spoken = speaktext
                 break
+
+            elif label == 1 and conf > CONFIDENCE_THRESHOLD:
+                print("Detected", name)
+
+                persistant_obj = False  # assume the object is not persistant
+                last_seen.append(name)
+                last_seen.pop(0)
+
+                inferred_times = last_seen.count(name)
+                if inferred_times / len(last_seen) > PERSISTANCE_THRESHOLD:  # over quarter time
+                    persistant_obj = True
+
+                speaktext = "Lily is fresh, no water needed!"
+
+                detecttext = name.replace("_", " ")
+                detecttextfont = None
+                for f in (bigfont, medfont, smallfont):
+                    detectsize = f.size(detecttext)
+                    if detectsize[0] < screen.get_width(): # it'll fit!
+                        detecttextfont = f
+                        break
+                else:
+                    detecttextfont = smallfont # well, we'll do our best
+                detecttext_color = (0, 255, 0) if persistant_obj else (255, 255, 255)
+                detecttext_surface = detecttextfont.render(detecttext, True, detecttext_color)
+                detecttext_position = (screen.get_width()//2,
+                                       screen.get_height() - detecttextfont.size(detecttext)[1])
+                screen.blit(detecttext_surface, detecttext_surface.get_rect(center=detecttext_position))
+                
+                if persistant_obj:
+                    buttonG.LED_on(150)
+
+                if persistant_obj and last_spoken != speaktext:
+                    os.system('echo %s | festival --tts & ' % speaktext)
+                    last_spoken = speaktext
+                break
+
+            elif label == 2 and conf > CONFIDENCE_THRESHOLD:
+                print("Detected", name)
+
+                persistant_obj = False  # assume the object is not persistant
+                last_seen.append(name)
+                last_seen.pop(0)
+
+                inferred_times = last_seen.count(name)
+                if inferred_times / len(last_seen) > PERSISTANCE_THRESHOLD:  # over quarter time
+                    persistant_obj = True
+
+                speaktext = "The potted plant looks dry, feed it!"
+
+                detecttext = name.replace("_", " ")
+                detecttextfont = None
+                for f in (bigfont, medfont, smallfont):
+                    detectsize = f.size(detecttext)
+                    if detectsize[0] < screen.get_width(): # it'll fit!
+                        detecttextfont = f
+                        break
+                else:
+                    detecttextfont = smallfont # well, we'll do our best
+                detecttext_color = (0, 255, 0) if persistant_obj else (255, 255, 255)
+                detecttext_surface = detecttextfont.render(detecttext, True, detecttext_color)
+                detecttext_position = (screen.get_width()//2,
+                                       screen.get_height() - detecttextfont.size(detecttext)[1])
+                screen.blit(detecttext_surface, detecttext_surface.get_rect(center=detecttext_position))
+
+                if persistant_obj:
+                    buttonR.LED_on(150)
+
+                if persistant_obj and last_spoken != speaktext:
+                    os.system('echo %s | festival --tts & ' % speaktext)
+                    last_spoken = speaktext
+                break
+
+            elif label == 3 and conf > CONFIDENCE_THRESHOLD:
+                print("Detected", name)
+
+                persistant_obj = False  # assume the object is not persistant
+                last_seen.append(name)
+                last_seen.pop(0)
+
+                inferred_times = last_seen.count(name)
+                if inferred_times / len(last_seen) > PERSISTANCE_THRESHOLD:  # over quarter time
+                    persistant_obj = True
+
+                speaktext = "This is fake, throw it away!"
+
+                detecttext = name.replace("_", " ")
+                detecttextfont = None
+                for f in (bigfont, medfont, smallfont):
+                    detectsize = f.size(detecttext)
+                    if detectsize[0] < screen.get_width(): # it'll fit!
+                        detecttextfont = f
+                        break
+                else:
+                    detecttextfont = smallfont # well, we'll do our best
+                detecttext_color = (0, 255, 0) if persistant_obj else (255, 255, 255)
+                detecttext_surface = detecttextfont.render(detecttext, True, detecttext_color)
+                detecttext_position = (screen.get_width()//2,
+                                       screen.get_height() - detecttextfont.size(detecttext)[1])
+                screen.blit(detecttext_surface, detecttext_surface.get_rect(center=detecttext_position))
+
+                if persistant_obj:
+                    buttonR.LED_on(150)
+                    buttonG.LED_on(150)
+
+                if persistant_obj and last_spoken != speaktext:
+                    os.system('echo %s | festival --tts & ' % speaktext)
+                    last_spoken = speaktext
+                break
+
         else:
             last_seen.append(None)
             last_seen.pop(0)
             if last_seen.count(None) == len(last_seen):
                 last_spoken = None
+            buttonR.LED_off()
+            buttonG.LED_off()
 
         pygame.display.update()
 
