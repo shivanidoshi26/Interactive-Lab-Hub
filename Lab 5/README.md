@@ -304,6 +304,16 @@ We created a storyboard to demonstrate how our device could be used:
 
 <img src="botany/storyboard.png">
 
+We found that a good environment is a well lit and clean white background, similar to the one used in the training images. This reduces any background noise and increases the likelihood of a properly classified object. On the other hand, a bad environment is one in which the lighting is bad/dark or when there are a lot of other objects in the background behind the plant.
+
+Our classification system misclassified many of the plants as being a succulent. We believe this happened because the shape of the objects were quite similar, as well as the colors. Here is a short video demonstrating how our system breaking and what it did when it misclassified (the system says "This is fake, throw it away" when it thinks the object is a succulent) - please note the sheer frustration in our voices:
+
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1618680185/video_to_markdown/images/google-drive--17Kh_6ZuxwRo-4ShpZzDoctGRUSapxi1D-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/17Kh_6ZuxwRo-4ShpZzDoctGRUSapxi1D/view?usp=sharing "")
+
+Our interaction checks to see if an object is persistent in front of it, so it only speaks and lights up the LEDs once if the flower has been in front of it for a while (i.e. when it persists in the view of the camera). This helps stop the interaction from repeating itself multiple times or constantly switching between classes as it tries to identify the class. 
+
+The interaction with the system feels smooth most of the time. Sometimes it can get annoying when it seems to be very sure of a class that is wrong, such as when it would constantly incorrectly identify the flowers as succulents.
+
 ### Part 2.
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
