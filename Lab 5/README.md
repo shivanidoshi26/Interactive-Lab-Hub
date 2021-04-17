@@ -229,6 +229,7 @@ Try out different interactions outputs and inputs.
 **Describe and detail the interaction, as well as your experimentation.**
 
 One of the observant systems we played around with was the face detection. We decided to create a photobooth style interaction, in which the user is prompted with a question asking whether they would like to take a photo. To incorporate the face detection concept, we prompt the user to take a photo only when their face is detected by the pi cam. If there is any other object other than a recognizable face, the user cannot take a picture. To take a photograph, the user has to click the button and it gets saved in the local folder. The idea was very simple and mainly focussed on triggering the photo functionality. If you click the button when there is no face, no photo is taken. A few points of interest with this interaction:
+
 - The face detection didn't work very well when it was dark
 - If the camera was held at any angle that wasn't straight, the face wasn't detected
 - If your face isn't visible within a specific range of the camera's view, the face isn't detected
@@ -240,7 +241,7 @@ Ritika and I took some great photos together:
 
 <img src="face-detection/pic000.jpg" height=230> <img src="face-detection/pic001.jpg" height=230> <img src="face-detection/pic002.jpg" height=230>
 
-The other thing we tried was object detection and we tried building a teachable machines model. We built a plant detection interaction that a user can use to determine whether their plant needs to be watered. We built a teachable machines model to recognize two types of flowers, a potted plant, and a fake succulent. The user can place their plant in front of the pi camera and if the model recoginzes the plant it will show the name on the screen and say whether the plant needs to be watered, if the plant is fine, or if the plant is fake. We also provide feedback using the LED lights along with the voice, so if the plant needs watering then the red light turns on, if the plant is healthy the green light turns on, and if the plant is fake both the red and green lights turn on. We decided to move forward with out plant detection idea.
+The other thing we tried was object detection and we tried building a teachable machines model. We built a plant detection interaction that a user can use to determine whether their plant needs to be watered. We built a teachable machines model to recognize two types of flowers, a potted plant, and a fake succulent. The user can place their plant in front of the pi camera and if the model recoginzes the plant it will show the name on the screen and say whether the plant needs to be watered, if the plant is fine, or if the plant is fake. We also provide feedback using the LED lights along with the voice, so if the plant needs watering then the red light turns on, if the plant is healthy the green light turns on, and if the plant is fake both the red and green lights turn on. We decided to move forward with our plant detection idea.
 
 Here is a short video demonstrating the trained model on teachable machines:
 
@@ -257,11 +258,11 @@ The plant detection model detects plants in day light in front of a white backgr
 
 2. When does it fail?
 
-There are many times when it fails to identify the flower correctly. We ran into an issue where the mdoel would frequently classify everything as a succuclent.
+There are many times when it fails to identify the flowers correctly. We ran into an issue where the model would frequently classify everything as a succulent.
 
 3. When it fails, why does it fail?
 
-The model fails whenever the angle of the flower is not one that was used in the model training, or if there is something in the background. We also think it was constantly identifying plants as succulents because of the green stem or leaves of the flowers which might look similart to the succulent.
+The model fails whenever the angle of the flower is not one that was used in the model training, or if there is something in the background. We also think it was constantly identifying plants as succulents because of the green stem or leaves of the flowers which might look similar to the succulent.
 
 4. Based on the behavior you have seen, what other scenarios could cause problems?
 
@@ -282,7 +283,7 @@ We could have a voice or instructions on a screen that instructs the user to mov
 
 4. Are there optimizations you can try to do on your sense-making algorithm.
 
-We think that having a more robust model with a large dataset of images will help with these issues. If the model is trained on almost every possible angle, lighting, and positition a plant can be in then it is more likely to correctly identify the plant in different settings.
+We think that having a more robust model with a large dataset of images will help with these issues. If the model is trained on almost every possible angle, lighting, and position a plant can be in then it is more likely to correctly identify the plant in different settings.
 
 ### Part D
 ### Characterize your own Observant system
@@ -313,7 +314,7 @@ Here is a short video to demonstrate the functionality we created with the face 
 
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1618601738/video_to_markdown/images/google-drive--1wbH6gI6LI6RqyBw_SfGFtFqpOmXMKk4C-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1wbH6gI6LI6RqyBw_SfGFtFqpOmXMKk4C/view?usp=sharing "")
 
-Here is a short video to demonstrate the functionality we created with the botanist:
+Here is a short video to demonstrate the functionality we created with the botanist. For our final version we updated our model to include more images of the plants in various different angles in order to help improve the classification performance:
 
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1618677458/video_to_markdown/images/google-drive--1qqeBXlIsvRo2rQTSCrBQodnvQ2NM9pIu-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1qqeBXlIsvRo2rQTSCrBQodnvQ2NM9pIu/view?usp=sharing "")
 
