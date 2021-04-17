@@ -234,10 +234,6 @@ One of the observant systems we played around with was the face detection. We de
 - If your face isn't visible within a specific range of the camera's view, the face isn't detected
 - When funny faces were made in front of the camera, the face wasn't detected
 
-Here is a short video to demonstrate the functionality we created with this face detection photobooth:
-
-[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1618601738/video_to_markdown/images/google-drive--1wbH6gI6LI6RqyBw_SfGFtFqpOmXMKk4C-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1wbH6gI6LI6RqyBw_SfGFtFqpOmXMKk4C/view?usp=sharing "")
-
 Ritika and I took some great photos together:
 
 <img src="face-detection/pic00.jpg" height=350> <img src="face-detection/pic01.jpg" height=350>
@@ -287,3 +283,10 @@ Following exploration and reflection from Part 1, finish building your interacti
 
 **Include a short video demonstrating the finished result.**
 
+Here is a short video to demonstrate the functionality we created with the face detection photobooth:
+
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1618601738/video_to_markdown/images/google-drive--1wbH6gI6LI6RqyBw_SfGFtFqpOmXMKk4C-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1wbH6gI6LI6RqyBw_SfGFtFqpOmXMKk4C/view?usp=sharing "")
+
+Here is a short video to demonstrate the functionality we created with the botanist:
+
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1618677458/video_to_markdown/images/google-drive--1qqeBXlIsvRo2rQTSCrBQodnvQ2NM9pIu-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1qqeBXlIsvRo2rQTSCrBQodnvQ2NM9pIu/view?usp=sharing "")
