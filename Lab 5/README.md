@@ -299,6 +299,10 @@ During the lecture, we mentioned questions to help characterize a material:
 
 **Include a short video demonstrating the answers to these questions.**
 
+We created a storyboard to demonstrate how our device could be used:
+
+<img src="botany/storyboard.png">
+
 ### Part 2.
 
 Following exploration and reflection from Part 1, finish building your interactive system, and demonstrate it in use with a video.
@@ -312,3 +316,5 @@ Here is a short video to demonstrate the functionality we created with the face 
 Here is a short video to demonstrate the functionality we created with the botanist:
 
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1618677458/video_to_markdown/images/google-drive--1qqeBXlIsvRo2rQTSCrBQodnvQ2NM9pIu-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1qqeBXlIsvRo2rQTSCrBQodnvQ2NM9pIu/view?usp=sharing "")
+
+<img src="botany/setup1.jpg"> <img src="botany/setup2.jpg">
