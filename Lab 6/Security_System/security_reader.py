@@ -1,44 +1,75 @@
 import paho.mqtt.client as mqtt
 import uuid
+import qwiic_button
+import os
+import json
+import wave
+import subprocess
 
-# the # wildcard means we subscribe to all subtopics of IDD
-topic = 'IDD/#'
+from vosk import Model, KaldiRecognizer
 
-# some other examples
-# topic = 'IDD/a/fun/topic'
+topic = 'IDD/security_cam'
 
-#this is the callback that gets called once we connect to the broker. 
-#we should add our subscribe functions here as well
+buttonR = qwiic_button.QwiicButton(0x6f)
+buttonG = qwiic_button.QwiicButton(0x60)
+buttonR.begin()
+buttonG.begin()
+buttonR.LED_off()
+buttonG.LED_off()
+
+def handle_speak(val):
+    subprocess.run(["sh","GoogleTTS_demo.sh",val])
+
+def check_userinput():
+    os.system('arecord -D hw:2,0 -f cd -c1 -r 48000 -d 10 -t wav recorded_mono.wav')
+    wf = wave.open("recorded_mono.wav", "rb")
+
+    model = Model("model")
+    rec = KaldiRecognizer(model, wf.getframerate())
+
+    while True:
+        data = wf.readframes(4000)
+        if len(data) == 0:
+            break
+        rec.AcceptWaveform(data)
+
+    d = json.loads(rec.FinalResult())
+    print("finaltext", d["text"])
+    return d
+
 def on_connect(client, userdata, flags, rc):
-	print(f"connected with result code {rc}")
-	client.subscribe(topic)
-	# you can subsribe to as many topics as you'd like
-	# client.subscribe('some/other/topic')
+    print(f"connected with result code {rc}")
+    client.subscribe(topic)
 
-
-# this is the callback that gets called each time a message is recived
 def on_message(cleint, userdata, msg):
-	print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
-	# you can filter by topics
-	# if msg.topic == 'IDD/some/other/topic': do thing
+    print(f"topic: {msg.topic} msg: {msg.payload.decode('UTF-8')}")
+    if msg == "Shivani" or msg == "Ritika":
+        buttonG.LED_on(150)
+        handle_speak("Access granted!")
+        buttonG.LED_off()
+    elif msg == "Unknown":
+        buttonR.LED_on(150)
+        handle_speak("Unknown user detected. What is the password?")
+        answer = check_userinput()
+        if answer == "bubble":
+            handle_speak("Access granted!")
+            buttonR.LED_off()
+            buttonG.LED_on(150)
+            time.sleep(5)
+            buttonG.LED_off()
+        else:
+            handle_speak("Incorrect password, you may not enter")
+            buttonR.LED_off()
 
-
-# Every client needs a random ID
 client = mqtt.Client(str(uuid.uuid1()))
-# configure network encryption etc
 client.tls_set()
-# this is the username and pw we have setup for the class
 client.username_pw_set('idd', 'device@theFarm')
 
-# attach out callbacks to the client
 client.on_connect = on_connect
 client.on_message = on_message
 
-#connect to the broker
 client.connect(
     'farlab.infosci.cornell.edu',
     port=8883)
 
-# this is blocking. to see other ways of dealing with the loop
-#  https://www.eclipse.org/paho/index.php?page=clients/python/docs/index.php#network-loop
 client.loop_forever()
