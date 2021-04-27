@@ -21,7 +21,7 @@ def handle_speak(val):
     subprocess.run(["sh","GoogleTTS_demo.sh",val])
 
 def check_userinput():
-    os.system('arecord -D hw:2,0 -f cd -c1 -r 48000 -d 10 -t wav recorded_mono.wav')
+    os.system('arecord -D hw:2,0 -f cd -c1 -r 48000 -d 8 -t wav recorded_mono.wav')
     wf = wave.open("recorded_mono.wav", "rb")
 
     model = Model("model")
