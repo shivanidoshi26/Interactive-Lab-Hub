@@ -57,7 +57,7 @@ x = 0
 # Alternatively load a TTF font.  Make sure the .ttf font file is in the
 # same directory as the python script!
 # Some other nice fonts to try: http://www.dafont.com/bitmap.php
-font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
+font = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 28)
 
 # Turn on the backlight
 backlight = digitalio.DigitalInOut(board.D22)
@@ -65,8 +65,8 @@ backlight.switch_to_output()
 backlight.value = True
 
 
-this_topic = "IDD/move_setter_testing"
-other_topic = "IDD/dance_moves_testing"
+this_topic = "IDD/move_setter"
+other_topic = "IDD/dance_moves"
 
 currMove = ''
 score = 0
@@ -85,7 +85,7 @@ def on_message(client, userdata, msg):
     if text == currMove:
         score += 1
     else:
-        client.publish(this_topic, "GAME OVER. Restarting game.")
+        client.publish(this_topic, "Game over! Final score was " + str(score) + ". Restarting game.")
         score = 0
         y = top
         screen_text = "GAME OVER!"
