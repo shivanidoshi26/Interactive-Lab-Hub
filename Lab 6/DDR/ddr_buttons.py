@@ -64,17 +64,23 @@ backlight = digitalio.DigitalInOut(board.D22)
 backlight.switch_to_output()
 backlight.value = True
 
-
+# Topic for sending messages
 this_topic = "IDD/move_setter"
+# Topic for reading messages
 other_topic = "IDD/dance_moves"
 
+# To check if the dancer hit the right move
 currMove = ''
+# Keep track of the player's score
 score = 0
 
+#this is the callback that gets called once we connect to the broker.
+#we should add our subscribe functions here as well
 def on_connect(client, userdata, flags, rc):
     print(f"connected with result code {rc}")
     client.subscribe(other_topic)
 
+# this is the callback that gets called each time a message is recived
 def on_message(client, userdata, msg):
     global score
     global currMove
@@ -107,6 +113,7 @@ client.tls_set()
 # this is the username and pw we have setup for the class
 client.username_pw_set('idd', 'device@theFarm')
 
+# attach out callbacks to the client
 client.on_connect = on_connect
 client.on_message = on_message
 
@@ -115,13 +122,10 @@ client.connect(
     'farlab.infosci.cornell.edu',
     port=8883)
 
-# Shivani - RED
+# Initialize all LED buttons
 buttonL = qwiic_button.QwiicButton(0x6f)
-# Shivani - GREEN
 buttonR = qwiic_button.QwiicButton(0x60)
-# Ritika - RED
 buttonU = qwiic_button.QwiicButton(0x61)
-# Ritika - GREEN
 buttonD = qwiic_button.QwiicButton(0x62)
 buttonL.begin()
 buttonR.begin()
@@ -132,9 +136,28 @@ buttonR.LED_off()
 buttonU.LED_off()
 buttonD.LED_off()
 
+# Loop to read in the input from controller to send to dancer
 while True:
     client.loop()
-    if buttonL.is_button_pressed():
+    if buttonL.is_button_pressed() and buttonR.is_button_pressed():
+        client.publish(this_topic, "LEFT-RIGHT")
+        currMove = 'LR'
+    elif buttonL.is_button_pressed() and buttonU.is_button_pressed():
+        client.publish(this_topic, "LEFT-UP")
+        currMove = 'LU'
+    elif buttonL.is_button_pressed() and buttonD.is_button_pressed():
+        client.publish(this_topic, "LEFT-DOWN")
+        currMove = 'LD'
+    elif buttonR.is_button_pressed() and buttonU.is_button_pressed():
+        client.publish(this_topic, "RIGHT-UP")
+        currMove = 'RU'
+    elif buttonR.is_button_pressed() and buttonD.is_button_pressed():
+        client.publish(this_topic, "RIGHT-DOWN")
+        currMove = 'RD'
+    elif buttonU.is_button_pressed() and buttonD.is_button_pressed():
+        client.publish(this_topic, "UP-DOWN")
+        currMove = 'UD'
+    elif buttonL.is_button_pressed():
         client.publish(this_topic, "LEFT")
         currMove = 'L'
     elif buttonR.is_button_pressed():
@@ -146,18 +169,5 @@ while True:
     elif buttonD.is_button_pressed():
         client.publish(this_topic, "DOWN")
         currMove = 'D'
-    #elif buttonL.is_button_pressed() and buttonR.is_button_pressed():
-    #    client.publish(this_topic, "LEFT-RIGHT")
     time.sleep(0.5)
-    #elif buttonL.is_button_pressed() and buttonU.is_button_pressed():
-    #    client.publish(this_topic, "LEFT-UP")
-    #elif buttonL.is_button_pressed() and buttonD.is_button_pressed():
-    #    client.publish(this_topic, "LEFT-DOWN")
-    #elif buttonR.is_button_pressed() and buttonU.is_button_pressed():
-    #    client.publish(this_topic, "RIGHT-UP")
-    #elif buttonR.is_button_pressed() and buttonD.is_button_pressed():
-    #    client.publish(this_topic, "RIGHT-DOWN")
-    #elif buttonU.is_button_pressed() and buttonD.is_button_pressed():
-    #    client.publish(this_topic, "UP-DOWN")
-
 
