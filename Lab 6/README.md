@@ -118,7 +118,7 @@ This is what the design of the MQTT 2 system looks like (the dancer):
 
 <img src="https://github.com/shivanidoshi26/Interactive-Lab-Hub/blob/Spring2021/Lab%206/DDR/setup2.jpg" height="500">
 
-The controller is intended to be small and handheld. It's hidden from the dancer, so they don't know what to expect until they receive the actual message. The actual raspberry pi wasn't fastened at the back - though it very easily could've - so that it could be moved around if any changes were necessary.
+The controller is intended to be small and handheld. It's hidden from the dancer, so they don't know what to expect until they receive the actual message. The actual raspberry pi wasn't fastened at the back - though it very easily could've been - so that it could be moved around if any changes were necessary.
 
 The dancer setup is very much like how the actual dance dance revolution setup is. The dancer stands in the center of the different move buttons (left, right, up and down). They use their feet to press on the corresponding move and perform their dance! It was difficult to not have the wires hidden within the setup because we used a blanket to avoid any slippage as a result of stepping on any of the cardboard cutouts. We definitely acknowledge that the raspberry pi, capacitive sensor and speaker were in very precarious locations.
 
