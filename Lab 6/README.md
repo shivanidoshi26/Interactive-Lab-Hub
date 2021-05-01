@@ -98,7 +98,7 @@ Glitch is a great tool for prototyping sites, interfaces and web-apps that's wor
 
 Find at least one class (more are okay) partner, and design a distributed application together. 
 
-**1. Explain your design** For example, if you made a remote controlled banana piano, explain why anyone would want such a thing.
+**1. Explain your design** 
 
 Most people at some point in their lives has been to the arcade and walked passed the glorious **Dance Dance Revolution** game. It's both really embarrassing and really fun at the same time. But you have no control over what moves you're given - you just follow the rhythm of a song and try to keep up with the arrows on the screen. For our project, we decided to emulate that entire experience, but to actually give a person the ability to control the other person's moves. 
 
@@ -108,7 +108,7 @@ In DDR, you don't only go left, right, up and down - you can also get a move tha
 
 **2. Diagram the architecture of the system.** Be clear to document where input, output and computation occur, and label all parts and connections. For example, where is the banana, who is the banana player, where does the sound get played, and who is listening to the banana music?
 
-**3. Build a working prototype of the system.** Do think about the user interface: if someone encountered these bananas, would they know how to interact with them? Should they know what to expect?
+**3. Build a working prototype of the system.** 
 
 This is what the design of the MQTT 1 system looks like (the controller):
 
@@ -124,7 +124,7 @@ The dancer setup is very much like how the actual dance dance revolution setup i
 
 It is quite clear from the setup of our system what this tool actually is - it wouldn't take someone new very long to figure out how to use it (once all the files are running, of course). We believe they would know what to expect pretty easily. Potentially, the only issue they may have is not pressing the buttons long enough (due to some time delays, the button pressing can be finicky sometimes). 
 
-**4. Document the working prototype in use.** It may be helpful to record a Zoom session where you should the input in one location clearly causing response in another location.
+**4. Document the working prototype in use.** 
 
 As mentioned earlier for our setup, we needed to establish a communication between the 2 pis: Ritika's and mine. Below is a video of how MQTT 1 (my pi) communicated instructions to the other. Note that in the video, the terminal on the left demonstrates the output of running DDR/reader.py, which subscribes to only the topics that we communicated on (IDD/move_setter and IDD/dance_moves), and the terminal on the right demonstrates the output of running DDR/ddr_buttons.py, which prints out a statement when a message is received from the other pi.
 
@@ -136,7 +136,7 @@ Below is a video of how MQTT 2 (Ritika's pi) communicated instructions to the ot
 
 The system worked mostly quite flawlessly. The only major issues we had were some misalignment between messages sent from the first pi and then from the second pi. We also had  issues with messages being sent more than once, which is why we incorporated some time delays. Overall, we're very proud of our creation!
 
-**5. BONUS (Wendy didn't approve this so you should probably ignore it)** get the whole class to run your code and make your distributed system BIGGER.
+**5. BONUS (Wendy didn't approve this so you should probably ignore it) get the whole class to run your code and make your distributed system BIGGER.**
 
 Maybe in future iterations of our DDR, we can incorporate a multiplayer mode which could involve more people. However, they would need the phenomenal setup that we built for our system to do so. In general, I believe that games that require lots of equipment won't work well when expanded to multiple users.
 
