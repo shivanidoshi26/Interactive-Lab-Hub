@@ -112,11 +112,11 @@ In DDR, you don't only go left, right, up and down - you can also get a move tha
 
 This is what the design of the MQTT 1 system looks like (the controller):
 
-<img src="https://github.com/shivanidoshi26/Interactive-Lab-Hub/blob/Spring2021/Lab%206/DDR/setup1.jpg" height="300">
+<img src="https://github.com/shivanidoshi26/Interactive-Lab-Hub/blob/Spring2021/Lab%206/DDR/setup1.jpg" height="500">
 
 This is what the design of the MQTT 2 system looks like (the dancer):
 
-<img src="https://github.com/shivanidoshi26/Interactive-Lab-Hub/blob/Spring2021/Lab%206/DDR/setup2.jpg" height="300">
+<img src="https://github.com/shivanidoshi26/Interactive-Lab-Hub/blob/Spring2021/Lab%206/DDR/setup2.jpg" height="500">
 
 The controller is intended to be small and handheld. It's hidden from the dancer, so they don't know what to expect until they receive the actual message. The actual raspberry pi wasn't fastened at the back - though it very easily could've - so that it could be moved around if any changes were necessary.
 
