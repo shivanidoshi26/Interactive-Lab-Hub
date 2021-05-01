@@ -20,7 +20,7 @@ https://github.com/shivanidoshi26/Interactive-Lab-Hub/blob/Spring2021/Lab%206/DD
 
 We came up with this idea together after lots of brainstorming, so we hope you enjoy! Here is the link to her repo: https://github.com/Rpoddar1953/Interactive-Lab-Hub/tree/Spring2021/Lab%206.
 
-I would also like to mention that I used the beloved song Disco Inferno by The Trammps as the background song to one of our videos (we do not own the rights to this song). I used this song because it was the only one that came to mind when I think back to my DDR days. I hope it was soothing.
+I would also like to mention that I used the beloved song Disco Inferno by The Trammps as the background song to one of our videos (we do not own the rights to this song: https://www.youtube.com/watch?v=A_sY2rjxq6M). I used this song because it was the only one that came to mind when I think back to my DDR days. I hope it was soothing.
 
 ## Introduction
 
