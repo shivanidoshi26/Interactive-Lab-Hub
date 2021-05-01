@@ -10,7 +10,15 @@
 
 ## Collaborators
 
-I worked with Ritika Poddar on this lab (rp477). I focussed on coding and communicating the dance steps she (as the dancer) had to make. I primarily used the LED buttons and she used the capacitive touch sensor. We came up with this idea together after lots of brainstorming, so we hope you enjoy! Here is the link to her repo: https://github.com/Rpoddar1953/Interactive-Lab-Hub/tree/Spring2021/Lab%206.
+I worked with Ritika Poddar on this lab (rp477). I focussed on coding and communicating the dance steps she (as the dancer) had to make. I primarily used the LED buttons and she used the capacitive touch sensor. 
+
+Here is a link to my code: 
+https://github.com/shivanidoshi26/Interactive-Lab-Hub/blob/Spring2021/Lab%206/DDR/ddr_buttons.py
+
+Here is a link to her code:
+https://github.com/shivanidoshi26/Interactive-Lab-Hub/blob/Spring2021/Lab%206/DDR/ddr_cap.py
+
+We came up with this idea together after lots of brainstorming, so we hope you enjoy! Here is the link to her repo: https://github.com/Rpoddar1953/Interactive-Lab-Hub/tree/Spring2021/Lab%206.
 
 I would also like to mention that I used the beloved song Disco Inferno by The Trammps as the background song to one of our videos (we do not own the rights to this song). I used this song because it was the only one that came to mind when I think back to my DDR days. I hope it was soothing.
 
