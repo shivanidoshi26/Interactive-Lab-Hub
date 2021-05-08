@@ -4,14 +4,19 @@ from flask_socketio import SocketIO, send, emit
 import time
 import board
 import busio
-import adafruit_mpu6050
 import socket
-
 import signal
 import sys
+import adafruit_mpu6050
+import qwiic_joystick
 
+# For the accelerometer
 i2c = busio.I2C(board.SCL, board.SDA)
 mpu = adafruit_mpu6050.MPU6050(i2c)
+
+# For the joystick
+joystick = qwiic_joystick.QwiicJoystick()
+joystick.begin()
 
 hostname = socket.gethostname()
 hardware = 'plughw:2,0'
@@ -24,19 +29,17 @@ def test_connect():
     print('connected')
     emit('after connect',  {'data':'Lets dance'})
 
+# Send back accelerometer interaction
 @socketio.on('ping-accel')
 def handle_message(val):
-    # print(mpu.acceleration)
-    # emit('pong-gps', mpu.acceleration)
-
-    currAccel = mpu.acceleration
-
-    # THRESHOLD DETECTION
-    #if currAccel[0] > 2.00 and currAccel[1] > 2.00 and currAccel[2] > 2.00:
-    if currAccel[0] > 5:
-        print("Acceleration: X:%.2f, Y: %.2f, Z: %.2f m/s^2" % (currAccel))
+    if mpu.acceleration > 5:
         emit('pong-accel', currAccel)
 
+# Send back joystick interaction
+@socketio.on('ping-joystick')
+def handle_message(val):
+    if joystick.get_horizontal() < 510:
+        emit('pong-joystick','make a jump')
 
 @app.route('/')
 def index():
