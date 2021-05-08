@@ -5,7 +5,6 @@ socket.on('connect', () => {
 // });
 });
 
-
 //send.onclick = () => {
 //  socket.emit('speak', wordsIn.value)
 //  wordsIn.value = ''
@@ -13,28 +12,29 @@ socket.on('connect', () => {
 //wordsIn.onkeyup = (e) => { if (e.keyCode === 13) { send.click(); } };
   
 setInterval(() => {
-  socket.emit('ping-gps', 'dat')
+   socket.emit('ping-gps', 'dat')
 }, 100)
 
 socket.on('disconnect', () => {
-  console.log('disconnect')
-//  mic.src = ''
-
-  });
+   console.log('disconnect')
+});
 
 
 // Create our 'main' state that will contain the game
 var mainState = {
-    preload: function() {
-        // This function will be executed at the beginning
-        // Load the bird sprite
-    	game.load.image('bird', 'assets/bird.png');
-	game.load.image('pipe', 'assets/pipe.png');
-    },
+   preload: function() {
+      // This function will be executed at the beginning
+      // Load the bird sprite
+      // game.load.image('bird', 'assets/bird.png');
+      //game.load.image('bird', "https://github.com/shivanidoshi26/Interactive-Lab-Hub/blob/Spring2021/Final%20Project/demo/templates/assets/bird.png");
+      //game.load.image('bird', "https://raw.githubusercontent.com/shivanidoshi26/Interactive-Lab-Hub/Spring2021/Final%20Project/demo/templates/assets/bird.png");
+      game.load.image('bird', 'static/assets/bird.png');
+	   game.load.image('pipe', 'static/assets/pipe.png');
+   },
 
-    create: function() {
-        // This function is called after the preload function
-        // Change the background color of the game to blue
+   create: function() {
+      // This function is called after the preload function
+      // Change the background color of the game to blue
     	game.stage.backgroundColor = '#71c5cf';
 
     	// Set the physics system
@@ -54,29 +54,28 @@ var mainState = {
     	var spaceKey = game.input.keyboard.addKey(
                     Phaser.Keyboard.SPACEBAR);
     	
-	spaceKey.onDown.add(this.jump, this);   
+	   spaceKey.onDown.add(this.jump, this);   
 	
-	// Create an empty group
-	this.pipes = game.add.group(); 
+	   // Create an empty group
+	   this.pipes = game.add.group(); 
 	
-	this.timer = game.time.events.loop(1500, this.addRowOfPipes, this); 
+	   this.timer = game.time.events.loop(1500, this.addRowOfPipes, this); 
 	
-	this.score = 0;
-	this.labelScore = game.add.text(20, 20, "0", 
+	   this.score = 0;
+	   this.labelScore = game.add.text(20, 20, "0", 
     		{ font: "30px Arial", fill: "#ffffff" });   
     },
 
     update: function() {
         // This function is called 60 times per second
         // It contains the game's logic
-	// If the bird is out of the screen (too high or too low)
-    	// Call the 'restartGame' function
-    	if (this.bird.y < 0 || this.bird.y > 490)
-	    this.restartGame();
+	     // If the bird is out of the screen (too high or too low)
+    	  // Call the 'restartGame' function
+    	  if (this.bird.y < 0 || this.bird.y > 490)
+	         this.restartGame();
 
 
-    game.physics.arcade.overlap(
-    	this.bird, this.pipes, this.restartGame, null, this);
+        game.physics.arcade.overlap(this.bird, this.pipes, this.restartGame, null, this);
     },
 
     // Make the bird jump 

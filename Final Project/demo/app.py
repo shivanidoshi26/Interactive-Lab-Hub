@@ -10,9 +10,7 @@ import socket
 
 import signal
 import sys
-from queue import Queue
 
- 
 i2c = busio.I2C(board.SCL, board.SDA)
 mpu = adafruit_mpu6050.MPU6050(i2c)
 
@@ -39,7 +37,6 @@ def index():
 
 def signal_handler(sig, frame):
     print('Closing Gracefully')
-    audio_stream.terminate()
     sys.exit(0)
 
 signal.signal(signal.SIGINT, signal_handler)
