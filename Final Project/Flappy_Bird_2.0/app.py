@@ -5,7 +5,6 @@ import time
 import board
 import busio
 import adafruit_mpu6050
-import json
 import socket
 
 import signal
@@ -25,10 +24,18 @@ def test_connect():
     print('connected')
     emit('after connect',  {'data':'Lets dance'})
 
-@socketio.on('ping-gps')
+@socketio.on('ping-accel')
 def handle_message(val):
     # print(mpu.acceleration)
-    emit('pong-gps', mpu.acceleration) 
+    # emit('pong-gps', mpu.acceleration)
+
+    currAccel = mpu.acceleration
+
+    # THRESHOLD DETECTION
+    #if currAccel[0] > 2.00 and currAccel[1] > 2.00 and currAccel[2] > 2.00:
+    if currAccel[0] > 5:
+        print("Acceleration: X:%.2f, Y: %.2f, Z: %.2f m/s^2" % (currAccel))
+        emit('pong-accel', currAccel)
 
 
 @app.route('/')

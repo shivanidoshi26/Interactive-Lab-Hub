@@ -1,18 +1,9 @@
 const socket = io();
-socket.on('connect', () => {
-//   socket.onAny((event, ...args) => {
-//   console.log(Date.now(),event, args);
-// });
-});
+socket.on('connect', () => {});
 
-//send.onclick = () => {
-//  socket.emit('speak', wordsIn.value)
-//  wordsIn.value = ''
-//}
-//wordsIn.onkeyup = (e) => { if (e.keyCode === 13) { send.click(); } };
-  
 setInterval(() => {
-   socket.emit('ping-gps', 'dat')
+   socket.emit('ping-accel', 'dat')
+   // socket.emit('ping-joystick', 'dat')
 }, 100)
 
 socket.on('disconnect', () => {
@@ -25,9 +16,6 @@ var mainState = {
    preload: function() {
       // This function will be executed at the beginning
       // Load the bird sprite
-      // game.load.image('bird', 'assets/bird.png');
-      //game.load.image('bird', "https://github.com/shivanidoshi26/Interactive-Lab-Hub/blob/Spring2021/Final%20Project/demo/templates/assets/bird.png");
-      //game.load.image('bird', "https://raw.githubusercontent.com/shivanidoshi26/Interactive-Lab-Hub/Spring2021/Final%20Project/demo/templates/assets/bird.png");
       game.load.image('bird', 'static/assets/bird.png');
 	   game.load.image('pipe', 'static/assets/pipe.png');
    },
@@ -51,10 +39,18 @@ var mainState = {
     	this.bird.body.gravity.y = 1000;  
 
     	// Call the 'jump' function when the spacekey is hit
-    	var spaceKey = game.input.keyboard.addKey(
-                    Phaser.Keyboard.SPACEBAR);
+    	// var spaceKey = game.input.keyboard.addKey(
+      //              Phaser.Keyboard.SPACEBAR);
     	
-	   spaceKey.onDown.add(this.jump, this);   
+	   // spaceKey.onDown.add(this.jump, this);
+
+      socket.on('pong-accel', (new_x,new_y,new_z) => {
+    	    this.jump();
+	   });
+
+      //socket.on('pong-joystick', () => {
+      //   this.jump();
+      //});
 	
 	   // Create an empty group
 	   this.pipes = game.add.group(); 
@@ -75,7 +71,8 @@ var mainState = {
 	         this.restartGame();
 
 
-        game.physics.arcade.overlap(this.bird, this.pipes, this.restartGame, null, this);
+        game.physics.arcade.overlap(
+         this.bird, this.pipes, this.restartGame, null, this);
     },
 
     // Make the bird jump 
@@ -118,16 +115,12 @@ var mainState = {
     	// Add the 6 pipes 
     	// With one big hole at position 'hole' and 'hole + 1'
     	for (var i = 0; i < 8; i++)
-            if (i != hole && i != hole + 1) 
-	        this.addOnePipe(400, i * 60 + 10);   
-	
+         if (i != hole && i != hole + 1 && i != hole - 1)
+            this.addOnePipe(400, i * 60 + 10);
+
     	this.score += 1;
-	this.labelScore.text = this.score;  
-
-    
+	   this.labelScore.text = this.score;
     },
-
-
 };
 
 // Initialize Phaser, and create a 400px by 490px game
