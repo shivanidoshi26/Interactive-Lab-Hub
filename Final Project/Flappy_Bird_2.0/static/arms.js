@@ -9,6 +9,30 @@ socket.on('disconnect', () => {
       console.log('disconnect')
       });
 
+var video = document.getElementById('video');
+
+// Get access to the camera!
+if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    // Not adding `{ audio: true }` since we only want video now
+    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
+        //video.src = window.URL.createObjectURL(stream);
+        console.log("I'm in");
+        video.srcObject = stream;
+        video.play();
+    });
+}
+
+//const webcamElement = document.getElementById('webcam');
+//const canvasElement = document.getElementById('canvas');
+//const webcam = new Webcam(webcamElement, 'user', canvasElement);
+
+//webcam.start()
+ // .then(result =>{
+  //  console.log("webcam started");
+ // })
+  //.catch(err => {
+    //console.log(err);
+//});
 
 // Create our 'main' state that will contain the game
 var mainState = {
@@ -41,9 +65,20 @@ create: function() {
            // Add gravity to the bird to make it fall
            this.bird.body.gravity.y = 1000;  
 
-           socket.on('pong-arms', () => {
-                 this.jump();
-                 });
+           //socket.on('pong-arms', () => {
+           //      this.jump();
+           //      });
+           
+           const imageScaleFactor = 0.50;
+           const flipHorizontal = false;
+           const outputStride = 16;
+
+           // load the posenet model
+           //const pose = await net.estimateSinglePose(video, scaleFactor, flipHorizontal, outputStride);
+           
+           //if (pose.keypoints[0].y < pose.keypoints[9].y) {
+           //    this.jump();
+           //}
 
            // Create an empty group
            this.pipes = game.add.group(); 
@@ -132,6 +167,8 @@ restartGame:function()
                game.state.start('main');
             }
 }
+
+//const net = await posenet.load();
 
 // Initialize Phaser, and create a 400px by 490px game
 var game = new Phaser.Game(400, 490);
