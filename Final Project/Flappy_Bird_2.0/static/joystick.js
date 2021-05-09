@@ -62,6 +62,7 @@ update: function() {
 
            game.physics.arcade.overlap(
                  this.bird, this.pipes, this.restartGame, null, this);
+
            game.scale.pageAlignHorizontally = true;
            game.scale.refresh();
         },

@@ -1,4 +1,4 @@
-from flask import Flask, Response,render_template
+from flask import Flask, Response, render_template, request
 from flask_socketio import SocketIO, send, emit
 from PIL import Image, ImageDraw, ImageFont
 
@@ -35,40 +35,45 @@ oled_obj = {
     'oled': adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
 }
 
-# Mode selection
-def draw_orig_text():
-    oled_obj['oled'].fill(0)
-    oled_obj['image'] = Image.new("1", (oled_obj['oled'].width, oled_obj['oled'].height))
-    oled_obj['draw'] = ImageDraw.Draw(oled_obj['image'])
-    oled_obj['draw'].text((0, 0), "Select a mode:", font=font1, fill=255)
-    oled_obj['draw'].text((0, 15), "Joystick", font=font2, fill=255)
-    oled_obj['draw'].text((38, 15), "Accelerometer", font=font2, fill=255)
-    oled_obj['draw'].text((100, 15), "Arms", font=font2, fill=255)
-    oled_obj['oled'].image(oled_obj['image'])
-    oled_obj['oled'].show()
-
 mode = -1
 
-while not twist.is_pressed():
-    curr_pos = twist.count % 3
-    if curr_pos % 3 == 0:
-        draw_orig_text()
-        oled_obj['draw'].text((0,20), "________", font=font2, fill=255)
+# Mode selection
+def mode_selection():
+    global mode
+
+    def draw_orig_text():
+        oled_obj['oled'].fill(0)
+        oled_obj['image'] = Image.new("1", (oled_obj['oled'].width, oled_obj['oled'].height))
+        oled_obj['draw'] = ImageDraw.Draw(oled_obj['image'])
+        oled_obj['draw'].text((0, 0), "Select a mode:", font=font1, fill=255)
+        oled_obj['draw'].text((0, 15), "Joystick", font=font2, fill=255)
+        oled_obj['draw'].text((38, 15), "Accelerometer", font=font2, fill=255)
+        oled_obj['draw'].text((100, 15), "Arms", font=font2, fill=255)
         oled_obj['oled'].image(oled_obj['image'])
         oled_obj['oled'].show()
-        mode = 0
-    elif curr_pos % 3 == 1:
-        draw_orig_text()
-        oled_obj['draw'].text((38,20), "______________", font=font2, fill=255)
-        oled_obj['oled'].image(oled_obj['image'])
-        oled_obj['oled'].show()
-        mode = 1
-    elif curr_pos % 3 == 2:
-        draw_orig_text()
-        oled_obj['draw'].text((100,20), "_____", font=font2, fill=255)
-        oled_obj['oled'].image(oled_obj['image'])
-        oled_obj['oled'].show()
-        mode = 2
+
+    while not twist.is_pressed():
+        curr_pos = twist.count % 3
+        if curr_pos % 3 == 0:
+            draw_orig_text()
+            oled_obj['draw'].text((0,20), "________", font=font2, fill=255)
+            oled_obj['oled'].image(oled_obj['image'])
+            oled_obj['oled'].show()
+            mode = 0
+        elif curr_pos % 3 == 1:
+            draw_orig_text()
+            oled_obj['draw'].text((38,20), "______________", font=font2, fill=255)
+            oled_obj['oled'].image(oled_obj['image'])
+            oled_obj['oled'].show()
+            mode = 1
+        elif curr_pos % 3 == 2:
+            draw_orig_text()
+            oled_obj['draw'].text((100,20), "_____", font=font2, fill=255)
+            oled_obj['oled'].image(oled_obj['image'])
+            oled_obj['oled'].show()
+            mode = 2
+
+    return mode
 
 hostname = socket.gethostname()
 hardware = 'plughw:2,0'
@@ -81,14 +86,22 @@ def test_connect():
     print('connected')
     emit('after connect',  {'data':'Lets dance'})
 
-@app.route('/')
-def index():
+@app.route('/mode')
+def mode():
     if mode == 0:
-        return render_template('joystick/index.html', hostname=hostname)
+        return render_template('joystick/mode.html', hostname=hostname)
     elif mode == 1:
-        return render_template('accel/index.html', hostname=hostname)
+        return render_template('accel/mode.html', hostname=hostname)
     else:
-        return render_template('arms/index.html', hostname=hostname)
+        return render_template('arms/mode.html', hostname=hostname)
+
+@app.route('/new_game', methods=['GET', 'POST'])
+def new_game():
+    if request.method == 'GET':
+        return render_template('new_game.html', hostname=hostname)
+    if request.method == 'POST':
+        mode_selection()
+        return 'done'
 
 # Send back joystick interaction
 @socketio.on('ping-joystick')
