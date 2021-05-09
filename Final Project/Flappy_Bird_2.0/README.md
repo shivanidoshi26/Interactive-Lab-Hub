@@ -12,3 +12,4 @@ References:
 - https://stackoverflow.com/questions/51309375/how-do-i-move-phaser-game-to-the-center-of-a-browser
 - https://stackoverflow.com/questions/46109084/flask-is-not-render-template-before-executing-long-function
 - https://kanchanardj.medium.com/redirecting-to-another-page-with-button-click-in-python-flask-c112a2a2304c
+- https://phasergames.com/creating-endless-runner-game-phaser-part-5-game/
