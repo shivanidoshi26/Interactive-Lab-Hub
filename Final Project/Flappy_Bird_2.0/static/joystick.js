@@ -17,6 +17,7 @@ preload: function() {
             // Load the bird sprite
             game.load.image('bird', 'static/assets/bird.png');
             game.load.image('pipe', 'static/assets/pipe.png');
+            game.load.image('playAgain', 'static/assets/playagain.png');
          },
 
 create: function() {
@@ -28,6 +29,9 @@ create: function() {
            game.physics.startSystem(Phaser.Physics.ARCADE);
 
            // Display the bird at the position x=100 and y=245
+           if (this.bird) {
+              this.bird.destroy()
+           }
            this.bird = game.add.sprite(100, 245, 'bird');
 
            // Add physics to the bird
@@ -57,11 +61,10 @@ update: function() {
            // If the bird is out of the screen (too high or too low)
            // Call the 'restartGame' function
            if (this.bird.y < 0 || this.bird.y > 490)
-              this.restartGame();
-
+              this.gameOver();
 
            game.physics.arcade.overlap(
-                 this.bird, this.pipes, this.restartGame, null, this);
+                 this.bird, this.pipes, this.gameOver, null, this);
 
            game.scale.pageAlignHorizontally = true;
            game.scale.refresh();
@@ -71,11 +74,6 @@ jump: function() {
          // Add a vertical velocity to the bird
          this.bird.body.velocity.y = -350;
       },
-
-restartGame: function() {
-                // Start the 'main' state, which restarts the game
-                game.state.start('main');
-             },	
 
 addOnePipe: function(x, y) {
                // Create a pipe at the position x and y
@@ -109,14 +107,39 @@ addRowOfPipes: function() {
                   this.score += 1;
                   this.labelScore.text = this.score;
                },
+
+gameOver: function() {
+             game.state.start('StateOver');
+          }
+
 };
 
+var StateOver={    
+    create:function()
+    {
+        //add a sprite to be used as a play again button
+        this.playAgain = game.add.sprite(game.width/2,game.height/2,'playAgain');
+        //center the button image
+        this.playAgain.anchor.set(0.5,0.5);
+        //enable for input
+        this.playAgain.inputEnabled = true;
+        //add an event listener
+        this.playAgain.events.onInputDown.add(this.restartGame,this);
+    },
+
+    restartGame:function()
+    {
+        //restart the game by starting stateMain
+        game.state.start('main');
+    }
+}
 
 // Initialize Phaser, and create a 400px by 490px game
 var game = new Phaser.Game(400, 490);
 
 // Add the 'mainState' and call it 'main'
 game.state.add('main', mainState);
+game.state.add('StateOver', StateOver);
 
 // Start the state to actually start the game
 game.state.start('main');
