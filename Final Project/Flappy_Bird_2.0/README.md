@@ -10,3 +10,4 @@ References:
 - https://github.com/rwightman/posenet-python
 - https://drive.google.com/drive/folders/12U8ASmOhhkgCVm5xUsbZEDy-1popyIhL
 - https://stackoverflow.com/questions/51309375/how-do-i-move-phaser-game-to-the-center-of-a-browser
+- https://stackoverflow.com/questions/46109084/flask-is-not-render-template-before-executing-long-function
