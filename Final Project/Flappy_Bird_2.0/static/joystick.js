@@ -2,7 +2,6 @@ const socket = io();
 socket.on('connect', () => {});
 
 setInterval(() => {
-      socket.emit('ping-accel', 'dat')
       socket.emit('ping-joystick', 'dat')
       }, 100)
 
@@ -38,14 +37,6 @@ create: function() {
            // Add gravity to the bird to make it fall
            this.bird.body.gravity.y = 1000;  
 
-           // var spaceKey = game.input.keyboard.addKey(
-           //              Phaser.Keyboard.SPACEBAR);
-           // spaceKey.onDown.add(this.jump, this);
-
-           socket.on('pong-accel', (new_x,new_y,new_z) => {
-                 this.jump();
-                 });
-
            socket.on('pong-joystick', () => {
                  this.jump();
                  });
@@ -71,6 +62,8 @@ update: function() {
 
            game.physics.arcade.overlap(
                  this.bird, this.pipes, this.restartGame, null, this);
+           game.scale.pageAlignHorizontally = true;
+           game.scale.refresh();
         },
 
 jump: function() {
@@ -116,6 +109,7 @@ addRowOfPipes: function() {
                   this.labelScore.text = this.score;
                },
 };
+
 
 // Initialize Phaser, and create a 400px by 490px game
 var game = new Phaser.Game(400, 490);

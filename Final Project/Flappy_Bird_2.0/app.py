@@ -35,6 +35,7 @@ oled_obj = {
     'oled': adafruit_ssd1306.SSD1306_I2C(128, 32, i2c)
 }
 
+# Mode selection
 def draw_orig_text():
     oled_obj['oled'].fill(0)
     oled_obj['image'] = Image.new("1", (oled_obj['oled'].width, oled_obj['oled'].height))
@@ -46,7 +47,7 @@ def draw_orig_text():
     oled_obj['oled'].image(oled_obj['image'])
     oled_obj['oled'].show()
 
-mode = 0
+mode = -1
 
 while not twist.is_pressed():
     curr_pos = twist.count % 3
@@ -80,21 +81,32 @@ def test_connect():
     print('connected')
     emit('after connect',  {'data':'Lets dance'})
 
-# Send back accelerometer interaction
-@socketio.on('ping-accel')
-def handle_message(val):
-    if mpu.acceleration > 5:
-        emit('pong-accel', currAccel)
+@app.route('/')
+def index():
+    if mode == 0:
+        return render_template('joystick/index.html', hostname=hostname)
+    elif mode == 1:
+        return render_template('accel/index.html', hostname=hostname)
+    else:
+        return render_template('arms/index.html', hostname=hostname)
 
 # Send back joystick interaction
 @socketio.on('ping-joystick')
 def handle_message(val):
-    if joystick.get_horizontal() < 510:
+    if joystick.get_horizontal() > 500:
         emit('pong-joystick','make a jump')
 
-@app.route('/')
-def index():
-    return render_template('index.html', hostname=hostname)
+# Send back accelerometer interaction
+@socketio.on('ping-accel')
+def handle_message(val):
+    curr_accel = mpu.acceleration
+    if curr_accel[0] > 5:
+        emit('pong-accel', curr_accel)
+
+# Send back arms interaction
+@socketio.on('ping-arms')
+def handle_message(val):
+    emit('pong-arms','TODO')
 
 def signal_handler(sig, frame):
     print('Closing Gracefully')
