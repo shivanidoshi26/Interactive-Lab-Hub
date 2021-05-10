@@ -1,3 +1,5 @@
+//import Webcam from 'webcam-easy.min.js';
+
 const socket = io();
 socket.on('connect', () => {});
 
@@ -9,10 +11,30 @@ socket.on('disconnect', () => {
       console.log('disconnect')
       });
 
+const webcamElement = document.getElementById('webcam');
+console.log(webcamElement);
+const canvasElement = document.getElementById('canvas');
+const webcam = new Webcam(webcamElement, 'user', canvasElement);
+
+webcam.start()
+  .then(result =>{
+    console.log("webcam started");
+  })
+  .catch(err => {
+    console.log(err);
+});
+
+/*
 var video = document.getElementById('video');
+
+if (navigator.getUserMedia) {
+   console.log("HELLO");
+   console.log(navigator.getUserMedia);
+}
 
 // Get access to the camera!
 if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+    console.log("How about in here?");
     // Not adding `{ audio: true }` since we only want video now
     navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
         //video.src = window.URL.createObjectURL(stream);
@@ -21,6 +43,7 @@ if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
         video.play();
     });
 }
+*/
 
 //const webcamElement = document.getElementById('webcam');
 //const canvasElement = document.getElementById('canvas');
