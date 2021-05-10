@@ -12,25 +12,25 @@ socket.on('disconnect', () => {
 const webcamElement = document.getElementById('webcam');
 const webcam = new Webcam(webcamElement, 'user');
 
+webcam.start()
+   .then(result =>{
+         console.log("webcam started");
+         })
+.catch(err => {
+      console.log(err);
+      });
+
 // Create our 'main' state that will contain the game
 var mainState = {
-
-   this.gameOverFlag = false;
 
 preload: function() {
             // This function will be executed at the beginning
             // Load the bird sprite
+            this.gameOverFlag = false;
+
             game.load.image('bird', 'static/assets/bird.png');
             game.load.image('pipe', 'static/assets/pipe.png');
             game.load.image('playAgain', 'static/assets/playagain.png');
-
-            webcam.start()
-               .then(result =>{
-                     console.log("webcam started");
-                     })
-            .catch(err => {
-                  console.log(err);
-                  });
          },
 
 create: function() {
@@ -77,7 +77,7 @@ create: function() {
               return pose;
            }
 
-           if (!gameOverFlag) {
+           if (!this.gameOverFlag) {
               setInterval(() => {
                     const pose = estimatePoseOnImage(webcamElement, this.jump, this.bird);
                     }, 800);
@@ -104,8 +104,8 @@ update: function() {
            game.physics.arcade.overlap(
                  this.bird, this.pipes, this.gameOver, null, this);
 
-           game.scale.pageAlignHorizontally = true;
-           game.scale.refresh();
+           //game.scale.pageAlignHorizontally = true;
+           //game.scale.refresh();
         },
 
 jump: function() {
@@ -148,7 +148,6 @@ addRowOfPipes: function() {
 
 gameOver: function() {
              this.gameOverFlag = true;
-             webcam.stop();
              game.state.start('StateOver');
           }
 };
@@ -174,7 +173,7 @@ restartGame:function()
 }
 
 // Initialize Phaser, and create a 400px by 490px game
-var game = new Phaser.Game(400, 490);
+var game = new Phaser.Game(400, 490, Phaser.AUTO, 'game-area');
 
 // Add the 'mainState' and call it 'main'
 game.state.add('main', mainState);
