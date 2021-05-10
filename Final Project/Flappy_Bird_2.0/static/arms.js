@@ -1,5 +1,3 @@
-//import Webcam from 'webcam-easy.min.js';
-
 const socket = io();
 socket.on('connect', () => {});
 
@@ -12,59 +10,27 @@ socket.on('disconnect', () => {
       });
 
 const webcamElement = document.getElementById('webcam');
-console.log(webcamElement);
-const canvasElement = document.getElementById('canvas');
-const webcam = new Webcam(webcamElement, 'user', canvasElement);
-
-webcam.start()
-  .then(result =>{
-    console.log("webcam started");
-  })
-  .catch(err => {
-    console.log(err);
-});
-
-/*
-var video = document.getElementById('video');
-
-if (navigator.getUserMedia) {
-   console.log("HELLO");
-   console.log(navigator.getUserMedia);
-}
-
-// Get access to the camera!
-if(navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-    console.log("How about in here?");
-    // Not adding `{ audio: true }` since we only want video now
-    navigator.mediaDevices.getUserMedia({ video: true }).then(function(stream) {
-        //video.src = window.URL.createObjectURL(stream);
-        console.log("I'm in");
-        video.srcObject = stream;
-        video.play();
-    });
-}
-*/
-
-//const webcamElement = document.getElementById('webcam');
-//const canvasElement = document.getElementById('canvas');
-//const webcam = new Webcam(webcamElement, 'user', canvasElement);
-
-//webcam.start()
- // .then(result =>{
-  //  console.log("webcam started");
- // })
-  //.catch(err => {
-    //console.log(err);
-//});
+const webcam = new Webcam(webcamElement, 'user');
 
 // Create our 'main' state that will contain the game
 var mainState = {
+
+   this.gameOverFlag = false;
+
 preload: function() {
             // This function will be executed at the beginning
             // Load the bird sprite
             game.load.image('bird', 'static/assets/bird.png');
             game.load.image('pipe', 'static/assets/pipe.png');
             game.load.image('playAgain', 'static/assets/playagain.png');
+
+            webcam.start()
+               .then(result =>{
+                     console.log("webcam started");
+                     })
+            .catch(err => {
+                  console.log(err);
+                  });
          },
 
 create: function() {
@@ -86,22 +52,36 @@ create: function() {
            game.physics.arcade.enable(this.bird);
 
            // Add gravity to the bird to make it fall
-           this.bird.body.gravity.y = 1000;  
+           this.bird.body.gravity.y = 700; 
 
-           //socket.on('pong-arms', () => {
-           //      this.jump();
-           //      });
-           
            const imageScaleFactor = 0.50;
            const flipHorizontal = false;
            const outputStride = 16;
 
-           // load the posenet model
-           //const pose = await net.estimateSinglePose(video, scaleFactor, flipHorizontal, outputStride);
-           
-           //if (pose.keypoints[0].y < pose.keypoints[9].y) {
-           //    this.jump();
-           //}
+           async function estimatePoseOnImage(imageElement, jumpFunc, bird) {
+              this.bird = bird;
+              const net = await posenet.load();
+
+              // load the posenet model
+              const pose = await net.estimateSinglePose(imageElement, imageScaleFactor, flipHorizontal, outputStride);
+
+              console.log(pose);
+
+              if (pose.keypoints[0].position.y > pose.keypoints[9].position.y && pose.keypoints[0].position.y > pose.keypoints[10].position.y) {
+                 console.log("attempted jump");
+                 jumpFunc();
+              } else {
+                 console.log("so sad too bad");
+              }
+
+              return pose;
+           }
+
+           if (!gameOverFlag) {
+              setInterval(() => {
+                    const pose = estimatePoseOnImage(webcamElement, this.jump, this.bird);
+                    }, 800);
+           }
 
            // Create an empty group
            this.pipes = game.add.group(); 
@@ -130,7 +110,7 @@ update: function() {
 
 jump: function() {
          // Add a vertical velocity to the bird
-         this.bird.body.velocity.y = -350;
+         this.bird.body.velocity.y = -250;
       },
 
 addOnePipe: function(x, y) {
@@ -167,6 +147,8 @@ addRowOfPipes: function() {
                },
 
 gameOver: function() {
+             this.gameOverFlag = true;
+             webcam.stop();
              game.state.start('StateOver');
           }
 };
@@ -190,8 +172,6 @@ restartGame:function()
                game.state.start('main');
             }
 }
-
-//const net = await posenet.load();
 
 // Initialize Phaser, and create a 400px by 490px game
 var game = new Phaser.Game(400, 490);
