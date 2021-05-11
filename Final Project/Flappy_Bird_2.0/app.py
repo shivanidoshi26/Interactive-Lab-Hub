@@ -116,11 +116,6 @@ def handle_message(val):
     if curr_accel[0] > 5:
         emit('pong-accel', curr_accel)
 
-# Send back arms interaction
-@socketio.on('ping-arms')
-def handle_message(val):
-    emit('pong-arms','TODO')
-
 def signal_handler(sig, frame):
     print('Closing Gracefully')
     sys.exit(0)

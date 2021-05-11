@@ -1,10 +1,6 @@
 const socket = io();
 socket.on('connect', () => {});
 
-setInterval(() => {
-      socket.emit('ping-arms', 'dat')
-      }, 100)
-
 socket.on('disconnect', () => {
       console.log('disconnect')
       });
