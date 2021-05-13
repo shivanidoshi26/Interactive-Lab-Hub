@@ -36,6 +36,12 @@ Our initial design was exceedingly simple and, as you can see, there are some fl
  <img src="imgs/design1.jpg" height=400/>
 </p>
 
+After a bit of planning and drawing on paper, this was the slightly better encased version 2 of our design. Note that while there aren't a lot of improvements with the overall look of it, it will be small, enclose all the tech and wires and have the accelerometer be a separate more handheld device:
+
+<p align="center">
+ <img src="imgs/setup.jpg" height=400/>
+</p>
+
 The second iteration was much better as it hid the raspberry pi as well, and the accelerometer was put in a piece of tech that could actually be held in your hand:
 
 <p align="center">
