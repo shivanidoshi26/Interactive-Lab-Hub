@@ -4,21 +4,27 @@ Flappy Bird 2.0 is a simple implementation of the original Flappy Bird game. It 
 
 To get set up, first you will need to boot up your raspberry pi and SSH into it on the appropriate domain:
 
-`ssh pi@sgd73.local`
+```
+ssh pi@sgd73.local
+```
 
 Proceed to enter your password and you will be logged in - remember that the hostname may defer if you are using your own personal raspberry pi.
 
 Then clone this repository locally, change to the appropriate directory and install all the necessary requirements:
 
-`pi@sgd73.local:~ $ git clone https://github.com/shivanidoshi26/Interactive-Lab-Hub.git
+```
+pi@sgd73.local:~ $ git clone https://github.com/shivanidoshi26/Interactive-Lab-Hub.git
 pi@sgd73.local:~ $ cd Interactive-Lab-Hub/Final\ Project/Flappy_Bird_2.0/
-pi@sgd73.local:Flappy_Bird_2.0 $ pip3 install -r requirements.txt`
+pi@sgd73.local:Flappy_Bird_2.0 $ pip3 install -r requirements.txt
+```
 
 You may want to perform this installation from within a virtual environment, as it may interfere with some of the other packages you have installed on your system:
 
-`pi@sgd73.local:~ $ virtualenv flappybird2
+```
+pi@sgd73.local:~ $ virtualenv flappybird2
 pi@sgd73.local:~ $ source flappybird2/bin/activate
-(flappybird2) pi@sgd73.local:~ $`
+(flappybird2) pi@sgd73.local:~ $
+```
 
 Once the requirements have been downloaded, ensure you set up your raspberry pi with the correct devices plugged in and daisy chained together. For the sake of this project, you will need the following pieces of equipment:
 - Raspberry Pi 4 with 4GB (https://www.adafruit.com/product/4296)
@@ -32,11 +38,15 @@ Once the requirements have been downloaded, ensure you set up your raspberry pi 
 
 To run the application simply run the following file:
 
-`pi@sgd73.local:Interactive-Lab-Hub/Final\ Project/Flappy_Bird_2.0 $ python3 app.py`
+```
+pi@sgd73.local:Interactive-Lab-Hub/Final\ Project/Flappy_Bird_2.0 $ python3 app.py
+```
 
 To successfully use **arms** mode, you will need access to a browser that does not have security restrictions and permission issues with accessing the webcam. Though insecure, we recommend running the following command from your local computer via the terminal - this is assuming you have and user Google Chrome as one of your browsers:
 
-`/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --unsafely-treat-insecure-origin-as-secure="http://sgd73.local:5000/" --user-data-dir=~/Desktop/test_dir`
+```
+/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --unsafely-treat-insecure-origin-as-secure="http://sgd73.local:5000/" --user-data-dir=~/Desktop/test_dir
+```
 
 Go ahead and accept the corresponding pop-up that shows on your screen after running the above. This will open a new Google Chrome browser with the security permissions unrestricted for the domain where our website will be hosted: http://sgd73.local:5000/. 
 
