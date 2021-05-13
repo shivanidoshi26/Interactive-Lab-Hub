@@ -50,17 +50,27 @@ pi@sgd73.local:Flappy_Bird_2.0 $ python3 app.py
 
 ## Notes about the Technology
 
-There are a few notes to take into account with regards to the technology. For the joystick mode, the bird will only jump when the joystick is pushed in the appropriate direction. Ensure that you orient the joystick such that you can read the text on it. To, then, make the bird jump, you will need to push the joystick up. Refer to the photographs below for further detail about this:
+There are a few notes to take into account with regards to the technology. 
+
+For the **joystick** mode, the bird will only jump when the joystick is pushed in the appropriate direction. Ensure that you orient the joystick such that you can read the text on it. To, then, make the bird jump, you will need to push the joystick up. Refer to the photographs below for further detail about this:
 
 <p align="center">
   <img src="imgs/joystick1.jpg" height=400/> <img src="imgs/joystick2.jpg" height=400/>
 </p>
 
-To successfully use **arms** mode, you will need access to a browser that does not have security restrictions and permission issues with accessing the webcam. Though insecure, we recommend running the following command from your local computer (not from the raspberry pi) via the terminal - this is assuming you have and use Google Chrome as one of your browsers:
+For the **accelerometer** mode, the bird will only jump when the accelerometer is tilted in the correct direction. We recommend fastening the accelerometer on some flat medium, such that you don't get false readings by accident. Refer to the photographs below for further detail about how to set up and use the accelerometer:
+
+<p align="center">
+  <img src="imgs/accelerometer1.jpg" height=400/> <img src="imgs/accelerometer2.jpg" height=400/>
+</p>
+
+For the **arms** mode, you will need access to a browser that does not have security restrictions and permission issues with accessing the webcam. Though insecure, we recommend running the following command from your local computer (not from the raspberry pi) via the terminal - this is assuming you have and use Google Chrome as one of your browsers:
 
 ```
 /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome --unsafely-treat-insecure-origin-as-secure="http://sgd73.local:5000/" --user-data-dir=~/Desktop/test_dir
 ```
+
+We need to do this because Google Chrome restricts insecure URL's from being able to access any of the media devices. While this is a wonderful security measure, it does not help our application because we do not have an SSL certificate tied to it. 
 
 Go ahead and accept the corresponding pop-up that shows on your screen after running the above. This will open a new Google Chrome browser with the security permissions unrestricted for the domain where our website will be hosted: http://sgd73.local:5000/. 
 
