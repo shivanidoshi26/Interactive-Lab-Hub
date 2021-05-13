@@ -45,7 +45,11 @@ After a bit of planning and drawing on paper, this was the slightly better encas
 The second iteration was much better as it hid the raspberry pi as well, and the accelerometer was put in a piece of tech that could actually be held in your hand:
 
 <p align="center">
- <img src="imgs/design2.jpg" height=400/>
+ <img src="imgs/setup2.jpg" height=600/>
+</p>
+
+<p align="center">
+ <img src="imgs/setup3.jpg" height=400/> <img src="imgs/setup4.jpg" height=400/>
 </p>
 
 ## Video Demos
