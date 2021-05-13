@@ -39,7 +39,7 @@ Once the requirements have been downloaded, ensure you set up your raspberry pi 
 To run the application simply run the following file:
 
 ```
-pi@sgd73.local:Interactive-Lab-Hub/Final\ Project/Flappy_Bird_2.0 $ python3 app.py
+pi@sgd73.local:Flappy_Bird_2.0 $ python3 app.py
 ```
 
 To successfully use **arms** mode, you will need access to a browser that does not have security restrictions and permission issues with accessing the webcam. Though insecure, we recommend running the following command from your local computer via the terminal - this is assuming you have and user Google Chrome as one of your browsers:
