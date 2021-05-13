@@ -66,7 +66,23 @@ Since we didn't want to put anyone's health at jeopardy by having them demo the 
 
 ## Reflections
 
-There were many take-aways from this experience.
+There were many take-aways from this experience and many improvements that we could make for the next iteration.
+
+Takeaways:
+- We needed to take so many components into account when building the application. Taking a step back and thinking about the interaction as just an interaction really helped us design the web application and the technology design better.
+- Posenet was surprisingly tricky to figure out. We had to ensure we were processing the video feedback quick enough to reflect the changes on the actual game, such that it was all real-time and there was no delay.
+- It was surprisingly difficult to figure out how to paper prototype the device. Having to come up with something that looked nice and wasn't too boring was not as easy it seemed. Ultimately, it would be nice to have a better looking container for the technology, but we did the best we could given the circumstances.
+
+Improvements:
+- We would try to attach an SSL certificate along with our domain, so that the process of actually using the web application isn't as complicated. It is not a fun interaction when you have to explicitly open up a new browser with specific permissions set and go through one extra step in this process just to get it up and running.
+- It would be very interesting to try and host this application on a phone, as well as on the web. We didn't get the chance to play around with building a mobile application since we based our infrastructure on the lab 3 demo of the magic 8 ball.
+- It would be nice if there was a bit of a delay before the user started playing when the game starts or restarts. Since the bird immediately starts to fly when the page loads, it might add a bit of anxiety or stress for the user to have to be prepared on the get-go.
+- For the next iteration, we would love to incorporate a sound element - maybe some sound when the bird flies or a little tune at the start and end of the game. This will make the interaction feel a lot more authentic and enjoyable.
+- It would be nice to not have such specific settings for the accelerometer and joystick. By this I mean that it would be nice to have the bird fly regardless of which direction you tilt the accelerometer or push the joystick. For simplicity sake, we fixed this interaction. But maybe for the next iteration, we could incorporate some leeway such that the user doesn't have to think too much about the setup.
+- There are still some small issues and kinks that need to be sorted with specifically the **arms** mode. It seems to send messages back and forth even when the game isn't being played - this is likely because the function we implemented is async. It would be great to spend more time figuring out how to fix this.
+- Next time, we would love to spend more time on building up the container of the technology. If it was sturdier and sleek-looking, it would look more professional.
+
+Overall, we are very proud of achieving all of this amazing work in just 1 week!
 
 ## Teams
 
