@@ -45,7 +45,7 @@ Once the requirements have been downloaded and all the technology has been plugg
 To run the application simply run the following file:
 
 ```
-pi@sgd73.local:Flappy_Bird_2.0 $ python3 app.py
+(flappybird2) pi@sgd73:~/Interactive-Lab-Hub/Final Project/Flappy_Bird_2.0 $ python3 app.py
 ```
 
 ## Notes about the Technology
