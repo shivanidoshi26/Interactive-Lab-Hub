@@ -16,6 +16,8 @@ We, therefore, implemented 3 modes in our project: joystick, accelerometer and a
  <img src="imgs/storyboard.png"/>
 </p>
 
+We used Phaser to display the game and Posenet to detect the person's poses for **arms** mode.
+
 Note: our intention with this project was not to trigger anyone's prior negative experiences with the game, but rather introduce slightly modified versions of the original and hopefully provide a fun, lively and interactive experience!
 
 ## Documentation of Design Process
