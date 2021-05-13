@@ -55,7 +55,7 @@ There are a few notes to take into account with regards to the technology.
 For the **joystick** mode, the bird will only jump when the joystick is pushed in the appropriate direction. Ensure that you orient the joystick such that you can read the text on it. To, then, make the bird jump, you will need to push the joystick up. Refer to the photographs below for further detail about this:
 
 <p align="center">
-  <img src="/imgs/joystick1.jpg" height=400/> <img src="imgs/joystick2.jpg" height=400/>
+  <img src="../imgs/joystick1.jpg" height=400/> <img src="imgs/joystick2.jpg" height=400/>
 </p>
 
 For the **accelerometer** mode, the bird will only jump when the accelerometer is tilted in the correct direction. We recommend fastening the accelerometer on some flat medium, such that you don't get false readings by accident. Refer to the photographs below for further detail about how to set up and use the accelerometer:
