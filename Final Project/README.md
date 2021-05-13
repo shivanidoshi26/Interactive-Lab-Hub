@@ -18,11 +18,20 @@ We, therefore, implemented 3 modes in our project: joystick, accelerometer and a
 
 Note: our intention with this project was not to trigger anyone's prior negative experiences with the game, but rather introduce slightly modified versions of the original and hopefully provide a fun, lively and interactive experience!
 
-## Deliverables
+## Documentation of Design Process
 
 1. Documentation of design process
+
+## Archive of Everything
+
 2. Archive of all code, design patterns, etc. used in the final design. (As with labs, the standard should be that the documentation would allow you to recreate your project if you woke up with amnesia.)
+
+## Video Demos
+
 3. Video of someone using your project (or as safe a version of that as can be managed given social distancing)
+
+## Reflections
+
 4. Reflections on process (What have you learned or wish you knew at the start?)
 
 ## Teams
