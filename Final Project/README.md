@@ -28,7 +28,11 @@ Note: our intention with this project was not to trigger anyone's prior negative
 
 ## Video Demos
 
-3. Video of someone using your project (or as safe a version of that as can be managed given social distancing)
+Since we didn't want to put anyone's health at jeopardy by having them demo the application, we decided to show you how it can be used ourselves:
+
+<p align="center">
+[![](https://res.cloudinary.com/marcomontalbano/image/upload/v1620924087/video_to_markdown/images/google-drive--1ma2-HkcZKHPzy7PB_bqO0nm2dztGvdqr-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1ma2-HkcZKHPzy7PB_bqO0nm2dztGvdqr/view "")
+</p>
 
 ## Reflections
 
