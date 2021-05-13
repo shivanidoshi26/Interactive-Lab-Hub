@@ -1,6 +1,6 @@
 # Final Project
 
-Using the tools and techniques you learned in this class, design, prototype and test an interactive device: Flappy Bird 2.0!
+Using the tools and techniques we learned in this class, Ritika Poddar (rp477) and I (sgd73) designed, prototyped and tested an interactive device: Flappy Bird 2.0!
  
 ## Description
 
@@ -27,9 +27,14 @@ Note: our intention with this project was not to trigger anyone's prior negative
 
 ## Teams
 
+Ritika Poddar (rp477) and I decided to work together for the entirety of this project. The effort we both put in was extremely equal and we're both very happy with how we've worked as a team (for not only this project, but most of them throughout the semester). Specifically:
+- Ritika started us off and implemented the basic infrastructure of the game.
+- I cleaned up the UI and integrated all the components of the web application together to make a smooth web interaction.
+- We figured out how to implement the accelerometer appropriately. 
+- Ritika got the joystick working, which was quite easy to figure out once we'd figured out the accelerometer. 
+- Ritika played around with posenet and got a basic version with the pi cam working - we decided to scrap using the pi cam due to issues with major delays and slowness.
+- We collectively figured out how to instead perform all the arms code browser-side - for this we needed to gain access to the computer's web camera and use that input to process the subsequent actions. A big thanks to David Goedicke for staying on call for nearly an hour helping us figure out how to get the web cam working!
+- We finally got arms to work pretty cleanly and process the input at a fairly normal rate.
+- I reorganized the UI and made last-minute touches and improvements.
 
-
-## Examples
-
-[Here is a list of good final projects from previous classes.](https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/wiki/Previous-Final-Projects)
-This version of the class is very different, but it may be useful to see these.
+The documentation and code for our final project is the same on both hers and my repository. Here is a link to her final project repository, in any case: https://github.com/Rpoddar1953/Interactive-Lab-Hub/tree/Spring2021/Final%20Project.
