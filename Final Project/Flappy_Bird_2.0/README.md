@@ -46,7 +46,7 @@ pi@sgd73.local:Flappy_Bird_2.0 $ python3 app.py
 
 There are a few notes to take into account with regards to the technology. For the joystick mode, the bird will only jump when the joystick is pushed in the appropriate direction. Ensure that you orient the joystick such that you can read the text on it. To, then, make the bird jump, you will need to push the joystick up. Refer to the photographs below for further detail about this:
 
-<img src="imgs/joystick1.jpg"/> <img src="imgs/joystick2.jpg"/>
+<img src="imgs/joystick1.jpg" height=300/> <img src="imgs/joystick2.jpg" height=300/>
 
 To successfully use **arms** mode, you will need access to a browser that does not have security restrictions and permission issues with accessing the webcam. Though insecure, we recommend running the following command from your local computer (not from the raspberry pi) via the terminal - this is assuming you have and use Google Chrome as one of your browsers:
 
