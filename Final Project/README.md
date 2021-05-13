@@ -33,13 +33,13 @@ If we had more experience and time to make use of the resources in the Maker Lab
 Our initial design was exceedingly simple and, as you can see, there are some flaws with it. The accelerometer was not as handheld as we would've liked it to be and there's nothing really exciting about this set up.
 
 <p align="center">
- <img src="imgs/design1.png" height=400/>
+ <img src="imgs/design1.jpg" height=400/>
 </p>
 
 The second iteration was much better as it hid the raspberry pi as well, and the accelerometer was put in a piece of tech that could actually be held in your hand:
 
 <p align="center">
- <img src="imgs/design2.png" height=400/>
+ <img src="imgs/design2.jpg" height=400/>
 </p>
 
 ## Video Demos
