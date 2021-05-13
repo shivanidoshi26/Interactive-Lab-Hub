@@ -50,7 +50,7 @@ The second iteration was much better as it hid the raspberry pi as well, and the
 
 ## Video Demos
 
-Since we didn't want to put anyone's health at jeopardy by having them demo the application, we decided to show you how it can be used ourselves:
+Since we didn't want to put anyone's health at jeopardy by having them demo the application, we decided to show you how it can be used ourselves. Though the design of the tech is with our older idea of the setup, we didn't think it necessary to reshoot the video because the design of the tech does not impact the interaction very much - the way to use the tech and the layout of things is mostly the same:
 
 [![](https://res.cloudinary.com/marcomontalbano/image/upload/v1620924087/video_to_markdown/images/google-drive--1ma2-HkcZKHPzy7PB_bqO0nm2dztGvdqr-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://drive.google.com/file/d/1ma2-HkcZKHPzy7PB_bqO0nm2dztGvdqr/view "")
 
