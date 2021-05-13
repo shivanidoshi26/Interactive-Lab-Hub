@@ -2,6 +2,8 @@
 
 Flappy Bird 2.0 is a simple implementation of the original Flappy Bird game. It involves 3 main modes and the user interacts solely with the web application to play the game. 
 
+## Necessary Technology
+
 For the sake of this project, you will need the following pieces of equipment:
 - Raspberry Pi 4 with 4GB (https://www.adafruit.com/product/4296)
 - Power supply (https://www.adafruit.com/product/4298)
@@ -11,6 +13,8 @@ For the sake of this project, you will need the following pieces of equipment:
 - OLED screen	(https://www.sparkfun.com/products/17153)
 - Accelerometer	(https://www.adafruit.com/product/3886)
 - Joystick (https://www.sparkfun.com/products/15168)
+
+## Setting Up the Code
 
 Ensure you set up your raspberry pi with these devices plugged in and daisy chained together. Then, you will need to boot up your raspberry pi and SSH into it on the appropriate host:
 
@@ -44,6 +48,8 @@ To run the application simply run the following file:
 pi@sgd73.local:Flappy_Bird_2.0 $ python3 app.py
 ```
 
+## Notes about the Technology
+
 There are a few notes to take into account with regards to the technology. For the joystick mode, the bird will only jump when the joystick is pushed in the appropriate direction. Ensure that you orient the joystick such that you can read the text on it. To, then, make the bird jump, you will need to push the joystick up. Refer to the photographs below for further detail about this:
 
 <p align="center">
@@ -59,6 +65,8 @@ To successfully use **arms** mode, you will need access to a browser that does n
 Go ahead and accept the corresponding pop-up that shows on your screen after running the above. This will open a new Google Chrome browser with the security permissions unrestricted for the domain where our website will be hosted: http://sgd73.local:5000/. 
 
 Proceed to the starting page of the game at http://sgd73.local:5000/new_game and get started playing. We hope you enjoy it and have a fun time triggering the frustration you once felt when playing this addictive game!
+
+## References
 
 Here is a non-exhaustive list of the most relevant references we took inspiration from to put our entire project together - all credit for originality goes to these people:
 - https://medium.com/@sandraxrose/pythons-and-matrices-5f3c7ed6d5fb
