@@ -1,23 +1,22 @@
 # Final Project
 
-Using the tools and techniques you learned in this class, design, prototype and test an interactive device.
-
-Project Github page set up - May 3
-
-Functional check-off - May 10
- 
-Final Project Presentations (video watch party) - May 12
-
-Final Project Documentation due - May 19
-
-
-
-## Objective
-
-The goal of this final project is for you to have a fully functioning and well-designed interactive device of your own design.
+Using the tools and techniques we learned in this class, Ritika Poddar (rp477) and I (sgd73) designed, prototyped and tested an interactive device: Flappy Bird 2.0!
  
 ## Description
-Your project is to design and build an interactive device to suit a specific application of your choosing. 
+
+Flappy Bird is a mobile game developed by Vietnamese video game artist and programmer Dong Nguyen, under his game development company dotGears. The game is fairly simple and merely requires the player to control a bird on the screen. The goal of the game is to navigate the bird through a sort of obstacle course of green pipes. You have to try and get as far as you possibly can without hitting the green pipes or going out of the bounds of the screen (i.e. going too high or too low). 
+
+While this game sounds simple, it was always very tricky to get a high score and perform well - people have spent hours practicing and trying to get the motions correct. The game was discontinued due to the violent reactions people had when they lost. It was such an addicting game and it really pushed people to perform (or try to perform) well. The game is still available on some websites and some off-brand mobile apps.
+
+Our goal for this final project was to replicate the game on a web application, but elevate the methods one could use to maneuver the bird. Ordinarily, a person would repeatedly tap on the mobile screen to keep the bird afloat, or repeatedly press the spacebar of your computer in the case of the web app. We decided to alter that and make use of some of the cool technology we were provided in this course. 
+
+We, therefore, implemented 3 modes in our project: joystick, accelerometer and arms mode. The joystick mode is the easiest, accelerometer a bit tougher and arms the hardest. The following storyboard depicts a classic interaction:
+
+<p align="center">
+ <img src="imgs/storyboard.png"/>
+</p>
+
+Note: our intention with this project was not to trigger anyone's prior negative experiences with the game, but rather introduce slightly modified versions of the original and hopefully provide a fun, lively and interactive experience!
 
 ## Deliverables
 
@@ -26,12 +25,16 @@ Your project is to design and build an interactive device to suit a specific app
 3. Video of someone using your project (or as safe a version of that as can be managed given social distancing)
 4. Reflections on process (What have you learned or wish you knew at the start?)
 
-
 ## Teams
 
-You can and are not required to work in teams. Be clear in documentation who contributed what. The total project contributions should reflect the number of people on the project.
+Ritika Poddar (rp477) and I decided to work together for the entirety of this project. The effort we both put in was extremely equal and we're both very happy with how we've worked as a team (for not only this project, but most of them throughout the semester). Specifically:
+- Ritika started us off and implemented the basic infrastructure of the game.
+- I cleaned up the UI and integrated all the components of the web application together to make a smooth web interaction.
+- We figured out how to implement the accelerometer appropriately. 
+- Ritika got the joystick working, which was quite easy to figure out once we'd figured out the accelerometer. 
+- Ritika played around with posenet and got a basic version with the pi cam working - we decided to scrap using the pi cam due to issues with major delays and slowness.
+- We collectively figured out how to instead perform all the arms code browser-side - for this we needed to gain access to the computer's web camera and use that input to process the subsequent actions. A big thanks to David Goedicke for staying on call for nearly an hour helping us figure out how to get the web cam working!
+- We finally got arms to work pretty cleanly and process the input at a fairly normal rate.
+- I reorganized the UI and made last-minute touches and improvements.
 
-## Examples
-
-[Here is a list of good final projects from previous classes.](https://github.com/FAR-Lab/Developing-and-Designing-Interactive-Devices/wiki/Previous-Final-Projects)
-This version of the class is very different, but it may be useful to see these.
+The documentation and code for our final project is the same on both hers and my repository. Here is a link to her final project repository, in any case: https://github.com/Rpoddar1953/Interactive-Lab-Hub/tree/Spring2021/Final%20Project.
